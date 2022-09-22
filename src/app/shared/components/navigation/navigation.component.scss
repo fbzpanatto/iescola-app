@@ -1,9 +1,46 @@
-.example-container {
-  position: relative;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: calc(100vh - 64px);
-}
+:host {
 
+  .pad {
+    padding: 16px;
+  }
+
+  mat-sidenav-container {
+    position: relative;
+    height: calc(100vh - 64px);
+
+    mat-sidenav {
+      background-color: #ffffff;
+      width: 250px;
+
+      &.mat-drawer-side {
+        border: none;
+      }
+
+      mat-list {
+        background-color: #f2f2f2;
+        border-radius: 5px;
+        height: calc(100% - 36px);
+
+        &.mat-list-base {
+          padding: 16px;
+        }
+
+        div.item-container {
+          mat-list-item {
+        cursor: pointer;
+            &:hover {
+              background-color: #E9ECF2;
+              color: #1976d2;
+              text-shadow: 0 0 5px #FFFFFF;
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+    }
+
+    mat-sidenav-content {
+      background-color: rgb(255, 255, 255);
+    }
+  }
+}

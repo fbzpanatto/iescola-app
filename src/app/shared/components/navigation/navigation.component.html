@@ -2,15 +2,17 @@
   <button (click)="opened = !opened">MENU</button>
 </mat-toolbar>
 
-<mat-sidenav-container class="example-container">
-  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
-    Sidenav content
+<mat-sidenav-container>
+  <mat-sidenav class="pad" #sidenav mode="side" [(opened)]="opened">
+    <mat-list>
+      <div class="item-container"><mat-list-item>Relatórios</mat-list-item></div>
+      <div class="item-container"><mat-list-item>Relatórios</mat-list-item></div>
+      <div class="item-container"><mat-list-item>Relatórios</mat-list-item></div>
+      <div class="item-container"><mat-list-item>Relatórios</mat-list-item></div>
+    </mat-list>
   </mat-sidenav>
 
-  <mat-sidenav-content>
-    <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
-    <p>Events:</p>
+  <mat-sidenav-content class="pad">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero odio accusantium molestias vel, dolores voluptatum obcaecati perferendis quibusdam eligendi impedit blanditiis reprehenderit sunt rerum consequuntur iusto excepturi architecto natus ipsa.</p>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-
