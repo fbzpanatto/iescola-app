@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+// @use '@angular/material' as mat;
+// @import '@angular/material/theming';
+// @include mat.core();
+
+// @import 'variables';
+
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body, input {
+  font-family: 'Roboto', 'Helvetica Neue', monospace, sans-serif;
+}
+
+:focus {
+  outline: none;
+}
+
+
+*::-webkit-scrollbar {
+  height: 0.2em;
+  width: 0.2em;
+}
+
+*::-webkit-scrollbar-thumb {
+  outline: none;
+}
