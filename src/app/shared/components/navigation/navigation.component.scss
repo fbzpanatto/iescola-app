@@ -1,12 +1,12 @@
 :host {
 
-  .pad {
+  .pad16 {
     padding: 16px;
   }
 
   mat-sidenav-container {
     position: relative;
-    height: calc(100vh - 64px);
+    height: 100vh;
 
     mat-sidenav {
       background-color: #ffffff;
@@ -19,7 +19,7 @@
       mat-list {
         background-color: #f2f2f2;
         border-radius: 5px;
-        height: calc(100% - 36px);
+        height: 100%;
 
         &.mat-list-base {
           padding: 16px;
@@ -27,7 +27,7 @@
 
         div.item-container {
           mat-list-item {
-        cursor: pointer;
+            cursor: pointer;
             &:hover {
               background-color: #E9ECF2;
               color: #1976d2;
@@ -41,6 +41,31 @@
 
     mat-sidenav-content {
       background-color: rgb(255, 255, 255);
+      padding-left: 0;
+
+      div.toolbar {
+        p {
+          margin: 0;
+        }
+        div.avatar {
+          height: 50px;
+          min-width: 50px;
+          background-color: yellow;
+          border-radius: 50px;
+        }
+      }
+
+      input.search-box {
+        border: none;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        font-style: italic;
+        font-size: 14px;
+        width: 314px;
+        height: 45px;
+        font-size: 1.2em;
+        padding: 0 16px;
+      }
     }
   }
 }

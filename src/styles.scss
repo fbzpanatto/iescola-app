@@ -15,6 +15,10 @@ body, input {
   font-family: 'Roboto', 'Helvetica Neue', monospace, sans-serif;
 }
 
+button {
+  cursor: pointer;
+}
+
 :focus {
   outline: none;
 }

@@ -1,18 +1,33 @@
-<mat-toolbar color="primary">
-  <button (click)="opened = !opened">MENU</button>
-</mat-toolbar>
-
 <mat-sidenav-container>
-  <mat-sidenav class="pad" #sidenav mode="side" [(opened)]="opened">
-    <mat-list>
-      <div class="item-container"><mat-list-item>Relatórios</mat-list-item></div>
-      <div class="item-container"><mat-list-item>Relatórios</mat-list-item></div>
-      <div class="item-container"><mat-list-item>Relatórios</mat-list-item></div>
-      <div class="item-container"><mat-list-item>Relatórios</mat-list-item></div>
+  <mat-sidenav class="pad16" #sidenav mode="side" [(opened)]="opened">
+    <mat-list fxLayout="column">
+      <div>
+        <div mat-subheader>Principal</div>
+        <div class="item-container"><mat-list-item>Home</mat-list-item></div>
+        <div class="item-container"><mat-list-item>Professores</mat-list-item></div>
+        <div class="item-container"><mat-list-item>Alunos</mat-list-item></div>
+        <div class="item-container"><mat-list-item>Notas</mat-list-item></div>
+      </div>
+      <div fxFlex></div>
+      <div>
+        <div mat-subheader>Ajuda</div>
+        <div class="item-container"><mat-list-item>Suporte</mat-list-item></div>
+        <div class="item-container"><mat-list-item>Termos & Condições</mat-list-item></div>
+      </div>
     </mat-list>
   </mat-sidenav>
 
-  <mat-sidenav-content class="pad">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero odio accusantium molestias vel, dolores voluptatum obcaecati perferendis quibusdam eligendi impedit blanditiis reprehenderit sunt rerum consequuntur iusto excepturi architecto natus ipsa.</p>
+  <mat-sidenav-content class="pad16">
+    <div class="toolbar" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="16px">
+      <button (click)="opened = !opened">MENU</button>
+      <input class="search-box" type="text" placeholder="Pesquisar...">
+      <div fxFlex></div>
+      <p>Olá Fabrizio Panato</p>
+      <div class="avatar"></div>
+    </div>
+    <main>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias accusamus quaerat at numquam ut expedita tenetur aliquam inventore itaque eaque, quia ad minus, soluta placeat corporis magni, ipsa culpa officiis.</p>
+      <!-- <router-outlet></router-outlet> -->
+    </main>
   </mat-sidenav-content>
 </mat-sidenav-container>

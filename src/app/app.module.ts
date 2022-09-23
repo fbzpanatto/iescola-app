@@ -8,6 +8,7 @@ import { MaterialModule } from './shared/modules/material.module';
 import { NavigationComponent } from './shared/components/navigation/navigation.component';
 import { AuthenticationComponent } from './shared/components/authentication/authentication.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -20,8 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
