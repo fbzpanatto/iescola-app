@@ -1,17 +1,12 @@
 :host {
 
-  .pad16 {
-    padding: 16px;
-  }
-
   mat-sidenav-container {
     position: relative;
     height: 100vh;
 
     mat-sidenav {
-      background-color: #ffffff;
       width: 250px;
-
+      padding: 16px;
       &.mat-drawer-side {
         border: none;
       }
@@ -28,6 +23,7 @@
         div.item-container {
           mat-list-item {
             cursor: pointer;
+            font-weight: 500;
             &:hover {
               background-color: #E9ECF2;
               color: #1976d2;
@@ -40,13 +36,51 @@
     }
 
     mat-sidenav-content {
+      position: relative;
       background-color: rgb(255, 255, 255);
-      padding-left: 0;
+      top: 16px;
+      margin-left: 16px;
 
       div.toolbar {
+        position: fixed;
+        transition: .2s;
+        background-color: #fff;
+        z-index: 10;
+
+        &.content-width {
+          width: calc(100% - 300px);
+        }
+
+        &.content-width-two {
+          width: calc(100% - 66px);
+        }
+
+        input.search-box {
+          border: none;
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          font-style: italic;
+          font-size: 14px;
+          width: 314px;
+          height: 45px;
+          font-size: 1.2em;
+          padding: 0 16px;
+          letter-spacing: 1.5px;
+        }
+
         p {
           margin: 0;
+          &.greeting {
+            font-style: italic;
+            font-weight: 300;
+            span.username {
+              margin-left: 16px;
+              font-style: normal;
+              font-weight: 500;
+            }
+          }
         }
+
         div.avatar {
           height: 50px;
           min-width: 50px;
@@ -55,16 +89,11 @@
         }
       }
 
-      input.search-box {
-        border: none;
-        border-radius: 5px;
-        background-color: #f2f2f2;
-        font-style: italic;
-        font-size: 14px;
-        width: 314px;
-        height: 45px;
-        font-size: 1.2em;
-        padding: 0 16px;
+      main {
+        position: relative;
+        top: 70px;
+        height: calc(100% - 70px);
+        padding-right: 32px;
       }
     }
   }

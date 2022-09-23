@@ -9,8 +9,6 @@ export class NavigationComponent implements OnInit {
 
   opened: boolean = true;
 
-  constructor() { }
-
   ngOnInit(): void {
   }
 

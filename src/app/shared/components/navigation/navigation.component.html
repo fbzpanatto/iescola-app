@@ -1,32 +1,106 @@
-<mat-sidenav-container>
-  <mat-sidenav class="pad16" #sidenav mode="side" [(opened)]="opened">
+<mat-sidenav-container fxLayout="row">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" fxLayout="column">
     <mat-list fxLayout="column">
       <div>
         <div mat-subheader>Principal</div>
-        <div class="item-container"><mat-list-item>Home</mat-list-item></div>
-        <div class="item-container"><mat-list-item>Professores</mat-list-item></div>
-        <div class="item-container"><mat-list-item>Alunos</mat-list-item></div>
-        <div class="item-container"><mat-list-item>Notas</mat-list-item></div>
+        <div class="item-container">
+          <mat-list-item>Home</mat-list-item>
+        </div>
+        <div class="item-container">
+          <mat-list-item>Professores</mat-list-item>
+        </div>
+        <div class="item-container">
+          <mat-list-item>Alunos</mat-list-item>
+        </div>
+        <div class="item-container">
+          <mat-list-item>Notas</mat-list-item>
+        </div>
       </div>
       <div fxFlex></div>
       <div>
         <div mat-subheader>Ajuda</div>
-        <div class="item-container"><mat-list-item>Suporte</mat-list-item></div>
-        <div class="item-container"><mat-list-item>Termos & Condições</mat-list-item></div>
+        <div class="item-container">
+          <mat-list-item>Suporte</mat-list-item>
+        </div>
+        <div class="item-container">
+          <mat-list-item>Termos & Condições</mat-list-item>
+        </div>
       </div>
     </mat-list>
   </mat-sidenav>
 
-  <mat-sidenav-content class="pad16">
-    <div class="toolbar" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="16px">
+  <mat-sidenav-content fxLayout="column">
+    <div class="toolbar" [ngClass]="{'content-width': opened, 'content-width-two': !opened}" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="16px">
+
       <button (click)="opened = !opened">MENU</button>
       <input class="search-box" type="text" placeholder="Pesquisar...">
       <div fxFlex></div>
-      <p>Olá Fabrizio Panato</p>
+      <p class="greeting">Olá!<span class="username">Fabrizio Panato</span></p>
       <div class="avatar"></div>
+      
     </div>
     <main>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias accusamus quaerat at numquam ut expedita tenetur aliquam inventore itaque eaque, quia ad minus, soluta placeat corporis magni, ipsa culpa officiis.</p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos laboriosam similique temporibus voluptas provident corrupti nemo fugit, delectus earum autem nobis necessitatibus tempore nesciunt quia, architecto, amet omnis soluta minus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis perferendis id, maiores fuga modi voluptates rerum laboriosam repellat, necessitatibus, magni deleniti quisquam soluta iure quos qui cum provident sint ullam.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere ratione vero rerum saepe dignissimos, nulla asperiores quo culpa, itaque id et ut ullam dolorum nesciunt reiciendis. Necessitatibus veritatis quisquam error?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam dolore ad id doloribus distinctio cum, veritatis fuga. Ipsam odio vero, fuga alias aliquam distinctio maiores nam quo, tempore a fugit?
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos laboriosam similique temporibus voluptas provident corrupti nemo fugit, delectus earum autem nobis necessitatibus tempore nesciunt quia, architecto, amet omnis soluta minus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis perferendis id, maiores fuga modi voluptates rerum laboriosam repellat, necessitatibus, magni deleniti quisquam soluta iure quos qui cum provident sint ullam.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere ratione vero rerum saepe dignissimos, nulla asperiores quo culpa, itaque id et ut ullam dolorum nesciunt reiciendis. Necessitatibus veritatis quisquam error?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam dolore ad id doloribus distinctio cum, veritatis fuga. Ipsam odio vero, fuga alias aliquam distinctio maiores nam quo, tempore a fugit?
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos laboriosam similique temporibus voluptas provident corrupti nemo fugit, delectus earum autem nobis necessitatibus tempore nesciunt quia, architecto, amet omnis soluta minus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis perferendis id, maiores fuga modi voluptates rerum laboriosam repellat, necessitatibus, magni deleniti quisquam soluta iure quos qui cum provident sint ullam.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere ratione vero rerum saepe dignissimos, nulla asperiores quo culpa, itaque id et ut ullam dolorum nesciunt reiciendis. Necessitatibus veritatis quisquam error?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam dolore ad id doloribus distinctio cum, veritatis fuga. Ipsam odio vero, fuga alias aliquam distinctio maiores nam quo, tempore a fugit?
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos laboriosam similique temporibus voluptas provident corrupti nemo fugit, delectus earum autem nobis necessitatibus tempore nesciunt quia, architecto, amet omnis soluta minus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis perferendis id, maiores fuga modi voluptates rerum laboriosam repellat, necessitatibus, magni deleniti quisquam soluta iure quos qui cum provident sint ullam.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere ratione vero rerum saepe dignissimos, nulla asperiores quo culpa, itaque id et ut ullam dolorum nesciunt reiciendis. Necessitatibus veritatis quisquam error?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam dolore ad id doloribus distinctio cum, veritatis fuga. Ipsam odio vero, fuga alias aliquam distinctio maiores nam quo, tempore a fugit?
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos laboriosam similique temporibus voluptas provident corrupti nemo fugit, delectus earum autem nobis necessitatibus tempore nesciunt quia, architecto, amet omnis soluta minus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis perferendis id, maiores fuga modi voluptates rerum laboriosam repellat, necessitatibus, magni deleniti quisquam soluta iure quos qui cum provident sint ullam.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere ratione vero rerum saepe dignissimos, nulla asperiores quo culpa, itaque id et ut ullam dolorum nesciunt reiciendis. Necessitatibus veritatis quisquam error?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam dolore ad id doloribus distinctio cum, veritatis fuga. Ipsam odio vero, fuga alias aliquam distinctio maiores nam quo, tempore a fugit?
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos laboriosam similique temporibus voluptas provident corrupti nemo fugit, delectus earum autem nobis necessitatibus tempore nesciunt quia, architecto, amet omnis soluta minus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis perferendis id, maiores fuga modi voluptates rerum laboriosam repellat, necessitatibus, magni deleniti quisquam soluta iure quos qui cum provident sint ullam.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere ratione vero rerum saepe dignissimos, nulla asperiores quo culpa, itaque id et ut ullam dolorum nesciunt reiciendis. Necessitatibus veritatis quisquam error?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam dolore ad id doloribus distinctio cum, veritatis fuga. Ipsam odio vero, fuga alias aliquam distinctio maiores nam quo, tempore a fugit?
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos laboriosam similique temporibus voluptas provident corrupti nemo fugit, delectus earum autem nobis necessitatibus tempore nesciunt quia, architecto, amet omnis soluta minus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis perferendis id, maiores fuga modi voluptates rerum laboriosam repellat, necessitatibus, magni deleniti quisquam soluta iure quos qui cum provident sint ullam.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere ratione vero rerum saepe dignissimos, nulla asperiores quo culpa, itaque id et ut ullam dolorum nesciunt reiciendis. Necessitatibus veritatis quisquam error?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam dolore ad id doloribus distinctio cum, veritatis fuga. Ipsam odio vero, fuga alias aliquam distinctio maiores nam quo, tempore a fugit?
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos laboriosam similique temporibus voluptas provident corrupti nemo fugit, delectus earum autem nobis necessitatibus tempore nesciunt quia, architecto, amet omnis soluta minus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis perferendis id, maiores fuga modi voluptates rerum laboriosam repellat, necessitatibus, magni deleniti quisquam soluta iure quos qui cum provident sint ullam.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere ratione vero rerum saepe dignissimos, nulla asperiores quo culpa, itaque id et ut ullam dolorum nesciunt reiciendis. Necessitatibus veritatis quisquam error?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam dolore ad id doloribus distinctio cum, veritatis fuga. Ipsam odio vero, fuga alias aliquam distinctio maiores nam quo, tempore a fugit?
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos laboriosam similique temporibus voluptas provident corrupti nemo fugit, delectus earum autem nobis necessitatibus tempore nesciunt quia, architecto, amet omnis soluta minus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis perferendis id, maiores fuga modi voluptates rerum laboriosam repellat, necessitatibus, magni deleniti quisquam soluta iure quos qui cum provident sint ullam.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere ratione vero rerum saepe dignissimos, nulla asperiores quo culpa, itaque id et ut ullam dolorum nesciunt reiciendis. Necessitatibus veritatis quisquam error?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam dolore ad id doloribus distinctio cum, veritatis fuga. Ipsam odio vero, fuga alias aliquam distinctio maiores nam quo, tempore a fugit?
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos laboriosam similique temporibus voluptas provident corrupti nemo fugit, delectus earum autem nobis necessitatibus tempore nesciunt quia, architecto, amet omnis soluta minus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis perferendis id, maiores fuga modi voluptates rerum laboriosam repellat, necessitatibus, magni deleniti quisquam soluta iure quos qui cum provident sint ullam.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere ratione vero rerum saepe dignissimos, nulla asperiores quo culpa, itaque id et ut ullam dolorum nesciunt reiciendis. Necessitatibus veritatis quisquam error?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam dolore ad id doloribus distinctio cum, veritatis fuga. Ipsam odio vero, fuga alias aliquam distinctio maiores nam quo, tempore a fugit?
+      </p>
+
       <!-- <router-outlet></router-outlet> -->
     </main>
   </mat-sidenav-content>
