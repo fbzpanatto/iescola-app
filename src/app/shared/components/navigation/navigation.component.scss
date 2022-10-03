@@ -43,9 +43,10 @@
 
     mat-sidenav-content {
       position: relative;
-      background-color: rgb(255, 255, 255);
       top: 16px;
-      margin-left: 16px;
+      margin: 0 16px;
+      width: 100%;
+      background-color: #fff;
 
       div.toolbar {
         position: fixed;
@@ -54,13 +55,12 @@
         z-index: 10;
         border-bottom: 1px solid black;
 
-
         &.content-width {
-          width: calc(100% - 300px);
+          width: calc(100% - 266px);
         }
 
         &.content-width-two {
-          width: calc(100% - 66px);
+          width: calc(100% - 32px);
         }
 
         div.input-box {
@@ -109,8 +109,8 @@
 
       main {
         position: relative;
-        top: 6rem;
-        padding-right: 2rem;
+        top: 8rem;
+        width: 100%;
       }
     }
   }
