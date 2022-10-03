@@ -1,1 +1,21 @@
-<h1>{{title}}</h1>
+<div class="component-container">
+  <div class="component-toolbar" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
+      <h1>{{title}}</h1>
+      <p style="font-weight: lighter">500 professores encontrados.</p>
+    </div>
+    <div fxFlex></div>
+    <button class="generic-btn" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px" >
+      <span>Filtro</span>
+      <mat-icon aria-hidden="false" aria-label="filter icon" fontIcon="filter_list"></mat-icon>
+    </button>
+    <button class="generic-btn" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px" >
+      <span>Gerar PDF</span>
+      <mat-icon aria-hidden="false" aria-label="pdf icon" fontIcon="picture_as_pdf"></mat-icon>
+    </button>
+    <button class="stylized-btn" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px" >
+      <span>Adicionar</span>
+      <mat-icon aria-hidden="false" aria-label="add icon" fontIcon="add"></mat-icon>
+    </button>
+  </div>
+</div>

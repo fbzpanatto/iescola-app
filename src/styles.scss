@@ -16,12 +16,36 @@ body, input {
   font-family: 'Roboto', 'Helvetica Neue', monospace, sans-serif;
 }
 
-button {
-  cursor: pointer;
-}
-
 h1 {
   color: #156AFB;
+}
+
+h1, h2, h3, p {
+  margin-bottom: 0!important;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  padding: 8px 24px;
+  color: #0B1F42;
+  mat-icon {
+    font-size: 20px;
+  }
+  &.generic-btn{
+    background: #F4F5F7;
+  }
+  &.stylized-btn{
+    color: #fff;
+    background: #156AFB;
+  }
+}
+
+div.component-container {
 }
 
 :focus {
