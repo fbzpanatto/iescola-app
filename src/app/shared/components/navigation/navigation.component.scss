@@ -53,14 +53,15 @@
         height: 6rem;
         background-color: rgb(255, 255, 255);
         z-index: 10;
-        border-bottom: 1px solid black;
 
         &.content-width {
-          width: calc(100% - 266px);
+          width: calc(100vw - 266px);
+          transition: .2s;
         }
 
         &.content-width-two {
-          width: calc(100% - 32px);
+          width: calc(100vw - 32px);
+          transition: .2s;
         }
 
         div.input-box {
@@ -109,7 +110,7 @@
 
       main {
         position: relative;
-        top: 8rem;
+        top: 6rem;
         width: 100%;
       }
     }

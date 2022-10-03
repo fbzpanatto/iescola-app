@@ -48,7 +48,7 @@
   </mat-sidenav>
 
   <mat-sidenav-content #sidenavcontent fxLayout="column">
-    <div class="toolbar" [ngClass]="{'content-width': opened, 'content-width-two': !opened}"  fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
+    <div class="toolbar" [ngClass]="{'content-width': opened, 'content-width-two': !opened}"  fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="16px">
       <div class="menu">
         <mat-icon style="cursor: pointer" (click)="opened = !opened" aria-hidden="false" aria-label="Example home icon" fontIcon="menu"></mat-icon>
       </div>
@@ -62,7 +62,8 @@
       </div>
     </div>
     <main>
-       <ng-content></ng-content>
+      <hr>
+      <ng-content></ng-content>
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
