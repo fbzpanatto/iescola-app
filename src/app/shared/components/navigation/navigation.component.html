@@ -3,26 +3,44 @@
     <mat-list fxLayout="column">
       <div>
         <div mat-subheader>Principal</div>
-        <div class="item-container">
+        <div class="item-container" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
           <mat-list-item>Home</mat-list-item>
         </div>
-        <div class="item-container">
+        <div class="item-container" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="contact_page"></mat-icon>
+          <mat-list-item>Disciplinas</mat-list-item>
+        </div>
+        <div class="item-container" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="person"></mat-icon>
           <mat-list-item>Professores</mat-list-item>
         </div>
-        <div class="item-container">
+        <div class="item-container" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="article"></mat-icon>
+          <mat-list-item>Atividades</mat-list-item>
+        </div>
+        <div class="item-container" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="diversity_3"></mat-icon>
+          <mat-list-item>Salas de Aula</mat-list-item>
+        </div>
+        <div class="item-container" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="face"></mat-icon>
           <mat-list-item>Alunos</mat-list-item>
         </div>
-        <div class="item-container">
+        <div class="item-container" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="format_list_numbered"></mat-icon>
           <mat-list-item>Notas</mat-list-item>
         </div>
       </div>
       <div fxFlex></div>
       <div>
         <div mat-subheader>Ajuda</div>
-        <div class="item-container">
+        <div class="item-container" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="help"></mat-icon>
           <mat-list-item>Suporte</mat-list-item>
         </div>
-        <div class="item-container">
+        <div class="item-container" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="format_align_left"></mat-icon>
           <mat-list-item>Termos & Condições</mat-list-item>
         </div>
       </div>
@@ -30,14 +48,18 @@
   </mat-sidenav>
 
   <mat-sidenav-content fxLayout="column">
-    <div class="toolbar" [ngClass]="{'content-width': opened, 'content-width-two': !opened}" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="16px">
-
-      <button (click)="opened = !opened">MENU</button>
-      <input class="search-box" type="text" placeholder="Pesquisar...">
-      <div fxFlex></div>
-      <p class="greeting">Olá!<span class="username">Fabrizio Panato</span></p>
-      <div class="avatar"></div>
-      
+    <div class="toolbar" [ngClass]="{'content-width': opened, 'content-width-two': !opened}" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
+      <div class="menu">
+        <mat-icon style="cursor: pointer" (click)="opened = !opened" aria-hidden="false" aria-label="Example home icon" fontIcon="menu"></mat-icon>
+      </div>
+      <div class="input-box" fxFlex="50%">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="search"></mat-icon>
+        <input class="search-box" type="text" placeholder="Pesquisar...">
+      </div>
+      <div fxFlex class="profile-box" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="16px">
+        <p class="greeting">Olá!<span class="username">Fabrizio Panato</span></p>
+        <div class="avatar"></div>
+      </div>
     </div>
     <main>
       <p>

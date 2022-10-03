@@ -21,15 +21,21 @@
         }
 
         div.item-container {
+          cursor: pointer;
+          mat-icon {
+            font-size: 20px;
+          }
           mat-list-item {
-            cursor: pointer;
             font-weight: 500;
-            &:hover {
-              background-color: #E9ECF2;
+          }
+          &:hover {
+            mat-list-item {
               color: #1976d2;
-              text-shadow: 0 0 5px #FFFFFF;
-              border-radius: 5px;
             }
+            background-color: #E9ECF2;
+            color: #1976d2;
+            text-shadow: 0 0 5px #FFFFFF;
+            border-radius: 5px;
           }
         }
       }
@@ -43,9 +49,11 @@
 
       div.toolbar {
         position: fixed;
-        transition: .2s;
-        background-color: #fff;
+        height: 6rem;
+        background-color: rgb(255, 255, 255);
         z-index: 10;
+        border-bottom: 1px solid black;
+
 
         &.content-width {
           width: calc(100% - 300px);
@@ -55,45 +63,54 @@
           width: calc(100% - 66px);
         }
 
-        input.search-box {
-          border: none;
-          border-radius: 5px;
-          background-color: #f2f2f2;
-          font-style: italic;
-          font-size: 14px;
-          width: 314px;
-          height: 45px;
-          font-size: 1.2em;
-          padding: 0 16px;
-          letter-spacing: 1.5px;
-        }
+        div.input-box {
+          position: relative;
+          mat-icon {
+            position: absolute;
+            top: 11.5px;
+            left: 16px;
+          }
 
-        p {
-          margin: 0;
-          &.greeting {
+          input.search-box {
+            border: none;
+            border-radius: 5px;
+            background-color: #f2f2f2;
             font-style: italic;
-            font-weight: 300;
-            span.username {
-              margin-left: 16px;
-              font-style: normal;
-              font-weight: 500;
-            }
+            width: 100%;
+            height: 45px;
+            font-size: 1.2em;
+            padding: 0 16px 0 48px;
+            letter-spacing: 1.5px;
           }
         }
 
-        div.avatar {
-          height: 50px;
-          min-width: 50px;
-          background-color: yellow;
-          border-radius: 50px;
+        div.profile-box {
+          p {
+            margin: 0;
+            &.greeting {
+              font-style: italic;
+              font-weight: 300;
+              span.username {
+                margin-left: 16px;
+                font-style: normal;
+                font-weight: 500;
+              }
+            }
+          }
+
+          div.avatar {
+            height: 50px;
+            min-width: 50px;
+            background-color: yellow;
+            border-radius: 50px;
+          }
         }
       }
 
       main {
         position: relative;
-        top: 70px;
-        height: calc(100% - 70px);
-        padding-right: 32px;
+        top: 6rem;
+        padding-right: 2rem;
       }
     }
   }
