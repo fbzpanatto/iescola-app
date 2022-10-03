@@ -9,12 +9,30 @@ import { NavigationComponent } from './shared/components/navigation/navigation.c
 import { AuthenticationComponent } from './shared/components/authentication/authentication.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { ClassComponent } from './components/class/class.component';
+import { TeacherComponent } from './components/teacher/teacher.component';
+import { StudentComponent } from './components/student/student.component';
+import { DisciplineComponent } from './components/discipline/discipline.component';
+import { ActivityComponent } from './components/activity/activity.component';
+import { GradeComponent } from './components/grade/grade.component';
+import { HomeComponent } from './components/home/home.component';
+import { HelpComponent } from './components/help/help.component';
+import { TermsComponent } from './components/terms/terms.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    ClassComponent,
+    TeacherComponent,
+    StudentComponent,
+    DisciplineComponent,
+    ActivityComponent,
+    GradeComponent,
+    HomeComponent,
+    HelpComponent,
+    TermsComponent
   ],
   imports: [
     BrowserModule,
