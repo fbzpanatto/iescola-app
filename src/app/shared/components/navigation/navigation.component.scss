@@ -28,7 +28,7 @@
           mat-list-item {
             font-weight: 500;
           }
-          &:hover {
+          &:hover, &.active {
             mat-list-item {
               color: #1976d2;
             }
