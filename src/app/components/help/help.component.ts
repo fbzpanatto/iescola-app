@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-help',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelpComponent implements OnInit {
 
-  constructor() { }
+  title: string | undefined
+
+  constructor(private titleService: Title) { }
 
   ngOnInit(): void {
+    this.title = this.titleService.getTitle().split('-')[1]
   }
 
 }

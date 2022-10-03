@@ -14,43 +14,53 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: "full",
-    redirectTo: 'home'
+    redirectTo: 'home',
+
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    title: 'escola.app - Home'
   },
   {
     path: 'class',
-    component: ClassComponent
+    component: ClassComponent,
+    title: 'escola.app - Salas'
   },
   {
     path: 'student',
-    component: StudentComponent
+    component: StudentComponent,
+    title: 'escola.app - Alunos'
   },
   {
     path: 'teacher',
-    component: TeacherComponent
+    component: TeacherComponent,
+    title: 'escola.app - Professores'
   },
   {
     path: 'discipline',
-    component: DisciplineComponent
+    component: DisciplineComponent,
+    title: 'escola.app - Disciplinas'
   },
   {
     path: 'activity',
-    component: ActivityComponent
+    component: ActivityComponent,
+    title: 'escola.app - Atividades'
   },
   {
     path: 'grade',
-    component: GradeComponent
+    component: GradeComponent,
+    title: 'escola.app - Notas'
   },
   {
     path: 'help',
-    component: HelpComponent
+    component: HelpComponent,
+    title: 'escola.app - Ajuda'
   },
   {
     path: 'terms',
-    component: TermsComponent
+    component: TermsComponent,
+    title: 'escola.app - Termos'
   },
   {
     path: '**',
