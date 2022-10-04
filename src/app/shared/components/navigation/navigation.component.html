@@ -1,14 +1,19 @@
 <div fxLayout="column" fxLayoutGap="16px">
   <mat-toolbar fxLayoutGap="16px">
     <mat-icon style="cursor: pointer" (click)="opened = !opened" aria-hidden="false" aria-label="menu icon" fontIcon="menu"></mat-icon>
-    <div class="search-box-container">
-      <mat-icon fontIcon="search" ></mat-icon>
+    <div>
+      <h2>logo goes here</h2>
+    </div>
+    <div fxFlex class="search-box-container">
+      <mat-icon fontIcon="search"></mat-icon>
       <input type="text" placeholder="Pesquisar...">
     </div>
-    <div fxFlex></div>
-    <div class="profile-box-container">
-      <p fxLayout="row" fxLayoutGap="8px"><span>Olá!</span><span>Fabrizio Panato</span></p>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <mat-icon fontIcon="settings" ></mat-icon>
     </div>
+<!--    <div class="profile-box-container">-->
+<!--      <p fxLayout="row" fxLayoutGap="8px"><span>Olá!</span><span>Fabrizio Panato</span></p>-->
+<!--    </div>-->
   </mat-toolbar>
   <mat-sidenav-container>
     <mat-sidenav mode="side" [(opened)]="opened" fxLayout="column">

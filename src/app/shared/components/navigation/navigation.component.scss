@@ -4,8 +4,7 @@ mat-toolbar {
 
   div.search-box-container {
     position: relative;
-
-
+    width: 100%;
     mat-icon {
       position: absolute;
       top: 12px;
@@ -13,6 +12,7 @@ mat-toolbar {
     }
 
     input {
+      width: calc(100% - 64px);
       border: none;
       border-radius: 6px;
       background-color: #d7d7d7;
@@ -22,7 +22,6 @@ mat-toolbar {
       padding: 0 16px 0 48px;
       letter-spacing: 1.5px;
       font-weight: lighter;
-      width: 25vw;
     }
   }
 
