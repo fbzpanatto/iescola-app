@@ -2,7 +2,7 @@
   <mat-toolbar fxLayoutGap="16px">
     <mat-icon style="cursor: pointer" (click)="opened = !opened" aria-hidden="false" aria-label="menu icon" fontIcon="menu"></mat-icon>
     <div>
-      <h2>logo goes here</h2>
+      <h2>escola.app</h2>
     </div>
     <div fxFlex class="search-box-container">
       <mat-icon fontIcon="search"></mat-icon>
@@ -11,39 +11,36 @@
     <div fxLayout="row" fxLayoutAlign="center center">
       <mat-icon fontIcon="settings" ></mat-icon>
     </div>
-<!--    <div class="profile-box-container">-->
-<!--      <p fxLayout="row" fxLayoutGap="8px"><span>Olá!</span><span>Fabrizio Panato</span></p>-->
-<!--    </div>-->
   </mat-toolbar>
   <mat-sidenav-container>
     <mat-sidenav mode="side" [(opened)]="opened" fxLayout="column">
       <mat-list>
         <div mat-subheader>Principal</div>
-        <div class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
+        <div routerLink="/home" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="home"></mat-icon>
           <mat-list-item>Home</mat-list-item>
         </div>
-        <div class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
+        <div routerLink="/teacher" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="person"></mat-icon>
           <mat-list-item>Professores</mat-list-item>
         </div>
-        <div class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
+        <div routerLink="/discipline" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="contact_page"></mat-icon>
           <mat-list-item><span>Disciplinas</span></mat-list-item>
         </div>
-        <div class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
+        <div routerLink="/class" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="diversity_3"></mat-icon>
           <mat-list-item>Salas</mat-list-item>
         </div>
-        <div class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
+        <div routerLink="/student" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="face"></mat-icon>
           <mat-list-item>Alunos</mat-list-item>
         </div>
-        <div class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
+        <div routerLink="/activity" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="article"></mat-icon>
           <mat-list-item>Atividades</mat-list-item>
         </div>
-        <div class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
+        <div routerLink="/grade" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="format_list_numbered"></mat-icon>
           <mat-list-item>Notas</mat-list-item>
         </div>
