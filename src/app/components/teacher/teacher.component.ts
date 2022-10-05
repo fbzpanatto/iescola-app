@@ -16,4 +16,7 @@ export class TeacherComponent implements OnInit {
     this.title = this.titleService.getTitle().split('-')[1]
   }
 
+  onEdit(){
+    console.log('edit...')
+  }
 }

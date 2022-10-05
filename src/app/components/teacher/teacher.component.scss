@@ -1,15 +1,17 @@
 div.component-container {
-
   table {
+    border-collapse: collapse;
+    position: relative;
     width: 100%;
-
     thead {
-
+      background-color: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 999;
       tr:nth-of-type(1) {
         span {
           position: relative;
           top: 2px;
-
           &.circle {
             height: 10px;
             min-width: 10px;
@@ -17,17 +19,52 @@ div.component-container {
             border-radius: 50%;
             display: inline-block;
           }
-
           &.quantity {
+            font-size: 14px;
             font-weight: lighter;
           }
         }
       }
 
       tr:nth-of-type(2) {
+        margin-top: 8px;
+        background-color: #E9ECF2;
+        border-radius: 6px;
+        position: relative;
+        display: flex;
         font-size: 14px;
         line-height: 48px;
         color: #0B1F42;
+        th {
+          display: flex;
+          width: 100%;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        line-height: 48px;
+        border-radius: 6px;
+        transition: .5s;
+        &:hover {
+          background-color: #f2f2f2;
+          transition: .2s;
+        }
+        td {
+          display: flex;
+          width: 100%;
+          &:last-child {
+            color: #156AFB;
+            mat-icon {
+              cursor: pointer;
+              scale: 1.2;
+            }
+          }
+        }
       }
     }
   }
