@@ -28,16 +28,22 @@ h1, h2, h3, p {
 }
 
 button {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
   cursor: pointer;
   border-radius: 6px;
   border: none;
-  font-size: 14px;
-  line-height: 16px;
-  font-weight: 400;
-  padding: 8px 24px;
+  padding: 8px 12px;
   color: #0B1F42;
-  mat-icon {
-    font-size: 20px;
+  span {
+    font-size: 14px;
+    font-weight: lighter;
+  }
+  mat-icon.material-icons {
+
   }
   &.generic-btn{
     background: #F4F5F7;
