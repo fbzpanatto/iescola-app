@@ -2,14 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClassComponent } from "./components/class/class.component";
 import { StudentComponent } from "./components/student/student.component";
-import { TeacherComponent } from "./components/teacher/teacher.component";
 import { DisciplineComponent } from "./components/discipline/discipline.component";
 import { ActivityComponent } from "./components/activity/activity.component";
 import { GradeComponent } from "./components/grade/grade.component";
 import { HomeComponent} from "./components/home/home.component";
 import { HelpComponent } from "./components/help/help.component";
 import { TermsComponent } from "./components/terms/terms.component";
-import {NewTeacherComponent} from "./components/teacher/new-teacher/new-teacher.component";
 
 const routes: Routes = [
   {
@@ -35,15 +33,8 @@ const routes: Routes = [
   },
   {
     path: 'teacher',
-    component: TeacherComponent,
     title: 'escola.app - Professores',
-    children: [
-      {
-        path: 'new',
-        component: NewTeacherComponent,
-        title: 'escola.app - Novo professor'
-      }
-    ]
+    loadChildren: () => import('./components/teacher/teacher.module').then(m => m.TeacherModule)
   },
   {
     path: 'discipline',

@@ -3,10 +3,10 @@ import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-teacher',
-  templateUrl: './teacher.component.html',
-  styleUrls: ['./teacher.component.scss']
+  templateUrl: 'home-teacher.component.html',
+  styleUrls: ['home-teacher.component.scss']
 })
-export class TeacherComponent implements OnInit {
+export class HomeTeacherComponent implements OnInit {
 
   title: string | undefined
 

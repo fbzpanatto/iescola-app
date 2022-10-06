@@ -10,7 +10,6 @@ import { AuthenticationComponent } from './shared/components/authentication/auth
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { ClassComponent } from './components/class/class.component';
-import { TeacherComponent } from './components/teacher/teacher.component';
 import { StudentComponent } from './components/student/student.component';
 import { DisciplineComponent } from './components/discipline/discipline.component';
 import { ActivityComponent } from './components/activity/activity.component';
@@ -18,7 +17,6 @@ import { GradeComponent } from './components/grade/grade.component';
 import { HomeComponent } from './components/home/home.component';
 import { HelpComponent } from './components/help/help.component';
 import { TermsComponent } from './components/terms/terms.component';
-import { NewTeacherComponent } from './components/teacher/new-teacher/new-teacher.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +24,6 @@ import { NewTeacherComponent } from './components/teacher/new-teacher/new-teache
     NavigationComponent,
     AuthenticationComponent,
     ClassComponent,
-    TeacherComponent,
     StudentComponent,
     DisciplineComponent,
     ActivityComponent,
@@ -34,7 +31,6 @@ import { NewTeacherComponent } from './components/teacher/new-teacher/new-teache
     HomeComponent,
     HelpComponent,
     TermsComponent,
-    NewTeacherComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +39,9 @@ import { NewTeacherComponent } from './components/teacher/new-teacher/new-teache
     MaterialModule,
     ReactiveFormsModule,
     FlexLayoutModule
+  ],
+  exports: [
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
