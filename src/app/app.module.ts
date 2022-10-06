@@ -18,6 +18,7 @@ import { GradeComponent } from './components/grade/grade.component';
 import { HomeComponent } from './components/home/home.component';
 import { HelpComponent } from './components/help/help.component';
 import { TermsComponent } from './components/terms/terms.component';
+import { NewTeacherComponent } from './components/teacher/new-teacher/new-teacher.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { TermsComponent } from './components/terms/terms.component';
     GradeComponent,
     HomeComponent,
     HelpComponent,
-    TermsComponent
+    TermsComponent,
+    NewTeacherComponent
   ],
   imports: [
     BrowserModule,

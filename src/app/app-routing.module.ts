@@ -9,6 +9,7 @@ import { GradeComponent } from "./components/grade/grade.component";
 import { HomeComponent} from "./components/home/home.component";
 import { HelpComponent } from "./components/help/help.component";
 import { TermsComponent } from "./components/terms/terms.component";
+import {NewTeacherComponent} from "./components/teacher/new-teacher/new-teacher.component";
 
 const routes: Routes = [
   {
@@ -30,12 +31,19 @@ const routes: Routes = [
   {
     path: 'student',
     component: StudentComponent,
-    title: 'escola.app - Alunos'
+    title: 'escola.app - Alunos',
   },
   {
     path: 'teacher',
     component: TeacherComponent,
-    title: 'escola.app - Professores'
+    title: 'escola.app - Professores',
+    children: [
+      {
+        path: 'new',
+        component: NewTeacherComponent,
+        title: 'escola.app - Novo professor'
+      }
+    ]
   },
   {
     path: 'discipline',
