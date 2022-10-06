@@ -11,21 +11,7 @@ div.component-container {
       z-index: 999;
 
       tr:nth-of-type(1) {
-        span {
-          position: relative;
-          top: 2px;
-          &.circle {
-            height: 10px;
-            min-width: 10px;
-            background-color: #0B1F42;
-            border-radius: 50%;
-            display: inline-block;
-          }
-          &.quantity {
-            font-size: 14px;
-            font-weight: lighter;
-          }
-        }
+        //primeira linha cabeçalho
       }
 
       tr:nth-of-type(2) {

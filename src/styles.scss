@@ -31,7 +31,6 @@ button {
   position: relative;
   display: flex;
   flex-direction: row;
-  align-items: center;
   gap: 8px;
   cursor: pointer;
   border-radius: 6px;
@@ -43,7 +42,7 @@ button {
     font-weight: lighter;
   }
   mat-icon.material-icons {
-
+    //apenas salvado o seletor
   }
   &.generic-btn{
     background: #F4F5F7;
@@ -51,6 +50,24 @@ button {
   &.stylized-btn{
     color: #fff;
     background: #156AFB;
+  }
+}
+
+div.my-toolbar {
+  span {
+    position: relative;
+    top: 2px;
+    &.circle {
+      height: 10px;
+      min-width: 10px;
+      background-color: #0B1F42;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    &.quantity {
+      font-size: 14px;
+      font-weight: lighter;
+    }
   }
 }
 
