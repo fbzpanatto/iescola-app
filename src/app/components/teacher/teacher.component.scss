@@ -3,11 +3,13 @@ div.component-container {
     border-collapse: collapse;
     position: relative;
     width: 100%;
+
     thead {
       background-color: #ffffff;
       position: sticky;
       top: 0;
       z-index: 999;
+
       tr:nth-of-type(1) {
         span {
           position: relative;
@@ -33,11 +35,17 @@ div.component-container {
         position: relative;
         display: flex;
         font-size: 14px;
-        line-height: 48px;
+        line-height: 46px;
         color: #0B1F42;
+        border: 1px solid rgba(12, 34, 72, 0.05);
         th {
           display: flex;
+          flex-direction: row;
+          justify-content: center;
           width: 100%;
+          &:not(:last-child) {
+            border-right: 1px solid rgba(12, 34, 72, 0.05);
+          }
         }
       }
     }
@@ -47,16 +55,22 @@ div.component-container {
         cursor: pointer;
         display: flex;
         align-items: center;
-        line-height: 48px;
-        border-radius: 6px;
+        line-height: 46px;
         transition: .5s;
+        border: 1px solid #eee;
+        border-top: none;
+        border-radius: 6px;
         &:hover {
+
           background-color: #f2f2f2;
           transition: .2s;
         }
         td {
           display: flex;
           width: 100%;
+          &:not(:last-child) {
+            border-right: 1px solid #eeeeee;
+          }
           &:last-child {
             color: #156AFB;
             mat-icon {
