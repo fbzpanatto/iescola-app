@@ -8,7 +8,7 @@
       <mat-icon fontIcon="search"></mat-icon>
       <input type="text" placeholder="Pesquisar...">
     </div>
-    <div>
+    <div class="school-year-selector" fxLayoutAlign="start center">
       <select [value]="0">
         <option value="0">2022</option>
         <option value="1">2021</option>
@@ -53,6 +53,10 @@
           <mat-list-item><span>Disciplinas</span></mat-list-item>
         </div>
         <div mat-subheader>Pessoas</div>
+        <div routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon fontIcon="badge"></mat-icon>
+          <mat-list-item>Colaboradores</mat-list-item>
+        </div>
         <div routerLink="/student" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="face"></mat-icon>
           <mat-list-item>Alunos</mat-list-item>
