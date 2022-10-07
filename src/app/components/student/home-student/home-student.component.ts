@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {Title} from "@angular/platform-browser";
 
 @Component({
-  selector: 'app-student',
-  templateUrl: './student.component.html',
-  styleUrls: ['./student.component.scss']
+  selector: 'app-home-student',
+  templateUrl: './home-student.component.html',
+  styleUrls: ['./home-student.component.scss']
 })
-export class StudentComponent implements OnInit {
+export class HomeStudentComponent implements OnInit {
 
   title: string | undefined
 
@@ -16,4 +16,7 @@ export class StudentComponent implements OnInit {
     this.title = this.titleService.getTitle().split('-')[1]
   }
 
+  onEdit(){
+    console.log('edit...')
+  }
 }

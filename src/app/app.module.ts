@@ -10,7 +10,6 @@ import { AuthenticationComponent } from './shared/components/authentication/auth
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { ClassComponent } from './components/class/class.component';
-import { StudentComponent } from './components/student/student.component';
 import { DisciplineComponent } from './components/discipline/discipline.component';
 import { ActivityComponent } from './components/activity/activity.component';
 import { GradeComponent } from './components/grade/grade.component';
@@ -24,7 +23,6 @@ import { TermsComponent } from './components/terms/terms.component';
     NavigationComponent,
     AuthenticationComponent,
     ClassComponent,
-    StudentComponent,
     DisciplineComponent,
     ActivityComponent,
     GradeComponent,

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClassComponent } from "./components/class/class.component";
-import { StudentComponent } from "./components/student/student.component";
 import { DisciplineComponent } from "./components/discipline/discipline.component";
 import { ActivityComponent } from "./components/activity/activity.component";
 import { GradeComponent } from "./components/grade/grade.component";
@@ -28,8 +27,8 @@ const routes: Routes = [
   },
   {
     path: 'student',
-    component: StudentComponent,
     title: 'escola.app - Alunos',
+    loadChildren: () => import('./components/student/student.module').then(m => m.StudentModule)
   },
   {
     path: 'teacher',
