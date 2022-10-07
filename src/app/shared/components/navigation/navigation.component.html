@@ -8,6 +8,13 @@
       <mat-icon fontIcon="search"></mat-icon>
       <input type="text" placeholder="Pesquisar...">
     </div>
+    <div>
+      <select [value]="0">
+        <option value="0">2022</option>
+        <option value="1">2021</option>
+        <option value="2">2020</option>
+      </select>
+    </div>
     <div class="profile-box-container" fxLayoutGap="8px">
       <span>olá!</span>
       <span>Fabrizio Panato</span>
@@ -27,6 +34,16 @@
           <mat-icon fontIcon="home"></mat-icon>
           <mat-list-item>Home</mat-list-item>
         </div>
+        <div mat-subheader>Período Escolar</div>
+        <div class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon fontIcon="inventory_2"></mat-icon>
+          <mat-list-item>Ano Letivo</mat-list-item>
+        </div>
+        <div class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon fontIcon="calendar_month"></mat-icon>
+          <mat-list-item>Períodos</mat-list-item>
+        </div>
+        <div mat-subheader>Corpo Docente</div>
         <div routerLink="/teacher" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="person"></mat-icon>
           <mat-list-item>Professores</mat-list-item>
@@ -35,20 +52,20 @@
           <mat-icon fontIcon="contact_page"></mat-icon>
           <mat-list-item><span>Disciplinas</span></mat-list-item>
         </div>
-        <div routerLink="/class" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
-          <mat-icon fontIcon="diversity_3"></mat-icon>
-          <mat-list-item>Salas</mat-list-item>
-        </div>
-        <div mat-subheader>Título do grupo</div>
+        <div mat-subheader>Pessoas</div>
         <div routerLink="/student" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="face"></mat-icon>
           <mat-list-item>Alunos</mat-list-item>
         </div>
-        <div routerLink="/student" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
-          <mat-icon fontIcon="face"></mat-icon>
+        <div routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon fontIcon="family_restroom"></mat-icon>
           <mat-list-item>Responsáveis</mat-list-item>
         </div>
-        <div mat-subheader>Avaliações</div>
+        <div mat-subheader>Turmas & Métricas</div>
+        <div routerLink="/class" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon fontIcon="school"></mat-icon>
+          <mat-list-item>Salas</mat-list-item>
+        </div>
         <div routerLink="/activity" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="article"></mat-icon>
           <mat-list-item>Atividades</mat-list-item>
