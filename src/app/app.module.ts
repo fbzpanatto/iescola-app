@@ -26,7 +26,7 @@ import { TermsComponent } from './components/terms/terms.component';
     GradeComponent,
     HomeComponent,
     HelpComponent,
-    TermsComponent,
+    TermsComponent
   ],
   imports: [
     BrowserModule,

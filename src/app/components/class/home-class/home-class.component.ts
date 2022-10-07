@@ -9,6 +9,7 @@ import {Title} from "@angular/platform-browser";
 export class HomeClassComponent implements OnInit {
 
   title: string | undefined
+  grid: boolean | undefined = true
 
   constructor(private titleService: Title) { }
 
@@ -16,4 +17,7 @@ export class HomeClassComponent implements OnInit {
     this.title = this.titleService.getTitle().split('-')[1]
   }
 
+  controller(value: any) {
+    this.grid = value
+  }
 }
