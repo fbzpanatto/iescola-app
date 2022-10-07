@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ClassComponent } from "./components/class/class.component";
 import { DisciplineComponent } from "./components/discipline/discipline.component";
 import { ActivityComponent } from "./components/activity/activity.component";
 import { GradeComponent } from "./components/grade/grade.component";
@@ -22,8 +21,8 @@ const routes: Routes = [
   },
   {
     path: 'class',
-    component: ClassComponent,
-    title: 'escola.app - Salas'
+    title: 'escola.app - Salas',
+    loadChildren: () => import('./components/class/class.module').then(m => m.ClassModule)
   },
   {
     path: 'student',
