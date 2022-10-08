@@ -1,4 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit } from '@angular/core';
+import {Subject} from "rxjs";
 
 @Component({
   selector: 'app-toolbar',
@@ -7,19 +8,22 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  grid: boolean = true
+  static subject: Subject<boolean> = new Subject<boolean>()
+  static grid: boolean = true
+  teste:boolean | undefined
   @Input() title: string | undefined
   @Input() quantity: string | undefined
   @Input() creationTitle: string | undefined
-  @Output() viewController: EventEmitter<boolean> = new EventEmitter<boolean>()
 
-  constructor() { }
+  constructor() {
+    this.teste = ToolbarComponent.grid
+  }
 
   ngOnInit(): void {}
 
-  changeView() {
-    this.grid = !this.grid
-    this.viewController.emit(this.grid)
+  changeView(){
+    ToolbarComponent.grid = !ToolbarComponent.grid
+    this.teste = ToolbarComponent.grid
+    ToolbarComponent.subject.next(this.teste)
   }
-
 }

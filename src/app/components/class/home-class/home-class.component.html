@@ -4,7 +4,7 @@
       <thead>
       <tr>
         <th colspan="4">
-          <app-toolbar (viewController)="controller($event)" [title]="title" creationTitle="nova Sala" quantity="14 salas encontradas"></app-toolbar>
+          <app-toolbar [title]="title" creationTitle="nova Sala" quantity="14 salas encontradas"></app-toolbar>
         </th>
       </tr>
       <tr>
@@ -75,26 +75,6 @@
     </table>
   </ng-container>
   <ng-template #elseBlock>
-    <div class="my-toolbar" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
-      <div class="sec-title" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
-        <mat-icon fontIcon="school"></mat-icon>
-        <h1>{{title}}</h1>
-      </div>
-      <span class="circle"></span>
-      <span class="quantity">14 salas encontradas.</span>
-      <div fxFlex></div>
-      <button class="generic-btn" (click)="grid = !grid">
-        <mat-icon fontIcon="list"></mat-icon>
-        <span>Lista</span>
-      </button>
-      <button class="generic-btn">
-        <mat-icon fontIcon="filter_list"></mat-icon>
-        <span>Filtrar</span>
-      </button>
-      <button class="stylized-btn" routerLink="new">
-        <mat-icon fontIcon="add"></mat-icon>
-        <span>nova Sala</span>
-      </button>
-    </div>
+    <app-toolbar [title]="title" creationTitle="nova Sala" quantity="14 salas encontradas"></app-toolbar>
   </ng-template>
 </div>

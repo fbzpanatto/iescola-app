@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Title} from "@angular/platform-browser";
+import {ToolbarComponent} from "../../../shared/components/toolbar/toolbar.component";
 
 @Component({
   selector: 'app-home-class',
@@ -15,9 +16,6 @@ export class HomeClassComponent implements OnInit {
 
   ngOnInit(): void {
     this.title = this.titleService.getTitle().split('-')[1]
-  }
-
-  controller(value: any) {
-    this.grid = value
+    ToolbarComponent.subject.subscribe(v => this.grid = v)
   }
 }
