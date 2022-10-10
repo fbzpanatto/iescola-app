@@ -1,5 +1,5 @@
 import {Component, Input, OnInit } from '@angular/core';
-import {Subject} from "rxjs";
+import {ChangeViewService} from "./change-view.service";
 
 @Component({
   selector: 'app-toolbar',
@@ -8,22 +8,24 @@ import {Subject} from "rxjs";
 })
 export class ToolbarComponent implements OnInit {
 
-  static subject: Subject<boolean> = new Subject<boolean>()
-  static grid: boolean = true
-  teste:boolean | undefined
+  control: boolean | undefined
   @Input() title: string | undefined
   @Input() quantity: string | undefined
   @Input() creationTitle: string | undefined
 
   constructor() {
-    this.teste = ToolbarComponent.grid
+    this.control = ChangeViewService.grid
   }
 
   ngOnInit(): void {}
 
   changeView(){
-    ToolbarComponent.grid = !ToolbarComponent.grid
-    this.teste = ToolbarComponent.grid
-    ToolbarComponent.subject.next(this.teste)
+    ChangeViewService.grid = !ChangeViewService.grid
+    this.next()
+  }
+
+  next() {
+    this.control = ChangeViewService.grid
+    ChangeViewService.subject.next(this.control)
   }
 }

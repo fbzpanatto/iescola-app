@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Title} from "@angular/platform-browser";
-import {ToolbarComponent} from "../../../shared/components/toolbar/toolbar.component";
+import {ChangeViewService} from "../../../shared/components/toolbar/change-view.service";
 
 @Component({
   selector: 'app-home-class',
@@ -10,12 +10,12 @@ import {ToolbarComponent} from "../../../shared/components/toolbar/toolbar.compo
 export class HomeClassComponent implements OnInit {
 
   title: string | undefined
-  grid: boolean | undefined = true
+  gridView: boolean | undefined = true
 
   constructor(private titleService: Title) { }
 
   ngOnInit(): void {
     this.title = this.titleService.getTitle().split('-')[1]
-    ToolbarComponent.subject.subscribe(v => this.grid = v)
+    ChangeViewService.subject.subscribe(v => this.gridView = v)
   }
 }

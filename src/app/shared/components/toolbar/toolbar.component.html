@@ -6,11 +6,11 @@
   <span class="circle"></span>
   <span class="quantity">{{ quantity }}</span>
   <div fxFlex></div>
-  <button *ngIf="teste" (click)="changeView()" class="generic-btn">
+  <button *ngIf="control" (click)="changeView()" class="generic-btn">
     <mat-icon fontIcon="grid_view"></mat-icon>
     <span>Grid</span>
   </button>
-  <button *ngIf="!teste" (click)="changeView()" class="generic-btn">
+  <button *ngIf="!control" (click)="changeView()" class="generic-btn">
     <mat-icon fontIcon="list"></mat-icon>
     <span>Lista</span>
   </button>
