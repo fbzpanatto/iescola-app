@@ -10,12 +10,12 @@ import {ChangeViewService} from "../../../shared/components/toolbar/change-view.
 export class HomeClassComponent implements OnInit {
 
   title: string | undefined
-  gridView: boolean | undefined = true
+  listView: boolean | undefined = true
 
   constructor(private titleService: Title) { }
 
   ngOnInit(): void {
     this.title = this.titleService.getTitle().split('-')[1]
-    ChangeViewService.subject.subscribe(v => this.gridView = v)
+    ChangeViewService.subject.subscribe(v => this.listView = v)
   }
 }

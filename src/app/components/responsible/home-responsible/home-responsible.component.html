@@ -1,6 +1,6 @@
 <div class="component-container">
   <app-toolbar [title]="title" creationTitle="novo Responsável" quantity="745 responsáveis encontradas"></app-toolbar>
-  <ng-container *ngIf="!gridView; else listTableView">
+  <ng-container *ngIf="!listView; else listTableView">
     <div class="grid-view">
       <p>lorem</p>
     </div>
