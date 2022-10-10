@@ -5,6 +5,9 @@ import { SchoolyearRoutingModule } from './schoolyear-routing.module';
 import { HomeSchoolyearComponent } from './home-schoolyear/home-schoolyear.component';
 import { DetailSchoolyearComponent } from './detail-schoolyear/detail-schoolyear.component';
 import { NewSchoolyearComponent } from './new-schoolyear/new-schoolyear.component';
+import {MatIconModule} from "@angular/material/icon";
+import {ToolbarModule} from "../../shared/components/toolbar/toolbar.module";
+import {FlexModule} from "@angular/flex-layout";
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { NewSchoolyearComponent } from './new-schoolyear/new-schoolyear.componen
   ],
   imports: [
     CommonModule,
-    SchoolyearRoutingModule
+    SchoolyearRoutingModule,
+    MatIconModule,
+    ToolbarModule,
+    FlexModule
   ]
 })
 export class SchoolyearModule { }
