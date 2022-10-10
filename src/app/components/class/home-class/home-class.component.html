@@ -1,7 +1,9 @@
 <div class="component-container">
   <app-toolbar [title]="title" creationTitle="nova Sala" quantity="14 salas encontradas"></app-toolbar>
   <ng-container *ngIf="!gridView; else listTableView">
-    <div><p>lorem</p></div>
+    <div class="grid-view">
+      <p>lorem</p>
+    </div>
   </ng-container>
   <ng-template #listTableView>
     <table>
