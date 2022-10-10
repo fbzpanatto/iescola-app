@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Title} from "@angular/platform-browser";
+import {ChangeViewService} from "../../../shared/components/toolbar/change-view.service";
 
 @Component({
   selector: 'app-home-activity',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeActivityComponent implements OnInit {
 
-  constructor() { }
+  title: string | undefined
+  listView: boolean | undefined = true
+
+  constructor(private titleService: Title) { }
 
   ngOnInit(): void {
+    this.title = this.titleService.getTitle().split('-')[1]
+    ChangeViewService.subject.subscribe(v => this.listView = v)
   }
-
 }

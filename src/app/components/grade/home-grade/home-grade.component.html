@@ -1,1 +1,134 @@
-<p>home-grade works!</p>
+<div class="component-container">
+  <app-toolbar [title]="title" creationTitle="Nota" quantity="621 nota(s) encontradas"></app-toolbar>
+  <ng-container *ngIf="!listView; else listTableView">
+    <div class="grid-view">
+      <p>lorem</p>
+    </div>
+  </ng-container>
+  <ng-template #listTableView>
+    <table>
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>lorem</th>
+        <th>lorem</th>
+        <th>Ações</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>
+          <mat-icon fontIcon="edit_note"></mat-icon>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>
+          <mat-icon fontIcon="edit_note"></mat-icon>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>
+          <mat-icon fontIcon="edit_note"></mat-icon>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>
+          <mat-icon fontIcon="edit_note"></mat-icon>
+        </td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>
+          <mat-icon fontIcon="edit_note"></mat-icon>
+        </td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>
+          <mat-icon fontIcon="edit_note"></mat-icon>
+        </td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>
+          <mat-icon fontIcon="edit_note"></mat-icon>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>
+          <mat-icon fontIcon="edit_note"></mat-icon>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>
+          <mat-icon fontIcon="edit_note"></mat-icon>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>
+          <mat-icon fontIcon="edit_note"></mat-icon>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>
+          <mat-icon fontIcon="edit_note"></mat-icon>
+        </td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>
+          <mat-icon fontIcon="edit_note"></mat-icon>
+        </td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>
+          <mat-icon fontIcon="edit_note"></mat-icon>
+        </td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>
+          <mat-icon fontIcon="edit_note"></mat-icon>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </ng-template>
+</div>
