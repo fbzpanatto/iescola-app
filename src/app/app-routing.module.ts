@@ -47,6 +47,16 @@ const routes: Routes = [
     loadChildren: () => import('./components/employee/employee.module').then(m => m.EmployeeModule)
   },
   {
+    path: 'activity',
+    title: 'escola.app - Atividades',
+    loadChildren: () => import('./components/activity/activity.module').then(m => m.ActivityModule)
+  },
+  {
+    path: 'grade',
+    title: 'escola.app - Notas',
+    loadChildren: () => import('./components/grade/grade.module').then(m => m.GradeModule)
+  },
+  {
     path: 'help',
     component: HelpComponent,
     title: 'escola.app - Ajuda'
