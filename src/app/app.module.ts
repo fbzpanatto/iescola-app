@@ -9,8 +9,6 @@ import { NavigationComponent } from './shared/components/navigation/navigation.c
 import { AuthenticationComponent } from './shared/components/authentication/authentication.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { ActivityComponent } from './components/activity/activity.component';
-import { GradeComponent } from './components/grade/grade.component';
 import { HomeComponent } from './components/home/home.component';
 import { HelpComponent } from './components/help/help.component';
 import { TermsComponent } from './components/terms/terms.component';
@@ -21,8 +19,6 @@ import { ToolbarModule } from "./shared/components/toolbar/toolbar.module";
     AppComponent,
     NavigationComponent,
     AuthenticationComponent,
-    ActivityComponent,
-    GradeComponent,
     HomeComponent,
     HelpComponent,
     TermsComponent,

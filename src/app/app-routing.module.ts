@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ActivityComponent } from "./components/activity/activity.component";
-import { GradeComponent } from "./components/grade/grade.component";
 import { HomeComponent} from "./components/home/home.component";
 import { HelpComponent } from "./components/help/help.component";
 import { TermsComponent } from "./components/terms/terms.component";
@@ -42,16 +40,6 @@ const routes: Routes = [
     path: 'discipline',
     title: 'escola.app - Disciplina',
     loadChildren: () => import('./components/discipline/discipline.module').then(m => m.DisciplineModule)
-  },
-  {
-    path: 'activity',
-    component: ActivityComponent,
-    title: 'escola.app - Atividades'
-  },
-  {
-    path: 'grade',
-    component: GradeComponent,
-    title: 'escola.app - Notas'
   },
   {
     path: 'help',
