@@ -9,6 +9,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { NewStudentComponent } from './new-student/new-student.component';
 import { DetailStudentComponent } from './detail-student/detail-student.component';
 import { HomeStudentComponent } from './home-student/home-student.component';
+import {ToolbarModule} from "../../shared/components/toolbar/toolbar.module";
 
 
 @NgModule({
@@ -17,11 +18,12 @@ import { HomeStudentComponent } from './home-student/home-student.component';
     DetailStudentComponent,
     HomeStudentComponent
   ],
-  imports: [
-    CommonModule,
-    StudentRoutingModule,
-    MaterialModule,
-    FlexLayoutModule
-  ]
+    imports: [
+        CommonModule,
+        StudentRoutingModule,
+        MaterialModule,
+        FlexLayoutModule,
+        ToolbarModule
+    ]
 })
 export class StudentModule { }
