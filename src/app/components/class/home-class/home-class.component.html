@@ -1,23 +1,17 @@
 <div class="component-container">
   <app-toolbar [title]="title" creationTitle="nova Sala" quantity="14 salas encontradas"></app-toolbar>
   <ng-container *ngIf="!gridView; else listTableView">
-    <app-toolbar [title]="title" creationTitle="nova Sala" quantity="14 salas encontradas"></app-toolbar>
     <div><p>lorem</p></div>
   </ng-container>
   <ng-template #listTableView>
     <table>
       <thead>
-<!--      <tr>-->
-<!--        <th colspan="4">-->
-<!--          <app-toolbar [title]="title" creationTitle="nova Sala" quantity="14 salas encontradas"></app-toolbar>-->
-<!--        </th>-->
-<!--      </tr>-->
-      <tr>
-        <th>#</th>
-        <th>lorem</th>
-        <th>lorem</th>
-        <th>Ações</th>
-      </tr>
+        <tr>
+          <th>#</th>
+          <th>lorem</th>
+          <th>lorem</th>
+          <th>Ações</th>
+        </tr>
       </thead>
       <tbody>
       <tr>
