@@ -57,6 +57,16 @@ const routes: Routes = [
     loadChildren: () => import('./components/grade/grade.module').then(m => m.GradeModule)
   },
   {
+    path: 'period',
+    title: 'escola.app - Período',
+    loadChildren: () => import('./components/period/period.module').then(m => m.PeriodModule)
+  },
+  {
+    path: 'schoolyear',
+    title: 'escola.app - Ano Letivo',
+    loadChildren: () => import('./components/schoolyear/schoolyear.module').then(m => m.SchoolyearModule)
+  },
+  {
     path: 'help',
     component: HelpComponent,
     title: 'escola.app - Ajuda'
