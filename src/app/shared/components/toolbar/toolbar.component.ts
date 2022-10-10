@@ -8,16 +8,17 @@ import {ChangeViewService} from "./change-view.service";
 })
 export class ToolbarComponent implements OnInit {
 
-  control: boolean | undefined
+  control: boolean | undefined = true
   @Input() title: string | undefined
   @Input() quantity: string | undefined
   @Input() creationTitle: string | undefined
 
   constructor() {
-    this.control = ChangeViewService.grid
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    ChangeViewService.grid = true
+  }
 
   changeView(){
     ChangeViewService.grid = !ChangeViewService.grid

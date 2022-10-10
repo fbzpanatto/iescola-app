@@ -15,6 +15,7 @@ import { GradeComponent } from './components/grade/grade.component';
 import { HomeComponent } from './components/home/home.component';
 import { HelpComponent } from './components/help/help.component';
 import { TermsComponent } from './components/terms/terms.component';
+import { ToolbarModule } from "./shared/components/toolbar/toolbar.module";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { TermsComponent } from './components/terms/terms.component';
     GradeComponent,
     HomeComponent,
     HelpComponent,
-    TermsComponent
+    TermsComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,10 +35,13 @@ import { TermsComponent } from './components/terms/terms.component';
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ToolbarModule
   ],
   exports: [
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule,
+    ToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

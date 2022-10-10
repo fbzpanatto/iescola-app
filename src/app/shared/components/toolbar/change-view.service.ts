@@ -7,7 +7,7 @@ import {Subject} from "rxjs";
 export class ChangeViewService {
 
   static subject: Subject<boolean> = new Subject<boolean>()
-  static _grid: boolean = true
+  private static _grid: boolean = true
 
   constructor() { }
 

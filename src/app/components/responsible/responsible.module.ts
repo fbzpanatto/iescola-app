@@ -9,6 +9,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { HomeResponsibleComponent } from './home-responsible/home-responsible.component';
 import { NewResponsibleComponent } from './new-responsible/new-responsible.component';
 import { DetailResponsabileComponent } from './detail-responsabile/detail-responsabile.component';
+import {ToolbarModule} from "../../shared/components/toolbar/toolbar.module";
 
 
 @NgModule({
@@ -17,11 +18,12 @@ import { DetailResponsabileComponent } from './detail-responsabile/detail-respon
     NewResponsibleComponent,
     DetailResponsabileComponent
   ],
-  imports: [
-    CommonModule,
-    ResponsibleRoutingModule,
-    MaterialModule,
-    FlexLayoutModule
-  ]
+    imports: [
+        CommonModule,
+        ResponsibleRoutingModule,
+        MaterialModule,
+        FlexLayoutModule,
+        ToolbarModule
+    ]
 })
 export class ResponsibleModule { }

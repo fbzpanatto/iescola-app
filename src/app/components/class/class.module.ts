@@ -9,21 +9,20 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { HomeClassComponent } from './home-class/home-class.component';
 import { DetailClassComponent } from './detail-class/detail-class.component';
 import { NewClassComponent } from './new-class/new-class.component';
-import { ToolbarComponent } from "../../shared/components/toolbar/toolbar.component";
-
+import { ToolbarModule } from "../../shared/components/toolbar/toolbar.module";
 
 @NgModule({
   declarations: [
     HomeClassComponent,
     DetailClassComponent,
     NewClassComponent,
-    ToolbarComponent
   ],
   imports: [
     CommonModule,
     ClassRoutingModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ToolbarModule
   ]
 })
 export class ClassModule { }
