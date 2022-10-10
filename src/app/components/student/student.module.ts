@@ -18,12 +18,12 @@ import {ToolbarModule} from "../../shared/components/toolbar/toolbar.module";
     DetailStudentComponent,
     HomeStudentComponent
   ],
-    imports: [
-        CommonModule,
-        StudentRoutingModule,
-        MaterialModule,
-        FlexLayoutModule,
-        ToolbarModule
-    ]
+  imports: [
+    CommonModule,
+    StudentRoutingModule,
+    MaterialModule,
+    FlexLayoutModule,
+    ToolbarModule
+  ]
 })
 export class StudentModule { }
