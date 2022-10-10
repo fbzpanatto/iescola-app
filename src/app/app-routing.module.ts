@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DisciplineComponent } from "./components/discipline/discipline.component";
 import { ActivityComponent } from "./components/activity/activity.component";
 import { GradeComponent } from "./components/grade/grade.component";
 import { HomeComponent} from "./components/home/home.component";
@@ -41,8 +40,8 @@ const routes: Routes = [
   },
   {
     path: 'discipline',
-    component: DisciplineComponent,
-    title: 'escola.app - Disciplinas'
+    title: 'escola.app - Disciplina',
+    loadChildren: () => import('./components/discipline/discipline.module').then(m => m.DisciplineModule)
   },
   {
     path: 'activity',

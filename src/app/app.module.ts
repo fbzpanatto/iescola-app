@@ -9,7 +9,6 @@ import { NavigationComponent } from './shared/components/navigation/navigation.c
 import { AuthenticationComponent } from './shared/components/authentication/authentication.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { DisciplineComponent } from './components/discipline/discipline.component';
 import { ActivityComponent } from './components/activity/activity.component';
 import { GradeComponent } from './components/grade/grade.component';
 import { HomeComponent } from './components/home/home.component';
@@ -22,7 +21,6 @@ import { ToolbarModule } from "./shared/components/toolbar/toolbar.module";
     AppComponent,
     NavigationComponent,
     AuthenticationComponent,
-    DisciplineComponent,
     ActivityComponent,
     GradeComponent,
     HomeComponent,
