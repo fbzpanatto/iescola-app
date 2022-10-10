@@ -38,8 +38,13 @@ const routes: Routes = [
   },
   {
     path: 'discipline',
-    title: 'escola.app - Disciplina',
+    title: 'escola.app - Disciplinas',
     loadChildren: () => import('./components/discipline/discipline.module').then(m => m.DisciplineModule)
+  },
+  {
+    path: 'employee',
+    title: 'escola.app - Colaboradores',
+    loadChildren: () => import('./components/employee/employee.module').then(m => m.EmployeeModule)
   },
   {
     path: 'help',
