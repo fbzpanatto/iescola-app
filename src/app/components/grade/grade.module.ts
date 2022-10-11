@@ -5,10 +5,9 @@ import { GradeRoutingModule } from './grade-routing.module';
 import { NewGradeComponent } from './new-grade/new-grade.component';
 import { HomeGradeComponent } from './home-grade/home-grade.component';
 import { DetailGradeComponent } from './detail-grade/detail-grade.component';
-import {MatIconModule} from "@angular/material/icon";
-import {ToolbarModule} from "../../shared/components/toolbar/toolbar.module";
-import {FlexModule} from "@angular/flex-layout";
-import {ToolbarsModule} from "../../shared/components/toolbars/toolbars.module";
+import { MatIconModule } from "@angular/material/icon";
+import { FlexModule } from "@angular/flex-layout";
+import { ToolbarsModule } from "../../shared/components/toolbars/toolbars.module";
 
 
 @NgModule({
@@ -17,13 +16,12 @@ import {ToolbarsModule} from "../../shared/components/toolbars/toolbars.module";
     HomeGradeComponent,
     DetailGradeComponent
   ],
-    imports: [
-        CommonModule,
-        GradeRoutingModule,
-        MatIconModule,
-        ToolbarModule,
-        FlexModule,
-        ToolbarsModule
-    ]
+  imports: [
+    CommonModule,
+    GradeRoutingModule,
+    MatIconModule,
+    FlexModule,
+    ToolbarsModule
+  ]
 })
 export class GradeModule { }

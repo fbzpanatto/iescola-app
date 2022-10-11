@@ -9,8 +9,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { NewStudentComponent } from './new-student/new-student.component';
 import { DetailStudentComponent } from './detail-student/detail-student.component';
 import { HomeStudentComponent } from './home-student/home-student.component';
-import {ToolbarModule} from "../../shared/components/toolbar/toolbar.module";
-import {ToolbarsModule} from "../../shared/components/toolbars/toolbars.module";
+import { ToolbarsModule } from "../../shared/components/toolbars/toolbars.module";
 
 
 @NgModule({
@@ -24,7 +23,6 @@ import {ToolbarsModule} from "../../shared/components/toolbars/toolbars.module";
         StudentRoutingModule,
         MaterialModule,
         FlexLayoutModule,
-        ToolbarModule,
         ToolbarsModule
     ]
 })

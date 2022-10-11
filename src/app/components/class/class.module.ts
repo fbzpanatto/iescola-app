@@ -9,8 +9,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { HomeClassComponent } from './home-class/home-class.component';
 import { DetailClassComponent } from './detail-class/detail-class.component';
 import { NewClassComponent } from './new-class/new-class.component';
-import { ToolbarModule } from "../../shared/components/toolbar/toolbar.module";
-import {ToolbarsModule} from "../../shared/components/toolbars/toolbars.module";
+import { ToolbarsModule } from "../../shared/components/toolbars/toolbars.module";
 
 @NgModule({
   declarations: [
@@ -18,13 +17,12 @@ import {ToolbarsModule} from "../../shared/components/toolbars/toolbars.module";
     DetailClassComponent,
     NewClassComponent,
   ],
-    imports: [
-        CommonModule,
-        ClassRoutingModule,
-        MaterialModule,
-        FlexLayoutModule,
-        ToolbarModule,
-        ToolbarsModule
-    ]
+  imports: [
+    CommonModule,
+    ClassRoutingModule,
+    MaterialModule,
+    FlexLayoutModule,
+    ToolbarsModule
+  ]
 })
 export class ClassModule { }

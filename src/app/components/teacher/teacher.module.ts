@@ -9,7 +9,6 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { HomeTeacherComponent } from './home-teacher/home-teacher.component';
 import { DetailTeacherComponent } from './detail-teacher/detail-teacher.component';
 import { NewTeacherComponent } from "./new-teacher/new-teacher.component";
-import {ToolbarModule} from "../../shared/components/toolbar/toolbar.module";
 import { ToolbarsModule } from "../../shared/components/toolbars/toolbars.module";
 
 @NgModule({
@@ -23,7 +22,6 @@ import { ToolbarsModule } from "../../shared/components/toolbars/toolbars.module
     TeacherRoutingModule,
     MaterialModule,
     FlexLayoutModule,
-    ToolbarModule,
     ToolbarsModule
   ],
   providers: []

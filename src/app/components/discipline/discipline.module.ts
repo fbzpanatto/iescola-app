@@ -6,9 +6,8 @@ import { NewDisciplineComponent } from './new-discipline/new-discipline.componen
 import { DetailDisciplineComponent } from './detail-discipline/detail-discipline.component';
 import { HomeDisciplineComponent } from './home-discipline/home-discipline.component';
 import { MaterialModule } from "../../shared/modules/material.module";
-import { ToolbarModule } from "../../shared/components/toolbar/toolbar.module";
-import {FlexModule} from "@angular/flex-layout";
-import {ToolbarsModule} from "../../shared/components/toolbars/toolbars.module";
+import { FlexModule} from "@angular/flex-layout";
+import { ToolbarsModule} from "../../shared/components/toolbars/toolbars.module";
 
 
 @NgModule({
@@ -17,13 +16,12 @@ import {ToolbarsModule} from "../../shared/components/toolbars/toolbars.module";
     DetailDisciplineComponent,
     HomeDisciplineComponent
   ],
-    imports: [
-        CommonModule,
-        DisciplineRoutingModule,
-        MaterialModule,
-        ToolbarModule,
-        FlexModule,
-        ToolbarsModule
-    ]
+  imports: [
+    CommonModule,
+    DisciplineRoutingModule,
+    MaterialModule,
+    FlexModule,
+    ToolbarsModule
+  ]
 })
 export class DisciplineModule { }

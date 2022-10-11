@@ -9,8 +9,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { HomeResponsibleComponent } from './home-responsible/home-responsible.component';
 import { NewResponsibleComponent } from './new-responsible/new-responsible.component';
 import { DetailResponsabileComponent } from './detail-responsabile/detail-responsabile.component';
-import {ToolbarModule} from "../../shared/components/toolbar/toolbar.module";
-import {ToolbarsModule} from "../../shared/components/toolbars/toolbars.module";
+import { ToolbarsModule } from "../../shared/components/toolbars/toolbars.module";
 
 
 @NgModule({
@@ -24,7 +23,6 @@ import {ToolbarsModule} from "../../shared/components/toolbars/toolbars.module";
         ResponsibleRoutingModule,
         MaterialModule,
         FlexLayoutModule,
-        ToolbarModule,
         ToolbarsModule
     ]
 })
