@@ -56,6 +56,33 @@ button {
   }
 }
 
+div.my-toolbar {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 999;
+  div.sec-title {
+    mat-icon {
+      color: #156AFB;
+    }
+  }
+  span {
+    position: relative;
+    top: 2px;
+    &.circle {
+      height: 10px;
+      min-width: 10px;
+      background-color: #156AFB;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    &.quantity {
+      font-size: 14px;
+      font-weight: lighter;
+    }
+  }
+}
+
 div.grid-view {
   div.fill {
     height: $margin-top;
