@@ -6,6 +6,7 @@
 
 $toolbar-height: 40px;
 $margin-top: 14px;
+$pool-blue: #156AFB;
 
 html, body {
   padding: 0;
@@ -23,7 +24,7 @@ body, input {
 }
 
 h1 {
-  color: #156AFB;
+  color: $pool-blue;
 }
 
 h1, h2, h3, p {
@@ -52,7 +53,7 @@ button {
   }
   &.stylized-btn{
     color: #fff;
-    background: #156AFB;
+    background: $pool-blue;
   }
 }
 
@@ -63,7 +64,7 @@ div.my-toolbar {
   z-index: 999;
   div.sec-title {
     mat-icon {
-      color: #156AFB;
+      color: $pool-blue;
     }
   }
   span {
@@ -72,7 +73,7 @@ div.my-toolbar {
     &.circle {
       height: 10px;
       min-width: 10px;
-      background-color: #156AFB;
+      background-color: $pool-blue;
       border-radius: 50%;
       display: inline-block;
     }
@@ -148,7 +149,7 @@ table {
           border-right: 1px solid #eeeeee;
         }
         &:last-child {
-          color: #156AFB;
+          color: $pool-blue;
           mat-icon {
             cursor: pointer;
             scale: 1.2;
