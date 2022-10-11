@@ -4,6 +4,9 @@
 
 // @import 'variables';
 
+$toolbar-height: 40px;
+$margin-top: 14px;
+
 html, body {
   padding: 0;
   margin: 0;
@@ -53,35 +56,14 @@ button {
   }
 }
 
-div.my-toolbar {
-  position: sticky;
-  top: 0;
-  background-color: #fff;
-  z-index: 999;
-  div.sec-title {
-    mat-icon {
-      color: #156AFB;
-    }
-  }
-  span {
-    position: relative;
-    top: 2px;
-    &.circle {
-      height: 10px;
-      min-width: 10px;
-      background-color: #156AFB;
-      border-radius: 50%;
-      display: inline-block;
-    }
-    &.quantity {
-      font-size: 14px;
-      font-weight: lighter;
-    }
-  }
-}
-
 div.grid-view {
-  margin-top: 14px;
+  div.fill {
+    height: $margin-top;
+    background-color: #fff;
+    position: sticky;
+    top: $toolbar-height;
+    border-bottom: 1px solid #cecece;
+  }
 }
 
 table {
@@ -92,11 +74,11 @@ table {
   thead {
     background-color: #fff;
     position: sticky;
-    top: 40px;
+    top: $toolbar-height;
     z-index: 999;
 
     tr:nth-of-type(1) {
-      margin-top: 14px;
+      margin-top: $margin-top;
       background-color: #E9ECF2;
       border-radius: 6px;
       position: relative;
