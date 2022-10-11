@@ -12,7 +12,6 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { HomeComponent } from './components/home/home.component';
 import { HelpComponent } from './components/help/help.component';
 import { TermsComponent } from './components/terms/terms.component';
-import { ToolbarModule } from "./shared/components/toolbar/toolbar.module";
 
 @NgModule({
   declarations: [
@@ -30,12 +29,10 @@ import { ToolbarModule } from "./shared/components/toolbar/toolbar.module";
     MaterialModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    ToolbarModule
   ],
   exports: [
     MaterialModule,
     FlexLayoutModule,
-    ToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

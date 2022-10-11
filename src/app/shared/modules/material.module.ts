@@ -29,7 +29,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 @NgModule({
   exports: [
     LayoutModule,
-
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
