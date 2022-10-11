@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Title} from "@angular/platform-browser";
-import {ChangeViewService} from "../../../shared/components/toolbar/change-view.service";
+import { HomeToolbarService } from "../../../shared/components/toolbars/service/home-toolbar.service";
 
 @Component({
   selector: 'app-home-grade',
@@ -16,7 +16,7 @@ export class HomeGradeComponent implements OnInit {
 
   ngOnInit(): void {
     this.title = this.titleService.getTitle().split('-')[1]
-    ChangeViewService.subject.subscribe(v => this.listView = v)
+    HomeToolbarService.subject.subscribe(v => this.listView = v)
   }
 
 }
