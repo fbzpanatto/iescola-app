@@ -8,6 +8,7 @@ import { HomeEmployeeComponent } from './home-employee/home-employee.component';
 import {ToolbarModule} from "../../shared/components/toolbar/toolbar.module";
 import {MatIconModule} from "@angular/material/icon";
 import {FlexModule} from "@angular/flex-layout";
+import {ToolbarsModule} from "../../shared/components/toolbars/toolbars.module";
 
 
 @NgModule({
@@ -16,12 +17,13 @@ import {FlexModule} from "@angular/flex-layout";
     DetailEmployeeComponent,
     HomeEmployeeComponent
   ],
-  imports: [
-    CommonModule,
-    EmployeeRoutingModule,
-    ToolbarModule,
-    MatIconModule,
-    FlexModule
-  ]
+    imports: [
+        CommonModule,
+        EmployeeRoutingModule,
+        ToolbarModule,
+        MatIconModule,
+        FlexModule,
+        ToolbarsModule
+    ]
 })
 export class EmployeeModule { }

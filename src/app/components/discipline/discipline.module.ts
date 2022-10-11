@@ -8,6 +8,7 @@ import { HomeDisciplineComponent } from './home-discipline/home-discipline.compo
 import { MaterialModule } from "../../shared/modules/material.module";
 import { ToolbarModule } from "../../shared/components/toolbar/toolbar.module";
 import {FlexModule} from "@angular/flex-layout";
+import {ToolbarsModule} from "../../shared/components/toolbars/toolbars.module";
 
 
 @NgModule({
@@ -16,12 +17,13 @@ import {FlexModule} from "@angular/flex-layout";
     DetailDisciplineComponent,
     HomeDisciplineComponent
   ],
-  imports: [
-    CommonModule,
-    DisciplineRoutingModule,
-    MaterialModule,
-    ToolbarModule,
-    FlexModule
-  ]
+    imports: [
+        CommonModule,
+        DisciplineRoutingModule,
+        MaterialModule,
+        ToolbarModule,
+        FlexModule,
+        ToolbarsModule
+    ]
 })
 export class DisciplineModule { }

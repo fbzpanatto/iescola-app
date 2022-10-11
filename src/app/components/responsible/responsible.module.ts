@@ -10,6 +10,7 @@ import { HomeResponsibleComponent } from './home-responsible/home-responsible.co
 import { NewResponsibleComponent } from './new-responsible/new-responsible.component';
 import { DetailResponsabileComponent } from './detail-responsabile/detail-responsabile.component';
 import {ToolbarModule} from "../../shared/components/toolbar/toolbar.module";
+import {ToolbarsModule} from "../../shared/components/toolbars/toolbars.module";
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {ToolbarModule} from "../../shared/components/toolbar/toolbar.module";
         ResponsibleRoutingModule,
         MaterialModule,
         FlexLayoutModule,
-        ToolbarModule
+        ToolbarModule,
+        ToolbarsModule
     ]
 })
 export class ResponsibleModule { }

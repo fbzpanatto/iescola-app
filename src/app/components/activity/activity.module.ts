@@ -8,6 +8,7 @@ import { NewActivityComponent } from './new-activity/new-activity.component';
 import {MatIconModule} from "@angular/material/icon";
 import {ToolbarModule} from "../../shared/components/toolbar/toolbar.module";
 import {FlexModule} from "@angular/flex-layout";
+import {ToolbarsModule} from "../../shared/components/toolbars/toolbars.module";
 
 
 @NgModule({
@@ -16,12 +17,13 @@ import {FlexModule} from "@angular/flex-layout";
     DetailActivityComponent,
     NewActivityComponent
   ],
-  imports: [
-    CommonModule,
-    ActivityRoutingModule,
-    MatIconModule,
-    ToolbarModule,
-    FlexModule
-  ]
+    imports: [
+        CommonModule,
+        ActivityRoutingModule,
+        MatIconModule,
+        ToolbarModule,
+        FlexModule,
+        ToolbarsModule
+    ]
 })
 export class ActivityModule { }

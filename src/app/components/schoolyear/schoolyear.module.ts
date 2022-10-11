@@ -8,6 +8,7 @@ import { NewSchoolyearComponent } from './new-schoolyear/new-schoolyear.componen
 import {MatIconModule} from "@angular/material/icon";
 import {ToolbarModule} from "../../shared/components/toolbar/toolbar.module";
 import {FlexModule} from "@angular/flex-layout";
+import {ToolbarsModule} from "../../shared/components/toolbars/toolbars.module";
 
 
 @NgModule({
@@ -16,12 +17,13 @@ import {FlexModule} from "@angular/flex-layout";
     DetailSchoolyearComponent,
     NewSchoolyearComponent
   ],
-  imports: [
-    CommonModule,
-    SchoolyearRoutingModule,
-    MatIconModule,
-    ToolbarModule,
-    FlexModule
-  ]
+    imports: [
+        CommonModule,
+        SchoolyearRoutingModule,
+        MatIconModule,
+        ToolbarModule,
+        FlexModule,
+        ToolbarsModule
+    ]
 })
 export class SchoolyearModule { }

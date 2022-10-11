@@ -8,6 +8,7 @@ import { DetailPeriodComponent } from './detail-period/detail-period.component';
 import {ToolbarModule} from "../../shared/components/toolbar/toolbar.module";
 import {MatIconModule} from "@angular/material/icon";
 import {FlexModule} from "@angular/flex-layout";
+import {ToolbarsModule} from "../../shared/components/toolbars/toolbars.module";
 
 
 @NgModule({
@@ -16,12 +17,13 @@ import {FlexModule} from "@angular/flex-layout";
     HomePeriodComponent,
     DetailPeriodComponent
   ],
-  imports: [
-    CommonModule,
-    PeriodRoutingModule,
-    ToolbarModule,
-    MatIconModule,
-    FlexModule
-  ]
+    imports: [
+        CommonModule,
+        PeriodRoutingModule,
+        ToolbarModule,
+        MatIconModule,
+        FlexModule,
+        ToolbarsModule
+    ]
 })
 export class PeriodModule { }
