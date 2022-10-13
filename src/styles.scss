@@ -99,11 +99,23 @@ div.new-view, div.edit-view {
     position: relative;
     top: 48px;
 
+    &.half-size {
+      padding: 0 20vw;
+    }
+
     div.input-group {
+
       border-radius: 6px;
       border: 1px solid rgba(11, 31, 66, 0.22);
       position: relative;
       padding: 32px 16px 16px 16px;
+
+      &:nth-of-type(1){
+        input[type='text'], select {
+          color: #156AFB;
+          font-size: 22px;
+        }
+      }
 
       label.group-title{
         position: absolute;
@@ -116,11 +128,9 @@ div.new-view, div.edit-view {
       }
 
       select {
-        font-size: 22px;
         cursor: pointer;
         background-color: transparent;
         border: none;
-        color: #156AFB;
 
         option {
           color: #3a3a3a;
@@ -136,6 +146,15 @@ div.new-view, div.edit-view {
       input[type="checkbox"] {
         width: 16px;
         height: 16px;
+      }
+
+      input {
+        border: none;
+        font-size: 16px;
+        padding: 0 16px;
+        color: #3a3a3a;
+        width: 100%;
+        border-bottom: 1px solid #cecece;
       }
     }
 

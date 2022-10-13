@@ -12,4 +12,8 @@ export class NewSchoolyearComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSave(): void {
+
+  }
+
 }

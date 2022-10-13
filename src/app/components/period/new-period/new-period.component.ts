@@ -12,4 +12,8 @@ export class NewPeriodComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSave(){
+
+  }
+
 }
