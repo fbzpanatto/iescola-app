@@ -1,32 +1,87 @@
 <app-new-toolbar title="Novo professor" phrase="cadastre um novo professor"></app-new-toolbar>
-<div class="new-view" fxLayout="column">
+<div class="new-view">
   <div class="fill"></div>
-  <section class="content">
-    <form>
-<!--      TODO: faz mais sentido colocar um combobox já filtrando pela categoria professor, e aqui realizar o vinculo entre teacher, disciplinas, salas, etc...-->
-<!--      TODO: criar um PIPE para formatar o CPF-->
-<!--      <div fxLayout="column" fxLayoutGap="32px">-->
-<!--        <div class="input-container">-->
-<!--          <label for="firstName">firstName</label>-->
-<!--          <input id="firstName" name="firstName" type="text">-->
-<!--        </div>-->
-<!--        <div class="input-container">-->
-<!--          <label for="middleName">middleName</label>-->
-<!--          <input id="middleName" name="middleName" type="text">-->
-<!--        </div>-->
-<!--        <div class="input-container">-->
-<!--          <label for="lastName">lastName</label>-->
-<!--          <input id="lastName" name="lastName" type="text">-->
-<!--        </div>-->
-<!--        <div class="input-container">-->
-<!--          <label for="cpf">cpf</label>-->
-<!--          <input id="cpf" name="cpf" type="text">-->
-<!--        </div>-->
-<!--        <div class="input-container">-->
-<!--          <label for="rg">rg</label>-->
-<!--          <input id="rg" name="rg" type="text">-->
-<!--        </div>-->
-<!--      </div>-->
-    </form>
-  </section>
+  <form class="content" fxLayout="column" fxLayoutGap="32px">
+    <fieldset fxLayout="column">
+      <label for="personSelector" class="fieldset-title">Professor</label>
+      <select name="personSelector" id="personSelector" [value]="0">
+        <option value="0">Selecione uma pessoa</option>
+        <option value="1">Maria José Fernandes Rocha</option>
+        <option value="2">Pessoa 2</option>
+      </select>
+    </fieldset>
+    <fieldset fxLayout="row wrap" fxLayoutGap="16px">
+      <label class="fieldset-title">Disciplinas</label>
+      <div>
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="matematica">
+        <label class="pointer" for="vehicle1">Matemática</label>
+      </div>
+      <div>
+        <input type="checkbox" id="vehicle2" name="vehicle2" value="matematica">
+        <label class="pointer" for="vehicle2">Português</label>
+      </div>
+    </fieldset>
+    <fieldset fxLayout="row wrap" fxLayoutGap="16px">
+      <label class="fieldset-title">Salas</label>
+      <div>
+        <input type="checkbox" id="class1" name="class1" value="matematica">
+        <label class="pointer" for="class1">1ºA</label>
+      </div>
+      <div>
+        <input type="checkbox" id="class2" name="class2" value="matematica">
+        <label class="pointer" for="class2">1ºB</label>
+      </div>
+      <div>
+        <input type="checkbox" id="class3" name="class3" value="matematica">
+        <label class="pointer" for="class3">2ºA</label>
+      </div>
+      <div>
+        <input type="checkbox" id="class4" name="class4" value="matematica">
+        <label class="pointer" for="class4">2ºB</label>
+      </div>
+      <div>
+        <input type="checkbox" id="class5" name="class5" value="matematica">
+        <label class="pointer" for="class5">3ºA</label>
+      </div>
+      <div>
+        <input type="checkbox" id="class6" name="class6" value="matematica">
+        <label class="pointer" for="class6">3ºB</label>
+      </div>
+    </fieldset>
+    <fieldset fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
+      <button class="generic-btn" fxLayoutAlign="center center" type="button" (click)="onSave()">
+        <mat-icon fontIcon="close"></mat-icon>
+        <span>Excluir</span>
+      </button>
+      <button class="stylized-btn" fxLayoutAlign="center center" type="button" (click)="onSave()">
+        <mat-icon fontIcon="save"></mat-icon>
+        <span>Salvar</span>
+      </button>
+    </fieldset>
+
+    <!--      TODO: faz mais sentido colocar um combobox já filtrando pela categoria professor, e aqui realizar o vinculo entre teacher, disciplinas, salas, etc...-->
+    <!--      TODO: criar um PIPE para formatar o CPF-->
+    <!--      <div fxLayout="column" fxLayoutGap="32px">-->
+    <!--        <div class="input-container">-->
+    <!--          <label for="firstName">firstName</label>-->
+    <!--          <input id="firstName" name="firstName" type="text">-->
+    <!--        </div>-->
+    <!--        <div class="input-container">-->
+    <!--          <label for="middleName">middleName</label>-->
+    <!--          <input id="middleName" name="middleName" type="text">-->
+    <!--        </div>-->
+    <!--        <div class="input-container">-->
+    <!--          <label for="lastName">lastName</label>-->
+    <!--          <input id="lastName" name="lastName" type="text">-->
+    <!--        </div>-->
+    <!--        <div class="input-container">-->
+    <!--          <label for="cpf">cpf</label>-->
+    <!--          <input id="cpf" name="cpf" type="text">-->
+    <!--        </div>-->
+    <!--        <div class="input-container">-->
+    <!--          <label for="rg">rg</label>-->
+    <!--          <input id="rg" name="rg" type="text">-->
+    <!--        </div>-->
+    <!--      </div>-->
+  </form>
 </div>

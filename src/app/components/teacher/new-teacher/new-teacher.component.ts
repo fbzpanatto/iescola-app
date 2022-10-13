@@ -13,6 +13,7 @@ export class NewTeacherComponent implements OnInit {
   }
 
   onSave(){
+    console.log('saving...')
   }
 
 }

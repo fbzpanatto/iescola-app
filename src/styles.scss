@@ -84,14 +84,80 @@ div.my-toolbar {
   }
 }
 
-div.grid-view, div.new-view {
-  div.fill {
-    height: $margin-top;
-    background-color: #fff;
-    position: sticky;
-    top: $toolbar-height;
-    border-bottom: 1px solid #cecece;
-    z-index: 1;
+div.fill {
+  height: $margin-top;
+  background-color: #fff;
+  position: sticky;
+  top: $toolbar-height;
+  border-bottom: 1px solid #cecece;
+  z-index: 1;
+}
+
+div.new-view, div.edit-view {
+  form {
+    padding: 0 10vw;
+    position: relative;
+    top: 48px;
+    align-self: center;
+    justify-self: center;
+
+    input[type="checkbox"], .pointer {
+      cursor: pointer;
+    }
+
+    fieldset {
+      border-radius: 6px;
+      border: 1px solid rgba(11, 31, 66, 0.22);
+      position: relative;
+
+      .fieldset-title{
+        position: absolute;
+        top: -12px;
+        left: 16px;
+        background-color: #fff;
+        padding: 2px 8px;
+        font-size: 16px;
+        color: rgba(0,0,0,.54);
+      }
+
+      div, select {
+        margin-top: 16px;
+      }
+
+      select {
+        font-size: 22px;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        color: #156AFB;
+
+        option {
+          color: #3a3a3a;
+          font-size: 16px;
+          font-weight: normal;
+        }
+      }
+      div {
+        display: flex;
+        align-items: center;
+        input {
+          width: 16px;
+          height: 16px;
+        }
+        label {
+          color: #3a3a3a;
+          font-size: 16px;
+        }
+      }
+    }
+
+    fieldset:last-of-type {
+      border: none;
+      top: -16px;
+      button.stylized-btn {
+        width: 150px;
+      }
+    }
   }
 }
 
