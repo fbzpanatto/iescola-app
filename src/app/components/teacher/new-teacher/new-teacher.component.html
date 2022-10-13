@@ -2,16 +2,16 @@
 <div class="new-view">
   <div class="fill"></div>
   <form class="content" fxLayout="column" fxLayoutGap="32px">
-    <fieldset fxLayout="column">
-      <label for="personSelector" class="fieldset-title">Professor</label>
+    <div class="input-group" fxLayout="column">
+      <label for="personSelector" class="group-title">Professor</label>
       <select name="personSelector" id="personSelector" [value]="0">
         <option value="0">Selecione uma pessoa</option>
         <option value="1">Maria José Fernandes Rocha</option>
         <option value="2">Pessoa 2</option>
       </select>
-    </fieldset>
-    <fieldset fxLayout="row wrap" fxLayoutGap="16px">
-      <label class="fieldset-title">Disciplinas</label>
+    </div>
+    <div class="input-group" fxLayout="row wrap" fxLayoutGap="16px">
+      <label class="group-title">Disciplinas</label>
       <div>
         <input type="checkbox" id="vehicle1" name="vehicle1" value="matematica">
         <label class="pointer" for="vehicle1">Matemática</label>
@@ -20,9 +20,9 @@
         <input type="checkbox" id="vehicle2" name="vehicle2" value="matematica">
         <label class="pointer" for="vehicle2">Português</label>
       </div>
-    </fieldset>
-    <fieldset fxLayout="row wrap" fxLayoutGap="16px">
-      <label class="fieldset-title">Salas</label>
+    </div>
+    <div class="input-group" fxLayout="row wrap" fxLayoutGap="16px">
+      <label class="group-title">Salas</label>
       <div>
         <input type="checkbox" id="class1" name="class1" value="matematica">
         <label class="pointer" for="class1">1ºA</label>
@@ -47,8 +47,8 @@
         <input type="checkbox" id="class6" name="class6" value="matematica">
         <label class="pointer" for="class6">3ºB</label>
       </div>
-    </fieldset>
-    <fieldset fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
       <button class="generic-btn" fxLayoutAlign="center center" type="button" (click)="onSave()">
         <mat-icon fontIcon="close"></mat-icon>
         <span>Excluir</span>
@@ -57,7 +57,7 @@
         <mat-icon fontIcon="save"></mat-icon>
         <span>Salvar</span>
       </button>
-    </fieldset>
+    </div>
 
     <!--      TODO: faz mais sentido colocar um combobox já filtrando pela categoria professor, e aqui realizar o vinculo entre teacher, disciplinas, salas, etc...-->
     <!--      TODO: criar um PIPE para formatar o CPF-->
