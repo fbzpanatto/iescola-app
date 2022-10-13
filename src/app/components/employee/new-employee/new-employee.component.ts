@@ -12,4 +12,8 @@ export class NewEmployeeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSave(): void {
+
+  }
+
 }

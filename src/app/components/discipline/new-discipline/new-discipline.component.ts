@@ -12,4 +12,8 @@ export class NewDisciplineComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSave(){
+
+  }
+
 }

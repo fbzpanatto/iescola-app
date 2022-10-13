@@ -1,1 +1,20 @@
 <app-new-toolbar title="Nova Disciplina" phrase="cadastre uma nova disciplina"></app-new-toolbar>
+<div class="new-view">
+  <div class="fill"></div>
+  <form class="content half-size" fxLayout="column" fxLayoutGap="32px">
+    <div class="input-group first" fxLayout="row wrap" fxLayoutGap="16px">
+      <label class="group-title">Disciplina</label>
+      <input type="text" placeholder="digite o nome">
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
+      <button class="generic-btn" fxLayoutAlign="center center" type="button" (click)="onSave()">
+        <mat-icon fontIcon="close"></mat-icon>
+        <span>Excluir</span>
+      </button>
+      <button class="stylized-btn" fxLayoutAlign="center center" type="button" (click)="onSave()">
+        <mat-icon fontIcon="save"></mat-icon>
+        <span>Salvar</span>
+      </button>
+    </div>
+  </form>
+</div>

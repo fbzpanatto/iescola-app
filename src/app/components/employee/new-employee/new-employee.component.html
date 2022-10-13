@@ -1,1 +1,47 @@
 <app-new-toolbar title="Novo Funcionário" phrase="cadastre um novo funcionário"></app-new-toolbar>
+<div class="new-view">
+  <div class="fill"></div>
+  <form class="half-size" fxLayout="column" fxLayoutGap="24px">
+    <div class="input-group first" fxLayout="row wrap" fxLayoutGap="16px">
+      <label class="group-title">Nome completo</label>
+      <input type="text">
+    </div>
+    <div class="input-group" fxLayout="column">
+      <label class="group-title" for="categorySelector">Categoria</label>
+      <select name="categorySelector" id="categorySelector" [value]="0">
+        <option value="0">Selecione uma categoria</option>
+        <option value="1">Professores</option>
+        <option value="2">Alunos</option>
+      </select>
+    </div>
+    <div fxLayout="row" fxLayoutGap="16px">
+      <div fxFlex="50%" class="input-group" fxLayout="row wrap" fxLayoutGap="16px">
+        <label class="group-title">Rg</label>
+        <input type="text">
+      </div>
+      <div fxFlex="50%" class="input-group" fxLayout="row wrap" fxLayoutGap="16px">
+        <label class="group-title">Cpf</label>
+        <input type="text">
+      </div>
+    </div>
+    <div class="input-group" fxLayout="column">
+      <label class="group-title" for="genderSelector">Gênero</label>
+      <select name="genderSelector" id="genderSelector" [value]="0">
+        <option value="0">Selecione um gênero</option>
+        <option value="1">Masculino</option>
+        <option value="2">Feminimo</option>
+        <option value="3">Outro</option>
+      </select>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
+      <button class="generic-btn" fxLayoutAlign="center center" type="button" (click)="onSave()">
+        <mat-icon fontIcon="close"></mat-icon>
+        <span>Excluir</span>
+      </button>
+      <button class="stylized-btn" fxLayoutAlign="center center" type="button" (click)="onSave()">
+        <mat-icon fontIcon="save"></mat-icon>
+        <span>Salvar</span>
+      </button>
+    </div>
+  </form>
+</div>
