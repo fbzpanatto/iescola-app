@@ -140,7 +140,7 @@ div.new-view, div.edit-view {
         border-bottom: 1px solid #cecece;
       }
 
-      input[type="checkbox"], .pointer {
+      input[type="radio"], input[type="checkbox"], .pointer {
         cursor: pointer;
       }
 
@@ -152,7 +152,6 @@ div.new-view, div.edit-view {
       input, select {
         border: none;
         font-size: 16px;
-        padding: 0 16px;
         color: #3a3a3a;
         width: 100%;
         background-color: #ffffff;
