@@ -1,4 +1,4 @@
-<app-new-toolbar title="Novo Funcionário" phrase="cadastre um novo funcionário"></app-new-toolbar>
+<app-new-toolbar title="Nova Pessoa" phrase="cadastre uma nova pessoa"></app-new-toolbar>
 <div class="new-view">
   <div class="fill"></div>
   <form class="half-size" fxLayout="column" fxLayoutGap="24px">
@@ -15,11 +15,11 @@
       </select>
     </div>
     <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
-      <div fxFlex="50%" fxLayout="row" class="input-group" >
+      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
         <label class="group-title">Rg</label>
         <input type="text" placeholder="2022222214">
       </div>
-      <div fxFlex="50%" fxLayout="row" class="input-group" >
+      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
         <label class="group-title">Cpf</label>
         <input type="text" placeholder="33333333333">
       </div>

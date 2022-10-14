@@ -42,9 +42,9 @@ const routes: Routes = [
     loadChildren: () => import('./components/discipline/discipline.module').then(m => m.DisciplineModule)
   },
   {
-    path: 'employee',
-    title: 'escola.app - Colaboradores',
-    loadChildren: () => import('./components/employee/employee.module').then(m => m.EmployeeModule)
+    path: 'person',
+    title: 'escola.app - Pessoas',
+    loadChildren: () => import('./components/person/employee.module').then(m => m.EmployeeModule)
   },
   {
     path: 'activity',
