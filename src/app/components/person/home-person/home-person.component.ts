@@ -3,11 +3,11 @@ import {Title} from "@angular/platform-browser";
 import { HomeToolbarService } from "../../../shared/components/toolbars/service/home-toolbar.service";
 
 @Component({
-  selector: 'app-home-employee',
-  templateUrl: './home-employee.component.html',
-  styleUrls: ['./home-employee.component.scss']
+  selector: 'app-home-person',
+  templateUrl: './home-person.component.html',
+  styleUrls: ['./home-person.component.scss']
 })
-export class HomeEmployeeComponent implements OnInit {
+export class HomePersonComponent implements OnInit {
 
   title: string | undefined
   listView: boolean | undefined = true
