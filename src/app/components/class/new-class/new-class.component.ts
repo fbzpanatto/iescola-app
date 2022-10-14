@@ -12,4 +12,8 @@ export class NewClassComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSave(){
+
+  }
+
 }

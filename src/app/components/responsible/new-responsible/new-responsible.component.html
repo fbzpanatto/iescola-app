@@ -1,1 +1,26 @@
 <app-new-toolbar title="Novo Responsável" phrase="cadastre um novo responsável"></app-new-toolbar>
+<div class="new-view">
+  <div class="fill"></div>
+  <form fxLayout="column" fxLayoutGap="32px">
+    <div class="input-group first" fxLayout="column">
+      <label for="personSelector" class="group-title">Responsável</label>
+      <select name="personSelector" id="personSelector" [value]="0">
+        <option value="0">Selecione uma pessoa</option>
+        <option value="1">Maria José Fernandes Rocha</option>
+        <option value="2">Thiago Abravanel</option>
+        <option value="2">Silvio Santos</option>
+        <option value="2">Otávio Mesquita</option>
+      </select>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
+      <button class="generic-btn" fxLayoutAlign="center center" type="button" (click)="onSave()">
+        <mat-icon fontIcon="close"></mat-icon>
+        <span>Excluir</span>
+      </button>
+      <button class="stylized-btn" fxLayoutAlign="center center" type="button" (click)="onSave()">
+        <mat-icon fontIcon="save"></mat-icon>
+        <span>Salvar</span>
+      </button>
+    </div>
+  </form>
+</div>

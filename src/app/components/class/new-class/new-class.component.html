@@ -1,1 +1,52 @@
 <app-new-toolbar title="Nova Sala" phrase="cadastre uma nova sala"></app-new-toolbar>
+<div class="new-view">
+  <div class="fill"></div>
+  <form fxLayout="column" fxLayoutGap="24px">
+    <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
+      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group first" >
+        <label class="group-title" for="typeSelector">Série</label>
+        <input type="text" maxlength="1">
+      </div>
+      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group first" >
+        <label class="group-title" for="yearSelector">Letra</label>
+        <input type="text" maxlength="1">
+      </div>
+    </div>
+    <div class="input-group" fxLayout="column">
+      <label class="group-title" for="schoolSelector">Escola</label>
+      <select name="schoolSelector" id="schoolSelector" [value]="0">
+        <option value="0">Selecione uma escola</option>
+        <option value="1">EMEB Benno Carlos Claus</option>
+        <option value="2">EMEB Sebastião de Camargo Pires</option>
+      </select>
+    </div>
+    <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
+      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
+        <label class="group-title" for="typeSelector">Tipo</label>
+        <select name="typeSelector" id="typeSelector" [value]="0">
+          <option value="0">Selecione uma categoria</option>
+          <option value="1">PEB I - Professor de ensino básico</option>
+          <option value="2">PEB II - Professor de ensino básico</option>
+        </select>
+      </div>
+      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
+        <label class="group-title" for="yearSelector">Ano Letivo</label>
+        <select name="yearSelector" id="yearSelector" [value]="0">
+          <option value="0">Selecione um ano letivo</option>
+          <option value="1">2022</option>
+          <option value="2">2021</option>
+        </select>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
+      <button class="generic-btn" fxLayoutAlign="center center" type="button" (click)="onSave()">
+        <mat-icon fontIcon="close"></mat-icon>
+        <span>Excluir</span>
+      </button>
+      <button class="stylized-btn" fxLayoutAlign="center center" type="button" (click)="onSave()">
+        <mat-icon fontIcon="save"></mat-icon>
+        <span>Salvar</span>
+      </button>
+    </div>
+  </form>
+</div>

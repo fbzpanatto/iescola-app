@@ -12,4 +12,8 @@ export class NewResponsibleComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSave() {
+
+  }
+
 }
