@@ -4,17 +4,19 @@ import { HomeToolbarComponent } from './home-toolbar/home-toolbar.component';
 import { NewToolbarComponent } from './new-toolbar/new-toolbar.component';
 import { MaterialModule } from "../../modules/material.module";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import {MatRippleModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
     HomeToolbarComponent,
     NewToolbarComponent
   ],
-  imports: [
-    CommonModule,
-    MaterialModule,
-    FlexLayoutModule
-  ],
+    imports: [
+        CommonModule,
+        MaterialModule,
+        FlexLayoutModule,
+        MatRippleModule
+    ],
   exports: [
     HomeToolbarComponent,
     NewToolbarComponent

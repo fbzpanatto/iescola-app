@@ -12,6 +12,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { HomeComponent } from './components/home/home.component';
 import { HelpComponent } from './components/help/help.component';
 import { TermsComponent } from './components/terms/terms.component';
+import {MatRippleModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -22,14 +23,15 @@ import { TermsComponent } from './components/terms/terms.component';
     HelpComponent,
     TermsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    ReactiveFormsModule,
-    FlexLayoutModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        ReactiveFormsModule,
+        FlexLayoutModule,
+        MatRippleModule,
+    ],
   exports: [
     MaterialModule,
     FlexLayoutModule,

@@ -10,6 +10,7 @@ import { HomeTeacherComponent } from './home-teacher/home-teacher.component';
 import { DetailTeacherComponent } from './detail-teacher/detail-teacher.component';
 import { NewTeacherComponent } from "./new-teacher/new-teacher.component";
 import { ToolbarsModule } from "../../shared/components/toolbars/toolbars.module";
+import {MatRippleModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -17,13 +18,14 @@ import { ToolbarsModule } from "../../shared/components/toolbars/toolbars.module
     DetailTeacherComponent,
     NewTeacherComponent
   ],
-  imports: [
-    CommonModule,
-    TeacherRoutingModule,
-    MaterialModule,
-    FlexLayoutModule,
-    ToolbarsModule
-  ],
+    imports: [
+        CommonModule,
+        TeacherRoutingModule,
+        MaterialModule,
+        FlexLayoutModule,
+        ToolbarsModule,
+        MatRippleModule
+    ],
   providers: []
 })
 export class TeacherModule { }
