@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 
 import { LayoutModule } from '@angular/cdk/layout';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -28,6 +30,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   exports: [
+    FlexLayoutModule,
     LayoutModule,
     MatButtonModule,
     MatCardModule,
@@ -51,6 +54,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatNativeDateModule,
     MatSnackBarModule,
     MatCheckboxModule,
+    MatChipsModule
   ],
 })
 export class MaterialModule {}

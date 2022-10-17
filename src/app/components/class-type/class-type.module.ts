@@ -1,21 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ClassTypeRoutingModule } from './class-type-routing.module';
-import { NewClassTypeComponent } from './new-class-type/new-class-type.component';
-import { DetailClassTypeComponent } from './detail-class-type/detail-class-type.component';
-import { HomeClassTypeComponent } from './home-class-type/home-class-type.component';
+import { MaterialModule } from "../../shared/modules/material.module";
+import { ToolbarsModule } from "../../shared/components/toolbars/toolbars.module";
 
+import { ClassTypeRoutingModule } from './class-type-routing.module';
+import { HomeClassTypeComponent } from './home-class-type/home-class-type.component';
+import { DetailClassTypeComponent } from './detail-class-type/detail-class-type.component';
+import { NewClassTypeComponent } from './new-class-type/new-class-type.component';
 
 @NgModule({
   declarations: [
-    NewClassTypeComponent,
+    HomeClassTypeComponent,
     DetailClassTypeComponent,
-    HomeClassTypeComponent
+    NewClassTypeComponent
   ],
   imports: [
     CommonModule,
-    ClassTypeRoutingModule
+    ClassTypeRoutingModule,
+    MaterialModule,
+    ToolbarsModule,
   ]
 })
 export class ClassTypeModule { }

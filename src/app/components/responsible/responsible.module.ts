@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { ResponsibleRoutingModule } from './responsible-routing.module';
 
 import { MaterialModule } from "../../shared/modules/material.module";
-import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { HomeResponsibleComponent } from './home-responsible/home-responsible.component';
 import { NewResponsibleComponent } from './new-responsible/new-responsible.component';
@@ -22,7 +21,6 @@ import { ToolbarsModule } from "../../shared/components/toolbars/toolbars.module
         CommonModule,
         ResponsibleRoutingModule,
         MaterialModule,
-        FlexLayoutModule,
         ToolbarsModule
     ]
 })

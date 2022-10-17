@@ -1,26 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { DisciplineRoutingModule } from './discipline-routing.module';
-import { NewDisciplineComponent } from './new-discipline/new-discipline.component';
-import { DetailDisciplineComponent } from './detail-discipline/detail-discipline.component';
-import { HomeDisciplineComponent } from './home-discipline/home-discipline.component';
 import { MaterialModule } from "../../shared/modules/material.module";
-import { FlexModule} from "@angular/flex-layout";
-import { ToolbarsModule} from "../../shared/components/toolbars/toolbars.module";
+import { ToolbarsModule } from "../../shared/components/toolbars/toolbars.module";
 
+import { DisciplineRoutingModule } from './discipline-routing.module';
+import { HomeDisciplineComponent } from './home-discipline/home-discipline.component';
+import { DetailDisciplineComponent } from './detail-discipline/detail-discipline.component';
+import { NewDisciplineComponent } from './new-discipline/new-discipline.component';
 
 @NgModule({
   declarations: [
-    NewDisciplineComponent,
+    HomeDisciplineComponent,
     DetailDisciplineComponent,
-    HomeDisciplineComponent
+    NewDisciplineComponent
   ],
   imports: [
     CommonModule,
     DisciplineRoutingModule,
     MaterialModule,
-    FlexModule,
     ToolbarsModule
   ]
 })
