@@ -14,17 +14,17 @@ import { map, startWith } from 'rxjs'
 export class NewResponsibleComponent implements OnInit {
 
   separatorKeysCodes: number[] = [ENTER, COMMA]
-  fruitCtrl = new FormControl('')
-  filteredFruits: Observable<string[]> = new Observable<string[]>()
-  fruits: string[] = ['Lemon']
-  allFruits: string[] = ['João Guilherme', 'Lemon', 'Aisha da Silva Santos', 'Rodrigo Emanuel Quirino', 'Strawberry']
+  studentCtrl = new FormControl('')
+  filteredStudents: Observable<string[]> = new Observable<string[]>()
+  students: string[] = []
+  allStudents: string[] = ['João Guilherme', 'Aisha da Silva Santos', 'Rodrigo Emanuel Quirino']
 
-  @ViewChild('fruitInput') fruitInput!: ElementRef<HTMLInputElement>;
+  @ViewChild('studentInput') fruitInput!: ElementRef<HTMLInputElement>;
 
   constructor() {
-    this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
+    this.filteredStudents = this.studentCtrl.valueChanges.pipe(
       startWith(null),
-      map((fruit: string | null) => (fruit ? this._filter(fruit) : this.allFruits.slice()))
+      map((fruit: string | null) => (fruit ? this._filter(fruit) : this.allStudents.slice()))
     )
   }
 
@@ -36,28 +36,28 @@ export class NewResponsibleComponent implements OnInit {
 
   //  add our fruit
     if(value) {
-      this.fruits.push(value)
+      this.students.push(value)
     }
   //  Clear the input value
     event.chipInput!.clear()
   }
 
   remove(fruit: string) :void {
-    const index = this.fruits.indexOf(fruit)
+    const index = this.students.indexOf(fruit)
     if(index >=0) {
-      this.fruits.splice(index, 1)
+      this.students.splice(index, 1)
     }
   }
 
   selected(event: MatAutocompleteSelectedEvent): void {
-    this.fruits.push(event.option.viewValue)
+    this.students.push(event.option.viewValue)
     this.fruitInput.nativeElement.value = ''
-    this.fruitCtrl.setValue(null);
+    this.studentCtrl.setValue(null);
   }
 
   private _filter(value:string): string[] {
     const filterValue = value.toLowerCase()
-    return this.allFruits.filter(fruit => fruit.toLowerCase().includes(filterValue))
+    return this.allStudents.filter(fruit => fruit.toLowerCase().includes(filterValue))
   }
 
   onSave() {}

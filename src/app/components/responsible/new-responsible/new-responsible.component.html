@@ -19,17 +19,17 @@
       <mat-chip-list #chipList aria-label="Student selection">
         <input fxLayout="row"
           placeholder="digite o nome do aluno..."
-          #fruitInput
-          [formControl]="fruitCtrl"
+          #studentInput
+          [formControl]="studentCtrl"
           [matAutocomplete]="auto"
           [matChipInputFor]="chipList"
           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
           (matChipInputTokenEnd)="add($event)">
         <div fxLayout="row wrap" class="chips">
           <mat-chip
-            *ngFor="let fruit of fruits"
-            (removed)="remove(fruit)">
-            {{fruit}}
+            *ngFor="let student of students"
+            (removed)="remove(student)">
+            {{student}}
             <button matChipRemove>
               <mat-icon>cancel</mat-icon>
             </button>
@@ -37,8 +37,8 @@
         </div>
       </mat-chip-list>
       <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
-        <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
-          {{fruit}}
+        <mat-option *ngFor="let student of filteredStudents | async" [value]="student">
+          {{student}}
         </mat-option>
       </mat-autocomplete>
     </div>
