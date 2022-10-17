@@ -5,7 +5,7 @@
   <span class="circle"></span>
   <span class="quantity">{{ quantity }}</span>
   <div fxFlex></div>
-  <div fxLayout="row" fxLayoutGap="32px">
+  <div fxLayout="row" fxLayoutGap="16px">
     <button matRipple matTooltip="mudar exibição" *ngIf="control" (click)="changeView()" class="generic-btn">
       <mat-icon fontIcon="grid_view"></mat-icon>
       <span>Grid</span>
@@ -20,7 +20,8 @@
     </button>
     <button matRipple matTooltip="adicionar novo(a)" class="stylized-btn" (click)="navigateToNew()">
       <mat-icon fontIcon="add"></mat-icon>
-      <span>{{ creationTitle }}</span>
+<!--      <span>{{ creationTitle }}</span>-->
+      <span>novo</span>
     </button>
   </div>
 </div>
