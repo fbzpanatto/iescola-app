@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { StudentRoutingModule } from './student-routing.module';
-
 import { MaterialModule } from "../../shared/modules/material.module";
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { ToolbarsModule } from "../../shared/components/toolbars/toolbars.module";
 
+import { StudentRoutingModule } from './student-routing.module';
 import { NewStudentComponent } from './new-student/new-student.component';
 import { DetailStudentComponent } from './detail-student/detail-student.component';
 import { HomeStudentComponent } from './home-student/home-student.component';
-import { ToolbarsModule } from "../../shared/components/toolbars/toolbars.module";
-
 
 @NgModule({
   declarations: [
@@ -18,12 +15,11 @@ import { ToolbarsModule } from "../../shared/components/toolbars/toolbars.module
     DetailStudentComponent,
     HomeStudentComponent
   ],
-    imports: [
-        CommonModule,
-        StudentRoutingModule,
-        MaterialModule,
-        FlexLayoutModule,
-        ToolbarsModule
-    ]
+  imports: [
+    CommonModule,
+    StudentRoutingModule,
+    MaterialModule,
+    ToolbarsModule
+  ]
 })
 export class StudentModule { }

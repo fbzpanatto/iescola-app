@@ -6,8 +6,8 @@ import { ToolbarsModule } from "../../shared/components/toolbars/toolbars.module
 
 import { EmployeeRoutingModule } from './employee-routing.module';
 import { HomeEmployeeComponent } from './home-employee/home-employee.component';
-import { NewEmployeeComponent } from './new-employee/new-employee.component';
 import { DetailEmployeeComponent } from './detail-employee/detail-employee.component';
+import { NewEmployeeComponent } from './new-employee/new-employee.component';
 
 @NgModule({
   declarations: [

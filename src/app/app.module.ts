@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './shared/modules/material.module';
-import { NavigationComponent } from './shared/components/navigation/navigation.component';
-import { AuthenticationComponent } from './shared/components/authentication/authentication.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { MaterialModule } from './shared/modules/material.module';
+
+import { AppComponent } from './app.component';
+import { AuthenticationComponent } from './shared/components/authentication/authentication.component';
 import { HomeComponent } from './components/home/home.component';
+import { NavigationComponent } from './shared/components/navigation/navigation.component';
 import { HelpComponent } from './components/help/help.component';
 import { TermsComponent } from './components/terms/terms.component';
-import {MatRippleModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -23,18 +22,16 @@ import {MatRippleModule} from "@angular/material/core";
     HelpComponent,
     TermsComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MaterialModule,
-        ReactiveFormsModule,
-        FlexLayoutModule,
-        MatRippleModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    ReactiveFormsModule,
+  ],
   exports: [
     MaterialModule,
-    FlexLayoutModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
