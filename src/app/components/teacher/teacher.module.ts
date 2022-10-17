@@ -18,14 +18,14 @@ import {MatRippleModule} from "@angular/material/core";
     DetailTeacherComponent,
     NewTeacherComponent
   ],
-    imports: [
-        CommonModule,
-        TeacherRoutingModule,
-        MaterialModule,
-        FlexLayoutModule,
-        ToolbarsModule,
-        MatRippleModule
-    ],
+  imports: [
+    CommonModule,
+    TeacherRoutingModule,
+    MaterialModule,
+    FlexLayoutModule,
+    ToolbarsModule,
+    MatRippleModule,
+  ],
   providers: []
 })
 export class TeacherModule { }

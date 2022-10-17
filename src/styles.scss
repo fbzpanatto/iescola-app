@@ -6,7 +6,7 @@
 
 $toolbar-height: 40px;
 $margin-top: 14px;
-$pool-blue: #156AFB;
+$pool-blue: #1f6cff;
 
 html, body {
   padding: 0;
@@ -55,11 +55,19 @@ button {
     //apenas salvado o seletor
   }
   &.generic-btn{
-    background: #F4F5F7;
+    background: #f6f6f6;
+
+    &:hover {
+      background: #e7e7e7;
+    }
   }
   &.stylized-btn{
     color: #fff;
     background: $pool-blue;
+
+    &:hover {
+      background: rgb(0, 92, 255);
+    }
   }
 }
 

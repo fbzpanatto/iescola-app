@@ -17,6 +17,16 @@ const routes: Routes = [
     title: 'escola.app - Home'
   },
   {
+    path: 'employee',
+    title: 'escola.app - Colaboradores',
+    loadChildren: () => import('./components/employee/employee.module').then(m => m.EmployeeModule)
+  },
+  {
+    path: 'classtype',
+    title: 'escola.app - Categoria Educacional',
+    loadChildren: () => import('./components/class-type/class-type.module').then(m => m.ClassTypeModule)
+  },
+  {
     path: 'class',
     title: 'escola.app - Salas',
     loadChildren: () => import('./components/class/class.module').then(m => m.ClassModule)

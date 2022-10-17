@@ -1,6 +1,9 @@
 <div fxLayout="column" fxLayoutGap="16px">
   <mat-toolbar fxLayoutGap="16px">
-    <mat-icon style="cursor: pointer" (click)="opened = !opened" aria-hidden="false" aria-label="menu icon" fontIcon="menu"></mat-icon>
+    <button fxLayout="row" fxLayoutAlign="start center" class="generic-btn" matRipple style="cursor: pointer" (click)="opened = !opened">
+      <mat-icon aria-hidden="false" aria-label="menu icon" fontIcon="menu"></mat-icon>
+      <span>Menu</span>
+    </button>
     <div>
       <h2>escola.app</h2>
     </div>
@@ -19,12 +22,14 @@
       <span>olá!</span>
       <span>Fabrizio Panato</span>
     </div>
-    <div fxLayout="row" fxLayoutAlign="center center">
-      <mat-icon style="cursor: pointer" fontIcon="settings" ></mat-icon>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="center center">
-      <mat-icon style="cursor: pointer" fontIcon="logout" ></mat-icon>
-    </div>
+    <button fxLayout="row" fxLayoutAlign="start center" class="generic-btn" matRipple>
+      <mat-icon aria-hidden="false" aria-label="settings icon" fontIcon="settings"></mat-icon>
+      <span>Configurações</span>
+    </button>
+    <button fxLayout="row" fxLayoutAlign="start center" class="generic-btn" matRipple>
+      <mat-icon aria-hidden="false" aria-label="logout icon" fontIcon="logout"></mat-icon>
+      <span>Sair</span>
+    </button>
   </mat-toolbar>
   <mat-sidenav-container>
     <mat-sidenav mode="side" [(opened)]="opened" fxLayout="column">
@@ -35,7 +40,7 @@
           <mat-list-item>Home</mat-list-item>
         </div>
         <div mat-subheader>Administrativo</div>
-        <div matRipple class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
+        <div matRipple routerLink="/employee" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="badge"></mat-icon>
           <mat-list-item>Colaboradores</mat-list-item>
         </div>
@@ -43,11 +48,11 @@
           <mat-icon fontIcon="inventory_2"></mat-icon>
           <mat-list-item>Ano Letivo</mat-list-item>
         </div>
-        <div matRipple routerLink="period" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
+        <div matRipple routerLink="/period" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="calendar_month"></mat-icon>
           <mat-list-item>Períodos</mat-list-item>
         </div>
-        <div matRipple class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
+        <div matRipple routerLink="/classtype" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="category"></mat-icon>
           <mat-list-item>Categoria Educacional</mat-list-item>
         </div>
