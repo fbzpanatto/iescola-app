@@ -2,6 +2,7 @@
 <div class="new-view">
   <div class="fill"></div>
   <form fxLayout="column" fxLayoutGap="32px">
+
     <div class="input-group first" fxLayout="column">
       <label for="personSelector" class="group-title">Responsável</label>
       <select name="personSelector" id="personSelector" [value]="0">
@@ -15,7 +16,7 @@
 
     <div class="input-group" fxLayout="column">
       <label class="group-title">Alunos</label>
-      <mat-chip-list #chipList aria-label="Fruit selection">
+      <mat-chip-list #chipList aria-label="Student selection">
         <input fxLayout="row"
           placeholder="digite o nome do aluno..."
           #fruitInput
@@ -42,7 +43,6 @@
       </mat-autocomplete>
     </div>
 
-
     <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
       <button class="generic-btn" fxLayoutAlign="center center" type="button" (click)="onSave()">
         <mat-icon fontIcon="close"></mat-icon>
@@ -53,6 +53,7 @@
         <span>Salvar</span>
       </button>
     </div>
+
   </form>
 </div>
 
