@@ -6,13 +6,15 @@
       <label class="group-title">Período</label>
       <input type="text" placeholder="digite o nome do período">
     </div>
-    <div class="input-group" fxLayout="row wrap" fxLayoutGap="16px">
-      <label class="group-title">Data início</label>
-      <input type="date">
-    </div>
-    <div class="input-group" fxLayout="row wrap" fxLayoutGap="16px">
-      <label class="group-title">Data fim</label>
-      <input type="date">
+    <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
+      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
+        <label class="group-title">Data início</label>
+        <input type="date">
+      </div>
+      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
+        <label class="group-title">Data fim</label>
+        <input type="date">
+      </div>
     </div>
     <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
       <button class="generic-btn" fxLayoutAlign="center center" type="button" (click)="onSave()">
