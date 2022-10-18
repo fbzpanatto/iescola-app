@@ -7,14 +7,14 @@ mat-toolbar {
     width: 100%;
     mat-icon[fontIcon="search"] {
       position: absolute;
-      top: 12px;
+      top: 8px;
       left: 16px;
     }
 
     mat-icon[fontIcon="cancel"] {
       cursor: pointer;
       position: absolute;
-      top: 12px;
+      top: 8px;
       right: 16px;
       color: rgba(0, 0, 0, 0.36);
       &:hover {
@@ -28,7 +28,7 @@ mat-toolbar {
       border-radius: 25px;
       background-color: #d7d7d7;
       font-style: italic;
-      height: 3rem;
+      height: 2.5rem;
       font-size: 1.1em;
       padding: 0 48px 0 48px;
       letter-spacing: 1.5px;

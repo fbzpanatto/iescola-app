@@ -1,12 +1,11 @@
 <div class="my-toolbar" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
   <div class="sec-title" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
-    <mat-icon fontIcon="add"></mat-icon>
     <h1>{{ title }}</h1>
   </div>
   <span class="circle"></span>
   <span class="quantity">{{ phrase }}</span>
   <div fxFlex></div>
-  <button matRipple class="generic-btn" (click)="back()">
+  <button matRipple class="generic-btn" (click)="back(backLevels)">
     <mat-icon fontIcon="arrow_back"></mat-icon>
     <span>Voltar</span>
   </button>

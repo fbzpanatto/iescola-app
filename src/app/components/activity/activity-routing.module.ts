@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {HomeActivityComponent} from "./home-activity/home-activity.component";
 import {NewActivityComponent} from "./new-activity/new-activity.component";
+import {DetailActivityComponent} from "./detail-activity/detail-activity.component";
+import {GradeActivityComponent} from "./grade-activity/grade-activity.component";
 
 const routes: Routes = [
   {
@@ -11,6 +13,14 @@ const routes: Routes = [
   {
     path: 'new',
     component: NewActivityComponent
+  },
+  {
+    path: ':id/grade',
+    component: GradeActivityComponent
+  },
+  {
+    path: ':id/detail',
+    component: DetailActivityComponent
   }
 ];
 

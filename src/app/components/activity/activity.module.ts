@@ -8,13 +8,15 @@ import { NewActivityComponent } from './new-activity/new-activity.component';
 import { MatIconModule } from "@angular/material/icon";
 import { FlexModule} from "@angular/flex-layout";
 import { ToolbarsModule } from "../../shared/components/toolbars/toolbars.module";
+import { GradeActivityComponent } from './grade-activity/grade-activity.component';
 
 
 @NgModule({
   declarations: [
     HomeActivityComponent,
     DetailActivityComponent,
-    NewActivityComponent
+    NewActivityComponent,
+    GradeActivityComponent
   ],
   imports: [
     CommonModule,

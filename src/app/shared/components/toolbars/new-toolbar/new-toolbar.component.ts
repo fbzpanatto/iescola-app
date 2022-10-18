@@ -10,13 +10,15 @@ export class NewToolbarComponent implements OnInit {
 
   @Input() title: string | undefined
   @Input() phrase: string | undefined
+  @Input() backLevels: number | undefined
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
-  back() {
-    this.router.navigate([".."], {relativeTo: this.route})
+  back(backLevels: number = 1) {
+    const back = '../'.repeat(backLevels)
+    this.router.navigate([back], {relativeTo: this.route})
   }
 }
