@@ -246,12 +246,10 @@ table {
         &:not(:last-child) {
           border-right: 1px solid #eeeeee;
         }
-        &:last-child {
+        &:last-child mat-icon {
           color: $pool-blue;
-          mat-icon {
-            cursor: pointer;
-            scale: 1.2;
-          }
+          cursor: pointer;
+          scale: 1.2;
         }
       }
     }
