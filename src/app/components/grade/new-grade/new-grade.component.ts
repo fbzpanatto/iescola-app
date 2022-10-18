@@ -12,4 +12,8 @@ export class NewGradeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSave() {
+
+  }
+
 }
