@@ -9,6 +9,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { FlexModule} from "@angular/flex-layout";
 import { ToolbarsModule } from "../../shared/components/toolbars/toolbars.module";
 import { GradeActivityComponent } from './grade-activity/grade-activity.component';
+import {MaterialModule} from "../../shared/modules/material.module";
 
 
 @NgModule({
@@ -18,12 +19,13 @@ import { GradeActivityComponent } from './grade-activity/grade-activity.componen
     NewActivityComponent,
     GradeActivityComponent
   ],
-  imports: [
-    CommonModule,
-    ActivityRoutingModule,
-    MatIconModule,
-    FlexModule,
-    ToolbarsModule
-  ]
+    imports: [
+        CommonModule,
+        ActivityRoutingModule,
+        MatIconModule,
+        FlexModule,
+        ToolbarsModule,
+        MaterialModule
+    ]
 })
 export class ActivityModule { }

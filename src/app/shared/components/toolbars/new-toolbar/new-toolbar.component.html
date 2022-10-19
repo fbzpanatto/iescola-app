@@ -9,4 +9,8 @@
     <mat-icon fontIcon="arrow_back"></mat-icon>
     <span>Voltar</span>
   </button>
+  <button *ngIf="editButton" matRipple class="stylized-btn" (click)="toEdit()">
+    <mat-icon fontIcon="edit_note"></mat-icon>
+    <span>Editar</span>
+  </button>
 </div>
