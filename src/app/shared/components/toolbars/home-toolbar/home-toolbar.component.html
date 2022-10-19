@@ -1,7 +1,5 @@
 <div class="my-toolbar" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
-  <div class="sec-title" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
-    <h1>{{ title }}</h1>
-  </div>
+  <h1>{{ title }}</h1>
   <span class="circle"></span>
   <span class="quantity">{{ firstPhrase }}</span>
   <div fxFlex></div>
@@ -24,9 +22,13 @@
       <mat-icon fontIcon="arrow_back"></mat-icon>
       <span>Voltar</span>
     </button>
+    <button *ngIf="actionEdit" matRipple class="stylized-btn" (click)="goEdit()">
+      <mat-icon fontIcon="edit_note"></mat-icon>
+      <span>Editar</span>
+    </button>
     <button *ngIf="actionNew" matRipple matTooltip="adicionar novo(a)" class="stylized-btn" (click)="navigateToNew()">
       <mat-icon fontIcon="add"></mat-icon>
-      <span>novo</span>
+      <span>Novo</span>
     </button>
   </div>
 </div>
