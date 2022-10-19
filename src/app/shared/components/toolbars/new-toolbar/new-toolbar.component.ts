@@ -11,10 +11,10 @@ export class NewToolbarComponent implements OnInit {
   @Input() title: string | undefined
   @Input() phrase: string | undefined
   @Input() backLevels: number | undefined
-  @Input() editButton: boolean = false
 
   private id: string | undefined
   private readonly detail: string = 'detail'
+  private readonly backString: string = '../'
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
@@ -22,12 +22,7 @@ export class NewToolbarComponent implements OnInit {
     this.route.paramMap.subscribe(params => this.id = params.get('id')!)
   }
 
-  toEdit() {
-    this.router.navigate([`../`, this.detail], {relativeTo: this.route})
-  }
-
-  back(backLevels: number = 1) {
-    const back = '../'.repeat(backLevels)
-    this.router.navigate([back], {relativeTo: this.route})
+  goBack(backLevels: number = 1) {
+    this.router.navigate([this.backString.repeat(backLevels)], {relativeTo: this.route})
   }
 }

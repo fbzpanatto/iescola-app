@@ -1,4 +1,10 @@
-<app-new-toolbar title="Nova Atividade" phrase="cadastre uma nova atividade"></app-new-toolbar>
+<app-home-toolbar
+  [backButton]="true"
+  [title]="'Nova atividade'"
+  [firstPhrase]="'crie uma nova atividade'"
+>
+</app-home-toolbar>
+
 <div class="new-view">
   <div class="fill"></div>
   <form fxLayout="column" fxLayoutGap="24px">

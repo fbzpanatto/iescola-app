@@ -19,7 +19,7 @@ const routes: Routes = [
     component: GradeActivityComponent
   },
   {
-    path: ':id/detail',
+    path: ':id',
     component: DetailActivityComponent
   }
 ];
