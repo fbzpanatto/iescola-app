@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutGap="16px">
   <mat-toolbar fxLayoutGap="16px">
-    <button fxLayout="row" fxLayoutAlign="start center" class="generic-btn" matRipple style="cursor: pointer" (click)="opened = !opened">
-      <mat-icon aria-hidden="false" aria-label="menu icon" fontIcon="menu"></mat-icon>
+    <button (click)="opened = !opened" mat-button>
+      <mat-icon fontIcon="menu"></mat-icon>
       <span>Menu</span>
     </button>
     <div>
@@ -23,12 +23,12 @@
       <span>olá!</span>
       <span>Fabrizio Panato</span>
     </div>
-    <button fxLayout="row" fxLayoutAlign="start center" class="generic-btn" matRipple>
-      <mat-icon aria-hidden="false" aria-label="settings icon" fontIcon="settings"></mat-icon>
+    <button mat-button>
+      <mat-icon fontIcon="settings"></mat-icon>
       <span>Configurações</span>
     </button>
-    <button fxLayout="row" fxLayoutAlign="start center" class="generic-btn" matRipple>
-      <mat-icon aria-hidden="false" aria-label="logout icon" fontIcon="logout"></mat-icon>
+    <button mat-button>
+      <mat-icon fontIcon="logout"></mat-icon>
       <span>Sair</span>
     </button>
   </mat-toolbar>

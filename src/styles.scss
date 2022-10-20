@@ -70,11 +70,23 @@ button {
   }
 }
 
+button[mat-flat-button] {
+  background: $pool-blue;
+  color: #fff;
+}
+
+.mat-button-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px
+}
+
 div.my-toolbar {
   position: sticky;
   top: 0;
   background-color: #fff;
   z-index: 999;
+  height: 40px;
   div.sec-title {
     mat-icon {
       color: $pool-blue;
@@ -82,8 +94,9 @@ div.my-toolbar {
   }
   span {
     position: relative;
-    top: 2px;
+
     &.circle {
+      top: 2px;
       height: 10px;
       min-width: 10px;
       background-color: $pool-blue;
@@ -91,6 +104,7 @@ div.my-toolbar {
       display: inline-block;
     }
     &.quantity {
+      top: 2px;
       font-size: 14px;
       font-weight: lighter;
     }

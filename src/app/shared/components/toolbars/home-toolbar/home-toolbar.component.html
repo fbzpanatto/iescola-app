@@ -5,28 +5,28 @@
   <div fxFlex></div>
   <div fxLayout="row" fxLayoutGap="16px">
     <div *ngIf="changeViewOptions">
-      <button matRipple matTooltip="mudar exibição" *ngIf="control" (click)="changeView()" class="generic-btn">
+      <button matTooltip="mudar exibição" *ngIf="control" (click)="changeView()" mat-button>
         <mat-icon fontIcon="grid_view"></mat-icon>
         <span>Grid</span>
       </button>
-      <button matRipple matTooltip="mudar exibição" *ngIf="!control" (click)="changeView()" class="generic-btn">
+      <button matTooltip="mudar exibição" *ngIf="!control" (click)="changeView()" mat-button>
         <mat-icon fontIcon="list"></mat-icon>
         <span>Lista</span>
       </button>
     </div>
-    <button *ngIf="filter" matRipple class="generic-btn">
+    <button *ngIf="filter" mat-button>
       <mat-icon fontIcon="filter_list"></mat-icon>
       <span>Filtrar</span>
     </button>
-    <button *ngIf="backButton" matRipple class="generic-btn" (click)="goBack(backLevels)">
+    <button *ngIf="backButton" (click)="goBack(backLevels)" mat-button>
       <mat-icon fontIcon="arrow_back"></mat-icon>
       <span>Voltar</span>
     </button>
-    <button *ngIf="actionEdit" matRipple class="stylized-btn" (click)="goEdit()">
+    <button *ngIf="actionEdit" (click)="goEdit()" mat-button>
       <mat-icon fontIcon="edit_note"></mat-icon>
       <span>Editar</span>
     </button>
-    <button *ngIf="actionNew" matRipple matTooltip="adicionar novo(a)" class="stylized-btn" (click)="navigateToNew()">
+    <button *ngIf="actionNew" matTooltip="adicionar novo(a)" (click)="navigateToNew()" mat-flat-button>
       <mat-icon fontIcon="add"></mat-icon>
       <span>Novo</span>
     </button>
