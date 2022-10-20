@@ -2,6 +2,12 @@ $toolbar-height: 40px;
 $margin-top: 14px;
 $pool-blue: #1f6cff;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html, body {
   padding: 0;
   margin: 0;
@@ -10,7 +16,6 @@ html, body {
 body {
   height: 100vh;
   padding: 16px;
-  box-sizing: border-box;
 }
 
 body, input {
@@ -99,6 +104,24 @@ div.fill {
   top: $toolbar-height;
   border-bottom: 2px ridge #cecece;
   z-index: 1;
+}
+
+div.grid-view {
+  div.content {
+    position: relative;
+    top: 48px;
+    padding: 0 16px;
+    mat-card {
+      color: #3a3a3a;
+      border-radius: 6px;
+      max-width: 200px;
+
+      .header-image {
+        background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+        background-size: cover;
+      }
+    }
+  }
 }
 
 div.new-view, div.edit-view {
@@ -191,6 +214,8 @@ div.new-view, div.edit-view {
     }
   }
 }
+
+
 
 table {
   border-collapse: collapse;
