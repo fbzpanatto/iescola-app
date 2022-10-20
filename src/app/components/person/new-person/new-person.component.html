@@ -1,4 +1,9 @@
-<app-new-toolbar title="Nova Pessoa" phrase="cadastre uma nova pessoa"></app-new-toolbar>
+<app-home-toolbar
+  [backButton]="true"
+  [title]="'Nova Pessoa'"
+  [firstPhrase]="'cadastre uma nova pessoa'"
+>
+</app-home-toolbar>
 <div class="new-view">
   <div class="fill"></div>
   <form fxLayout="column" fxLayoutGap="24px">

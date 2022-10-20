@@ -1,4 +1,9 @@
-<app-new-toolbar title="Nova Nota" phrase="cadastre uma nova nota"></app-new-toolbar>
+<app-home-toolbar
+  [backButton]="true"
+  [title]="'Nova Nota'"
+  [firstPhrase]="'cadastre uma nova nota'"
+>
+</app-home-toolbar>
 <div class="new-view">
   <div class="fill"></div>
   <form fxLayout="column" fxLayoutGap="24px">
