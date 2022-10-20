@@ -1,5 +1,12 @@
 <div class="component-container">
-  <app-home-toolbar [title]="title" secondPhrase="Pessoa" firstPhrase="23 encontrado(s)"></app-home-toolbar>
+  <app-home-toolbar
+    [actionNew]="true"
+    [filter]="true"
+    [changeViewOptions] = "true"
+    [title]="title"
+    [firstPhrase]="'23 encontrada(s)'"
+  >
+  </app-home-toolbar>
   <ng-container *ngIf="!listView; else listTableView">
     <div class="grid-view" fxLayout="column">
       <div class="fill"></div>
@@ -44,10 +51,11 @@
     <table>
       <thead>
         <tr>
-          <th>#</th>
-          <th>lorem</th>
-          <th>lorem</th>
-          <th>Ações</th>
+          <th>id</th>
+          <th>coluna1</th>
+          <th>coluna2</th>
+          <th>coluna3</th>
+          <th>coluna4</th>
         </tr>
       </thead>
       <tbody>
@@ -55,113 +63,106 @@
         <td>1</td>
         <td>ipsum</td>
         <td>ipsum</td>
-        <td>
-          <mat-icon fontIcon="edit_note"></mat-icon>
-        </td>
-      </tr>
-      <tr>
-        <td>2</td>
         <td>ipsum</td>
         <td>ipsum</td>
-        <td>
-          <mat-icon fontIcon="edit_note"></mat-icon>
-        </td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>
-          <mat-icon fontIcon="edit_note"></mat-icon>
-        </td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>
-          <mat-icon fontIcon="edit_note"></mat-icon>
-        </td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>
-          <mat-icon fontIcon="edit_note"></mat-icon>
-        </td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>
-          <mat-icon fontIcon="edit_note"></mat-icon>
-        </td>
-      </tr>
-      <tr>
-        <td>7</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>
-          <mat-icon fontIcon="edit_note"></mat-icon>
-        </td>
       </tr>
       <tr>
         <td>1</td>
         <td>ipsum</td>
         <td>ipsum</td>
-        <td>
-          <mat-icon fontIcon="edit_note"></mat-icon>
-        </td>
+        <td>ipsum</td>
+        <td>ipsum</td>
       </tr>
       <tr>
-        <td>2</td>
+        <td>1</td>
         <td>ipsum</td>
         <td>ipsum</td>
-        <td>
-          <mat-icon fontIcon="edit_note"></mat-icon>
-        </td>
+        <td>ipsum</td>
+        <td>ipsum</td>
       </tr>
       <tr>
-        <td>3</td>
+        <td>1</td>
         <td>ipsum</td>
         <td>ipsum</td>
-        <td>
-          <mat-icon fontIcon="edit_note"></mat-icon>
-        </td>
+        <td>ipsum</td>
+        <td>ipsum</td>
       </tr>
       <tr>
-        <td>4</td>
+        <td>1</td>
         <td>ipsum</td>
         <td>ipsum</td>
-        <td>
-          <mat-icon fontIcon="edit_note"></mat-icon>
-        </td>
+        <td>ipsum</td>
+        <td>ipsum</td>
       </tr>
       <tr>
-        <td>5</td>
+        <td>1</td>
         <td>ipsum</td>
         <td>ipsum</td>
-        <td>
-          <mat-icon fontIcon="edit_note"></mat-icon>
-        </td>
+        <td>ipsum</td>
+        <td>ipsum</td>
       </tr>
       <tr>
-        <td>6</td>
+        <td>1</td>
         <td>ipsum</td>
         <td>ipsum</td>
-        <td>
-          <mat-icon fontIcon="edit_note"></mat-icon>
-        </td>
+        <td>ipsum</td>
+        <td>ipsum</td>
       </tr>
       <tr>
-        <td>7</td>
+        <td>1</td>
         <td>ipsum</td>
         <td>ipsum</td>
-        <td>
-          <mat-icon fontIcon="edit_note"></mat-icon>
-        </td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
+        <td>ipsum</td>
       </tr>
       </tbody>
     </table>
