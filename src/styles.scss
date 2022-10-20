@@ -214,10 +214,8 @@ table {
       line-height: 46px;
       color: #0B1F42;
       border: 1px solid rgba(12, 34, 72, 0.05);
-      //border-bottom: 2px ridge #cecece;
-      border-top-style: ridge;
-      border-top-color: #cecece;
-      border-top-width: 2px;
+      border-top: 2px ridge #cecece;
+
       th {
         display: flex;
         flex-direction: row;

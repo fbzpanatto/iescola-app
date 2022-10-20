@@ -14,7 +14,7 @@ const routes: Routes = [
     component: NewEmployeeComponent
   },
   {
-    path: 'id',
+    path: ':id',
     component: DetailEmployeeComponent
   }
 ];
