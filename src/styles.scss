@@ -102,25 +102,13 @@ div.fill {
   background-color: #fff;
   position: sticky;
   top: $toolbar-height;
-  border-bottom: 2px ridge #cecece;
+  border-bottom: 2px solid #cecece;
   z-index: 1;
 }
 
 div.grid-view {
   div.content {
-    position: relative;
-    top: 48px;
-    padding: 0 16px;
-    mat-card {
-      color: #3a3a3a;
-      border-radius: 6px;
-      max-width: 200px;
-
-      .header-image {
-        background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-        background-size: cover;
-      }
-    }
+  //  ...
   }
 }
 
@@ -239,7 +227,7 @@ table {
       line-height: 46px;
       color: #0B1F42;
       border: 1px solid rgba(12, 34, 72, 0.05);
-      border-top: 2px ridge #cecece;
+      border-top: 2px solid #cecece;
 
       th {
         display: flex;
