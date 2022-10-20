@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {NewGradeComponent} from "./new-grade/new-grade.component";
-import {HomeGradeComponent} from "./home-grade/home-grade.component";
+import { NewGradeComponent } from "./new-grade/new-grade.component";
+import { HomeGradeComponent } from "./home-grade/home-grade.component";
+import { DetailGradeComponent } from "./detail-grade/detail-grade.component";
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'new',
     component: NewGradeComponent
+  },
+  {
+    path: ':id',
+    component: DetailGradeComponent
   }
 ];
 

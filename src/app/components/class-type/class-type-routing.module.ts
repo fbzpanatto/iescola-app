@@ -14,7 +14,7 @@ const routes: Routes = [
     component: NewClassTypeComponent
   },
   {
-    path: 'id',
+    path: ':id',
     component: DetailClassTypeComponent
   }
 ];
