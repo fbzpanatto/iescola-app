@@ -8,12 +8,14 @@ import { StudentRoutingModule } from './student-routing.module';
 import { NewStudentComponent } from './new-student/new-student.component';
 import { DetailStudentComponent } from './detail-student/detail-student.component';
 import { HomeStudentComponent } from './home-student/home-student.component';
+import { FormStudentComponent } from './form-student/form-student.component';
 
 @NgModule({
   declarations: [
     NewStudentComponent,
     DetailStudentComponent,
-    HomeStudentComponent
+    HomeStudentComponent,
+    FormStudentComponent
   ],
   imports: [
     CommonModule,

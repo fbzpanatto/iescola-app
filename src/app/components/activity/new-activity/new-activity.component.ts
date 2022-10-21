@@ -12,8 +12,4 @@ export class NewActivityComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSave(): void {
-
-  }
-
 }

@@ -6,20 +6,5 @@
 </app-home-toolbar>
 <div class="new-view">
   <div class="fill"></div>
-  <form class="content" fxLayout="column" fxLayoutGap="32px">
-    <div class="input-group first" fxLayout="row wrap" fxLayoutGap="16px">
-      <label class="group-title">Disciplina</label>
-      <input type="text" placeholder="digite o nome">
-    </div>
-    <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
-      <button color="accent" mat-button>
-        <mat-icon fontIcon="delete_forever"></mat-icon>
-        <span>Excluir</span>
-      </button>
-      <button mat-flat-button (click)="onSave()" color="primary">
-        <mat-icon fontIcon="save"></mat-icon>
-        <span>Salvar</span>
-      </button>
-    </div>
-  </form>
+  <app-form-discipline></app-form-discipline>
 </div>

@@ -8,12 +8,14 @@ import { PeriodRoutingModule } from './period-routing.module';
 import { NewPeriodComponent } from './new-period/new-period.component';
 import { HomePeriodComponent } from './home-period/home-period.component';
 import { DetailPeriodComponent } from './detail-period/detail-period.component';
+import { FormPeriodComponent } from './form-period/form-period.component';
 
 @NgModule({
   declarations: [
     NewPeriodComponent,
     HomePeriodComponent,
-    DetailPeriodComponent
+    DetailPeriodComponent,
+    FormPeriodComponent
   ],
   imports: [
     CommonModule,

@@ -1,67 +1,12 @@
-<app-home-toolbar
-  [backButton]="true"
-  [title]="'Novo professor'"
-  [firstPhrase]="'cadastre um novo professor'"
->
-</app-home-toolbar>
-<div class="new-view">
+<div class="component-container">
+  <app-home-toolbar
+    [backButton]="true"
+    [title]="'Novo professor'"
+    [firstPhrase]="'cadastre um novo professor'"
+  >
+  </app-home-toolbar>
   <div class="fill"></div>
-  <form fxLayout="column" fxLayoutGap="32px">
-    <div class="input-group first" fxLayout="column">
-      <label for="personSelector" class="group-title">Professor</label>
-      <select name="personSelector" id="personSelector" [value]="0">
-        <option value="0">Selecione uma pessoa</option>
-        <option value="1">Maria José Fernandes Rocha</option>
-        <option value="2">Pessoa 2</option>
-      </select>
-    </div>
-    <div class="input-group" fxLayout="row wrap" fxLayoutGap="32px">
-      <label class="group-title">Disciplinas</label>
-      <div>
-        <input type="checkbox" id="vehicle1" name="vehicle1" value="matematica">
-        <label class="pointer" for="vehicle1">Matemática</label>
-      </div>
-      <div>
-        <input type="checkbox" id="vehicle2" name="vehicle2" value="matematica">
-        <label class="pointer" for="vehicle2">Português</label>
-      </div>
-    </div>
-    <div class="input-group" fxLayout="row wrap" fxLayoutGap="32px">
-      <label class="group-title">Salas</label>
-      <div>
-        <input type="checkbox" id="class1" name="class1" value="matematica">
-        <label class="pointer" for="class1">1ºA</label>
-      </div>
-      <div>
-        <input type="checkbox" id="class2" name="class2" value="matematica">
-        <label class="pointer" for="class2">1ºB</label>
-      </div>
-      <div>
-        <input type="checkbox" id="class3" name="class3" value="matematica">
-        <label class="pointer" for="class3">2ºA</label>
-      </div>
-      <div>
-        <input type="checkbox" id="class4" name="class4" value="matematica">
-        <label class="pointer" for="class4">2ºB</label>
-      </div>
-      <div>
-        <input type="checkbox" id="class5" name="class5" value="matematica">
-        <label class="pointer" for="class5">3ºA</label>
-      </div>
-      <div>
-        <input type="checkbox" id="class6" name="class6" value="matematica">
-        <label class="pointer" for="class6">3ºB</label>
-      </div>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
-      <button color="accent" mat-button>
-        <mat-icon fontIcon="delete_forever"></mat-icon>
-        <span>Excluir</span>
-      </button>
-      <button mat-flat-button (click)="onSave()" color="primary">
-        <mat-icon fontIcon="save"></mat-icon>
-        <span>Salvar</span>
-      </button>
-    </div>
-  </form>
+  <div class="new-view">
+    <app-form-teacher></app-form-teacher>
+  </div>
 </div>

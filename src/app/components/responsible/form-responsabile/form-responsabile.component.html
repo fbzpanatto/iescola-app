@@ -1,0 +1,54 @@
+<form fxLayout="column" fxLayoutGap="32px">
+
+  <div class="input-group first" fxLayout="column">
+    <label for="personSelector" class="group-title">Responsável</label>
+    <select name="personSelector" id="personSelector" [value]="0">
+      <option value="0">Selecione uma pessoa</option>
+      <option value="1">Maria José Fernandes Rocha</option>
+      <option value="2">Thiago Abravanel</option>
+      <option value="2">Silvio Santos</option>
+      <option value="2">Otávio Mesquita</option>
+    </select>
+  </div>
+
+  <div class="input-group" fxLayout="column">
+    <label class="group-title">Alunos</label>
+    <mat-chip-list #chipList aria-label="Student selection">
+      <input fxLayout="row"
+             placeholder="digite o nome do aluno..."
+             #studentInput
+             [formControl]="studentCtrl"
+             [matAutocomplete]="auto"
+             [matChipInputFor]="chipList"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+             (matChipInputTokenEnd)="add($event)">
+      <div fxLayout="row wrap" class="chips">
+        <mat-chip
+          *ngFor="let student of students"
+          (removed)="remove(student)">
+          {{student}}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip>
+      </div>
+    </mat-chip-list>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+      <mat-option *ngFor="let student of filteredStudents | async" [value]="student">
+        {{student}}
+      </mat-option>
+    </mat-autocomplete>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
+    <button color="accent" mat-button>
+      <mat-icon fontIcon="delete_forever"></mat-icon>
+      <span>Excluir</span>
+    </button>
+    <button mat-flat-button (click)="onSave()" color="primary">
+      <mat-icon fontIcon="save"></mat-icon>
+      <span>Salvar</span>
+    </button>
+  </div>
+
+</form>

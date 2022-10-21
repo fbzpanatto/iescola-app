@@ -1,73 +1,12 @@
-<app-home-toolbar
-  [backButton]="true"
-  [title]="'Nova Nota'"
-  [firstPhrase]="'cadastre uma nova nota'"
->
-</app-home-toolbar>
-<div class="new-view">
+<div class="component-container">
+  <app-home-toolbar
+    [backButton]="true"
+    [title]="'Nova Nota'"
+    [firstPhrase]="'cadastre uma nova nota'"
+  >
+  </app-home-toolbar>
   <div class="fill"></div>
-  <form fxLayout="column" fxLayoutGap="24px">
-    <div class="input-group" fxLayout="column">
-      <label class="group-title" for="studentSelector">Aluno</label>
-      <select name="studentSelector" id="studentSelector" [value]="0">
-        <option value="0">Selecione um aluno</option>
-        <option value="1">João Guilherme</option>
-        <option value="2">Aisha da Silva Santos</option>
-        <option value="3">Rodrigo Emanuel Quirino</option>
-      </select>
-    </div>
-    <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
-      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group">
-        <label class="group-title">Nota</label>
-        <input type="text" placeholder="digite a nota (usar vírgula para casas decimais)">
-      </div>
-      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group">
-        <label class="group-title" for="classSelector">Sala</label>
-        <select name="classSelector" id="classSelector" [value]="0">
-          <option value="0">Selecione um aluno</option>
-          <option value="1">1ºA</option>
-          <option value="2">5ºB</option>
-          <option value="3">9ºA</option>
-        </select>
-      </div>
-    </div>
-    <div class="input-group" fxLayout="column">
-      <label class="group-title" for="schoolSelector">Professor & Matéria</label>
-      <select name="schoolSelector" id="schoolSelector" [value]="0">
-        <option value="0">Selecione um professor & disciplina</option>
-        <option value="1">André Thiago - Matemática</option>
-        <option value="2">Adriana Santos - Geografia</option>
-        <option value="3">Nathália Carvalho - Geografia</option>
-        <option value="3">Nathália Carvalho - História</option>
-      </select>
-    </div>
-    <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
-      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-        <label class="group-title" for="schoolYearPeriod">Ano & Período</label>
-        <select name="schoolYearPeriod" id="schoolYearPeriod" [value]="0">
-          <option value="0">Selecione um tipo</option>
-          <option value="1">1ºBIM - 2020</option>
-          <option value="2">4ºBIM - 2022</option>
-        </select>
-      </div>
-      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-        <label class="group-title" for="actType">Atividade</label>
-        <select name="actType" id="actType" [value]="0">
-          <option value="0">Selecione uma atividade</option>
-          <option value="1">Prova de Geografia sobre tipos de relevos</option>
-          <option value="2">Trabalho sobre frações</option>
-        </select>
-      </div>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
-      <button color="accent" mat-button>
-        <mat-icon fontIcon="delete_forever"></mat-icon>
-        <span>Excluir</span>
-      </button>
-      <button mat-flat-button (click)="onSave()" color="primary">
-        <mat-icon fontIcon="save"></mat-icon>
-        <span>Salvar</span>
-      </button>
-    </div>
-  </form>
+  <div class="new-view">
+    <app-form-grade></app-form-grade>
+  </div>
 </div>

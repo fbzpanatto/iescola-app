@@ -1,35 +1,12 @@
-<app-home-toolbar
-  [backButton]="true"
-  [title]="'Novo Período'"
-  [firstPhrase]="'cadastre um novo período'"
->
-</app-home-toolbar>
-<div class="new-view">
+<div class="component-container">
+  <app-home-toolbar
+    [backButton]="true"
+    [title]="'Novo Período'"
+    [firstPhrase]="'cadastre um novo período'"
+  >
+  </app-home-toolbar>
   <div class="fill"></div>
-  <form class="content" fxLayout="column" fxLayoutGap="32px">
-    <div class="input-group first" fxLayout="row wrap" fxLayoutGap="16px">
-      <label class="group-title">Período</label>
-      <input type="text" placeholder="digite o nome do período">
-    </div>
-    <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
-      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-        <label class="group-title">Data início</label>
-        <input type="date">
-      </div>
-      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-        <label class="group-title">Data fim</label>
-        <input type="date">
-      </div>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
-      <button color="accent" mat-button>
-        <mat-icon fontIcon="delete_forever"></mat-icon>
-        <span>Excluir</span>
-      </button>
-      <button mat-flat-button (click)="onSave()" color="primary">
-        <mat-icon fontIcon="save"></mat-icon>
-        <span>Salvar</span>
-      </button>
-    </div>
-  </form>
+  <div class="new-view">
+    <app-form-period></app-form-period>
+  </div>
 </div>

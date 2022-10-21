@@ -8,12 +8,14 @@ import { PersonRoutingModule } from './person-routing.module';
 import { NewPersonComponent } from './new-person/new-person.component';
 import { DetailPersonComponent } from './detail-person/detail-person.component';
 import { HomePersonComponent } from './home-person/home-person.component';
+import { FormPersonComponent } from './form-person/form-person.component';
 
 @NgModule({
   declarations: [
     NewPersonComponent,
     DetailPersonComponent,
-    HomePersonComponent
+    HomePersonComponent,
+    FormPersonComponent
   ],
   imports: [
     CommonModule,

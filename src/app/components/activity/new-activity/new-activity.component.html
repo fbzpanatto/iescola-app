@@ -1,60 +1,12 @@
-<app-home-toolbar
-  [backButton]="true"
-  [title]="'Nova atividade'"
-  [firstPhrase]="'crie uma nova atividade'"
->
-</app-home-toolbar>
-
-<div class="new-view">
+<div class="component-container">
+  <app-home-toolbar
+    [backButton]="true"
+    [title]="'Nova atividade'"
+    [firstPhrase]="'crie uma nova atividade'"
+  >
+  </app-home-toolbar>
   <div class="fill"></div>
-  <form fxLayout="column" fxLayoutGap="24px">
-    <div class="input-group first" fxLayout="row wrap" fxLayoutGap="16px">
-      <label class="group-title">Título da atividade</label>
-      <input type="text" placeholder="digite o título da atividade">
-    </div>
-    <div class="input-group" fxLayout="column">
-      <label class="group-title" for="schoolSelector">Professor & Matéria</label>
-      <select name="schoolSelector" id="schoolSelector" [value]="0">
-        <option value="0">Selecione um professor & disciplina</option>
-        <option value="1">André Thiago - Matemática</option>
-        <option value="2">Adriana Santos - Geografia</option>
-        <option value="3">Nathália Carvalho - Geografia</option>
-        <option value="3">Nathália Carvalho - História</option>
-      </select>
-    </div>
-    <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
-      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-        <label class="group-title" for="typeSelector">Tipo da atividade</label>
-        <select name="typeSelector" id="typeSelector" [value]="0">
-          <option value="0">Selecione um tipo</option>
-          <option value="1">Prova</option>
-          <option value="2">Trabalho</option>
-        </select>
-      </div>
-      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-        <label class="group-title" for="weight">Peso</label>
-        <input type="text" id="weight" name="weight" placeholder="informe o peso da atividade">
-      </div>
-    </div>
-    <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
-      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-        <label class="group-title">Data início</label>
-        <input type="date">
-      </div>
-      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-        <label class="group-title">Data fim</label>
-        <input type="date">
-      </div>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
-      <button color="accent" mat-button>
-        <mat-icon fontIcon="delete_forever"></mat-icon>
-        <span>Excluir</span>
-      </button>
-      <button mat-flat-button (click)="onSave()" color="primary">
-        <mat-icon fontIcon="save"></mat-icon>
-        <span>Salvar</span>
-      </button>
-    </div>
-  </form>
+  <div class="new-view">
+    <app-form-activity></app-form-activity>
+  </div>
 </div>

@@ -1,58 +1,13 @@
-<app-home-toolbar
-  [backButton]="true"
-  [title]="'Nova Sala'"
-  [firstPhrase]="'cadastre uma nova sala'"
->
-</app-home-toolbar>
-<div class="new-view">
+<div class="component-container">
+  <app-home-toolbar
+    [backButton]="true"
+    [title]="'Nova Sala'"
+    [firstPhrase]="'cadastre uma nova sala'"
+  >
+  </app-home-toolbar>
   <div class="fill"></div>
-  <form fxLayout="column" fxLayoutGap="24px">
-<!--    TODO: colocar input chips para incluir alunos da respectiva sala no cadastro-->
-    <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
-      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group first" >
-        <label class="group-title" for="typeSelector">Série</label>
-        <input type="text" maxlength="1">
-      </div>
-      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group first" >
-        <label class="group-title" for="yearSelector">Letra</label>
-        <input type="text" maxlength="1">
-      </div>
-    </div>
-    <div class="input-group" fxLayout="column">
-      <label class="group-title" for="schoolSelector">Escola</label>
-      <select name="schoolSelector" id="schoolSelector" [value]="0">
-        <option value="0">Selecione uma escola</option>
-        <option value="1">EMEB Benno Carlos Claus</option>
-        <option value="2">EMEB Sebastião de Camargo Pires</option>
-      </select>
-    </div>
-    <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
-      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-        <label class="group-title" for="typeSelector">Tipo</label>
-        <select name="typeSelector" id="typeSelector" [value]="0">
-          <option value="0">Selecione uma categoria</option>
-          <option value="1">PEB I - Professor de ensino básico</option>
-          <option value="2">PEB II - Professor de ensino básico</option>
-        </select>
-      </div>
-      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-        <label class="group-title" for="yearSelector">Ano Letivo</label>
-        <select name="yearSelector" id="yearSelector" [value]="0">
-          <option value="0">Selecione um ano letivo</option>
-          <option value="1">2022</option>
-          <option value="2">2021</option>
-        </select>
-      </div>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
-      <button color="accent" mat-button>
-        <mat-icon fontIcon="delete_forever"></mat-icon>
-        <span>Excluir</span>
-      </button>
-      <button mat-flat-button (click)="onSave()" color="primary">
-        <mat-icon fontIcon="save"></mat-icon>
-        <span>Salvar</span>
-      </button>
-    </div>
-  </form>
+  <div class="new-view">
+    <app-form-class></app-form-class>
+  </div>
+
 </div>

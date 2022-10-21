@@ -8,12 +8,14 @@ import { GradeRoutingModule } from './grade-routing.module';
 import { NewGradeComponent } from './new-grade/new-grade.component';
 import { HomeGradeComponent } from './home-grade/home-grade.component';
 import { DetailGradeComponent } from './detail-grade/detail-grade.component';
+import { FormGradeComponent } from './form-grade/form-grade.component';
 
 @NgModule({
   declarations: [
     NewGradeComponent,
     HomeGradeComponent,
-    DetailGradeComponent
+    DetailGradeComponent,
+    FormGradeComponent
   ],
   imports: [
     CommonModule,

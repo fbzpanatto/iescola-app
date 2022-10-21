@@ -9,12 +9,14 @@ import { HomeResponsibleComponent } from './home-responsible/home-responsible.co
 import { NewResponsibleComponent } from './new-responsible/new-responsible.component';
 import { DetailResponsabileComponent } from './detail-responsabile/detail-responsabile.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { FormResponsabileComponent } from './form-responsabile/form-responsabile.component';
 
 @NgModule({
   declarations: [
     HomeResponsibleComponent,
     NewResponsibleComponent,
-    DetailResponsabileComponent
+    DetailResponsabileComponent,
+    FormResponsabileComponent
   ],
   imports: [
     CommonModule,

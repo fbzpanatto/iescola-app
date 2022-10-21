@@ -29,7 +29,7 @@ select option {
 }
 
 h1 {
-  color: $pool-blue;
+  color: #444;
 }
 
 h1, h2, h3, p {
@@ -61,7 +61,7 @@ div.my-toolbar {
       top: 2px;
       height: 7px;
       min-width: 7px;
-      background-color: $pool-blue;
+      background-color: #444;
       border-radius: 50%;
       display: inline-block;
     }
@@ -99,8 +99,8 @@ div.new-view, div.edit-view {
     }
 
     div.input-group {
-      border-radius: 6px;
-      border: 1px solid rgba(11, 31, 66, 0.22);
+      border-radius: 4px;
+      border: 1px solid #cecece;
       position: relative;
       padding: 24px 16px 8px 16px;
 
@@ -108,10 +108,14 @@ div.new-view, div.edit-view {
         position: absolute;
         top: -12px;
         left: 16px;
-        background-color: #fff;
-        padding: 2px 8px;
-        font-size: 16px;
-        color: #6c9eff;
+        padding: 4px 8px;
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: lighter;
+        border-radius: 4px;
+        border: 1px solid #cecece;
+        color: #444;
+        background-color: #f2f2f2;
       }
 
       input[type="text"], input.mat-chip-input {
@@ -176,16 +180,13 @@ table {
 
     tr:nth-of-type(1) {
       margin-top: $margin-top;
-      background-color: #e3e3e3;
-      border-bottom-right-radius: 4px;
-      border-bottom-left-radius: 4px;
+      background-color: #444;
       position: relative;
       display: flex;
       font-size: 12px;
       line-height: 32px;
-      color: #444;
-      border: 1px solid rgba(12, 34, 72, 0.05);
-      border-top: 2px solid #cecece;
+      color: #fff;
+      border-radius: 4px;
 
       th {
         text-transform: uppercase;

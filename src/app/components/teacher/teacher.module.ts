@@ -8,12 +8,14 @@ import { TeacherRoutingModule } from './teacher-routing.module';
 import { HomeTeacherComponent } from './home-teacher/home-teacher.component';
 import { DetailTeacherComponent } from './detail-teacher/detail-teacher.component';
 import { NewTeacherComponent } from "./new-teacher/new-teacher.component";
+import { FormTeacherComponent } from './form-teacher/form-teacher.component';
 
 @NgModule({
   declarations: [
     HomeTeacherComponent,
     DetailTeacherComponent,
-    NewTeacherComponent
+    NewTeacherComponent,
+    FormTeacherComponent
   ],
   imports: [
     CommonModule,

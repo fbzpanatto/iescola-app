@@ -12,8 +12,6 @@ export class NewTeacherComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSave(){
-    console.log('saving...')
-  }
+
 
 }

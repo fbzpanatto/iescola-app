@@ -1,0 +1,43 @@
+<form fxLayout="column" fxLayoutGap="24px">
+  <div class="input-group first" fxLayout="row wrap" fxLayoutGap="16px">
+    <label class="group-title">Nome completo</label>
+    <input type="text" placeholder="João da Silva">
+  </div>
+  <div class="input-group" fxLayout="column">
+    <label class="group-title" for="categorySelector">Categoria</label>
+    <select name="categorySelector" id="categorySelector" [value]="0">
+      <option value="0">Selecione uma categoria</option>
+      <option value="1">Professores</option>
+      <option value="2">Alunos</option>
+    </select>
+  </div>
+  <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
+    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
+      <label class="group-title">Rg</label>
+      <input type="text" placeholder="2022222214">
+    </div>
+    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
+      <label class="group-title">Cpf</label>
+      <input type="text" placeholder="33333333333">
+    </div>
+  </div>
+  <div class="input-group" fxLayout="column">
+    <label class="group-title" for="genderSelector">Gênero</label>
+    <select name="genderSelector" id="genderSelector" [value]="0">
+      <option value="0">Selecione um gênero</option>
+      <option value="1">Masculino</option>
+      <option value="2">Feminimo</option>
+      <option value="3">Outro</option>
+    </select>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
+    <button color="accent" mat-button>
+      <mat-icon fontIcon="delete_forever"></mat-icon>
+      <span>Excluir</span>
+    </button>
+    <button mat-flat-button (click)="onSave()" color="primary">
+      <mat-icon fontIcon="save"></mat-icon>
+      <span>Salvar</span>
+    </button>
+  </div>
+</form>
