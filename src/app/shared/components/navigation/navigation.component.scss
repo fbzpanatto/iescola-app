@@ -90,19 +90,21 @@ mat-sidenav-container mat-sidenav {
 
     div.list-item-container {
       cursor: pointer;
+      color: #444;
+      padding-left: 16px;
       mat-icon {
         font-size: 20px;
       }
       mat-list-item {
+        color: #444;
         font-weight: 500;
       }
       &:hover, &.active {
         mat-list-item {
-          color: #1976d2;
+          color: #3f51b5;
         }
-        background-color: #E9ECF2;
-        color: #1976d2;
-        text-shadow: 0 0 5px #FFFFFF;
+        background-color: #e3e3e3;
+        color: #3f51b5;
         border-radius: 5px;
       }
     }
