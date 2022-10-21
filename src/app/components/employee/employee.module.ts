@@ -8,18 +8,23 @@ import { EmployeeRoutingModule } from './employee-routing.module';
 import { HomeEmployeeComponent } from './home-employee/home-employee.component';
 import { DetailEmployeeComponent } from './detail-employee/detail-employee.component';
 import { NewEmployeeComponent } from './new-employee/new-employee.component';
+import { FormEmployeeComponent } from './form-employee/form-employee.component';
 
 @NgModule({
-  declarations: [
-    HomeEmployeeComponent,
-    NewEmployeeComponent,
-    DetailEmployeeComponent
-  ],
-  imports: [
-    CommonModule,
-    EmployeeRoutingModule,
-    MaterialModule,
-    ToolbarsModule,
-  ]
+    declarations: [
+        HomeEmployeeComponent,
+        NewEmployeeComponent,
+        DetailEmployeeComponent,
+        FormEmployeeComponent
+    ],
+    exports: [
+        FormEmployeeComponent
+    ],
+    imports: [
+        CommonModule,
+        EmployeeRoutingModule,
+        MaterialModule,
+        ToolbarsModule,
+    ]
 })
 export class EmployeeModule { }

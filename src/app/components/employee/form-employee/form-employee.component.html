@@ -1,0 +1,45 @@
+<form fxLayout="column" fxLayoutGap="24px">
+  <div class="input-group first" fxLayout="column">
+    <label for="personSelector" class="group-title">Colaborador</label>
+    <select name="personSelector" id="personSelector" [value]="0">
+      <option value="0">Selecione uma pessoa</option>
+      <option value="1">Maria José Fernandes Rocha</option>
+      <option value="2">Pessoa 2</option>
+    </select>
+  </div>
+  <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
+    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" class="input-group">
+      <label class="group-title" for="registration">Nº. Matrícula</label>
+      <input type="text" name="registration" id="registration">
+    </div>
+    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" class="input-group">
+      <label class="group-title" for="contractSelector">Contrato</label>
+      <select name="schoolSelector" id="contractSelector" [value]="0">
+        <option value="0">Selecione um tipo de contrato</option>
+        <option value="1">Efetivo</option>
+        <option value="2">Contratado</option>
+        <option value="2">Terceirizado</option>
+      </select>
+    </div>
+  </div>
+  <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
+    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
+      <label class="group-title" for="startDate">Data início</label>
+      <input type="date" name="startDate" id="startDate">
+    </div>
+    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
+      <label class="group-title" for="endDate">Data Fim</label>
+      <input type="date" id="endDate">
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
+    <button color="accent" mat-button>
+      <mat-icon fontIcon="delete_forever"></mat-icon>
+      <span>Excluir</span>
+    </button>
+    <button mat-flat-button (click)="onSave()" color="primary">
+      <mat-icon fontIcon="save"></mat-icon>
+      <span>Salvar</span>
+    </button>
+  </div>
+</form>

@@ -11,5 +11,4 @@ export class DetailSchoolyearComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
