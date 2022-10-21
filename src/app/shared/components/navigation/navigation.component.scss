@@ -1,20 +1,22 @@
 mat-toolbar {
+  display: flex;
+  gap: 8px;
   border-radius: 6px;
   background-color: #f2f2f2;
 
   h2 {
     padding: 0 16px;
-    padding-left: 0;
   }
 
   div.search-box-container {
     position: relative;
+    padding: 0 16px;
 
     mat-icon[fontIcon="cancel"] {
       cursor: pointer;
       position: absolute;
       top: 8px;
-      right: 16px;
+      right: 32px;
     }
 
     input {
@@ -38,6 +40,7 @@ mat-toolbar {
       border: none;
       font-weight: bold;
       color: #fff;
+      padding: 0 16px;
 
       option {
         color: #3a3a3a;
