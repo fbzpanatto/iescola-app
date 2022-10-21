@@ -30,6 +30,7 @@ select option {
 
 h1 {
   color: $pool-blue;
+  //font-weight: lighter!important;
 }
 
 h1, h2, h3, p {
@@ -70,11 +71,6 @@ button {
   }
 }
 
-button[mat-flat-button] {
-  background: $pool-blue;
-  color: #fff;
-}
-
 .mat-button-wrapper {
   display: flex;
   align-items: center;
@@ -97,8 +93,8 @@ div.my-toolbar {
 
     &.circle {
       top: 2px;
-      height: 10px;
-      min-width: 10px;
+      height: 7px;
+      min-width: 7px;
       background-color: $pool-blue;
       border-radius: 50%;
       display: inline-block;

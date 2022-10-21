@@ -2,35 +2,29 @@ mat-toolbar {
   border-radius: 6px;
   background-color: #f2f2f2;
 
+  h2 {
+    padding: 0 16px;
+    padding-left: 0;
+  }
+
   div.search-box-container {
     position: relative;
-    width: 100%;
-    mat-icon[fontIcon="search"] {
-      position: absolute;
-      top: 8px;
-      left: 16px;
-    }
 
     mat-icon[fontIcon="cancel"] {
       cursor: pointer;
       position: absolute;
       top: 8px;
       right: 16px;
-      color: rgba(0, 0, 0, 0.36);
-      &:hover {
-        color: rgba(0, 0, 0, 0.49);
-      }
     }
 
     input {
-      width: calc(100% - 96px);
+      width: 100%;
       border: none;
       border-radius: 25px;
-      background-color: #d7d7d7;
       font-style: italic;
       height: 2.5rem;
       font-size: 1.1em;
-      padding: 0 48px 0 48px;
+      padding: 0 48px 0 16px;
       letter-spacing: 1.5px;
       font-weight: lighter;
     }
@@ -42,8 +36,8 @@ mat-toolbar {
       cursor: pointer;
       background-color: transparent;
       border: none;
-      color: #156AFB;
       font-weight: bold;
+      color: #fff;
 
       option {
         color: #3a3a3a;
@@ -54,6 +48,7 @@ mat-toolbar {
   }
 
   div.profile-box-container {
+    padding: 0 16px;
     span {
       font-size: 14px;
     }

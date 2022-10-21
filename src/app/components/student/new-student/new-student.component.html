@@ -41,11 +41,11 @@
       </div>
     </div>
     <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
-      <button class="generic-btn" fxLayoutAlign="center center" type="button" (click)="onSave()">
-        <mat-icon fontIcon="close"></mat-icon>
+      <button color="accent" mat-button>
+        <mat-icon fontIcon="delete_forever"></mat-icon>
         <span>Excluir</span>
       </button>
-      <button class="stylized-btn" fxLayoutAlign="center center" type="button" (click)="onSave()">
+      <button mat-flat-button (click)="onSave()" color="primary">
         <mat-icon fontIcon="save"></mat-icon>
         <span>Salvar</span>
       </button>
