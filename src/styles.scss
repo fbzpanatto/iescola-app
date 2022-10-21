@@ -1,6 +1,6 @@
 $toolbar-height: 40px;
 $margin-top: 14px;
-$pool-blue: #1f6cff;
+$pool-blue: #3f51b5;
 
 *,
 *::before,
@@ -30,45 +30,10 @@ select option {
 
 h1 {
   color: $pool-blue;
-  //font-weight: lighter!important;
 }
 
 h1, h2, h3, p {
   margin-bottom: 0!important;
-}
-
-button {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  cursor: pointer;
-  border-radius: 6px;
-  border: none;
-  padding: 8px 12px;
-  color: #0B1F42;
-  span {
-    font-size: 14px;
-    font-weight: lighter;
-  }
-  mat-icon.material-icons {
-    //apenas salvado o seletor
-  }
-  &.generic-btn{
-    background: #f6f6f6;
-
-    &:hover {
-      background: #e7e7e7;
-    }
-  }
-  &.stylized-btn{
-    color: #fff;
-    background: $pool-blue;
-
-    &:hover {
-      background: rgb(0, 92, 255);
-    }
-  }
 }
 
 .mat-button-wrapper {
@@ -206,14 +171,8 @@ div.new-view, div.edit-view {
         }
       }
     }
-
-    button.stylized-btn {
-      width: 150px;
-    }
   }
 }
-
-
 
 table {
   border-collapse: collapse;
