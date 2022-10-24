@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { PersonService } from "../person.service";
 import { person } from "../person";
 
@@ -23,7 +23,7 @@ export class FormPersonComponent implements OnInit {
       .then(id => {
         this.personService.getById(id)
           .subscribe({
-            next: (person) => this.person = person,
+            next: (person) => this.onEdit(person),
             error: (err) => this.errorHandler(err)
           })
       })
@@ -33,6 +33,7 @@ export class FormPersonComponent implements OnInit {
     this.id = this.route.snapshot.params['id']
     return new Promise<string>((resolve) => {
       if(this.id) resolve(this.id)
+      this.onNew()
     })
   }
 
@@ -44,7 +45,8 @@ export class FormPersonComponent implements OnInit {
   }
 
   onEdit(person: person) {
-    console.log('editando', person)
+    this.person = person
+    console.log('editando', this.person)
   }
 
   onNew() {
