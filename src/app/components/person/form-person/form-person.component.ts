@@ -23,9 +23,7 @@ export class FormPersonComponent implements OnInit {
       .then(id => {
         this.personService.getById(id)
           .subscribe({
-            next: (person) => {
-              console.log(person)
-            },
+            next: (person) => this.person = person,
             error: (err) => this.errorHandler(err)
           })
       })
