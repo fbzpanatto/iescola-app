@@ -40,8 +40,9 @@ export class FormPersonComponent implements OnInit {
 
   errorHandler(err: any) {
     const { status, message } = err
-    alert(`${status}-${message}`)
-    this.router.navigate(['person'])
+    this.router.navigate(['person']).then(() => {
+      alert(`${status}-${message}`)
+    })
   }
 
   onEdit(person: person) {
