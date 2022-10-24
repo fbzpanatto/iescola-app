@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import { PersonService } from "../person.service";
 import { person } from "../person";
 
@@ -10,22 +10,38 @@ import { person } from "../person";
 })
 export class FormPersonComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private personService: PersonService) { }
+  id: string | null = null
+  person: person | null = null
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private personService: PersonService) {}
 
   ngOnInit(): void {
-    this.getById(+this.route.snapshot.params['id'])
+    this.onLoad()
+      .then(id => {
+        this.personService.getById(id)
+          .subscribe({
+            next: (person) => {
+              console.log(person)
+            },
+            error: (err) => this.errorHandler(err)
+          })
+      })
   }
 
-  getById(id: number):void {
-    this.personService.getById(id)
-      .then((result: person | string) => {
-        result === 'new'?
-            this.onNew() :
-            this.onEdit(result as person)
-      })
-      .catch(error => {
-        console.log('error', error)
-      })
+  onLoad() {
+    this.id = this.route.snapshot.params['id']
+    return new Promise<string>((resolve) => {
+      if(this.id) resolve(this.id)
+    })
+  }
+
+  errorHandler(err: any) {
+    const { status, message } = err
+    alert(`${status}-${message}`)
+    this.router.navigate(['person'])
   }
 
   onEdit(person: person) {

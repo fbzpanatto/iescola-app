@@ -16,11 +16,6 @@ const routes: Routes = [
   {
     path: ':id',
     component: DetailPersonComponent
-  },
-  {
-    path: '',
-    redirectTo: '/person',
-    pathMatch: "prefix"
   }
 ];
 
