@@ -7,7 +7,7 @@ import {DetailPersonComponent} from "./detail-person/detail-person.component";
 const routes: Routes = [
   {
     path: '',
-    component: HomePersonComponent
+    component: HomePersonComponent,
   },
   {
     path: 'new',
@@ -16,6 +16,11 @@ const routes: Routes = [
   {
     path: ':id',
     component: DetailPersonComponent
+  },
+  {
+    path: '',
+    redirectTo: '/person',
+    pathMatch: "prefix"
   }
 ];
 

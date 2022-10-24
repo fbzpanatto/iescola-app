@@ -6,12 +6,6 @@ import { TermsComponent } from "./components/terms/terms.component";
 
 const routes: Routes = [
   {
-    path: '',
-    pathMatch: "full",
-    redirectTo: 'home',
-
-  },
-  {
     path: 'home',
     component: HomeComponent,
     title: 'escola.app - Home'
@@ -54,7 +48,7 @@ const routes: Routes = [
   {
     path: 'person',
     title: 'escola.app - Pessoas',
-    loadChildren: () => import('./components/person/person.module').then(m => m.PersonModule)
+    loadChildren: () => import('./components/person/person.module').then(m => m.PersonModule),
   },
   {
     path: 'activity',
@@ -85,6 +79,11 @@ const routes: Routes = [
     path: 'terms',
     component: TermsComponent,
     title: 'escola.app - Termos'
+  },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
   },
   {
     path: '**',
