@@ -24,7 +24,7 @@ export class FormPersonComponent implements OnInit {
             this.onEdit(result as person)
       })
       .catch(error => {
-        console.log(error)
+        console.log('error', error)
       })
   }
 
