@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {PersonService} from "../person.service";
 
 @Component({
   selector: 'app-form-person',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormPersonComponent implements OnInit {
 
-  constructor() { }
+  id: string | null = null
+
+  constructor(private route: ActivatedRoute, private personService: PersonService) { }
 
   ngOnInit(): void {
+    this.onLoad()
+  }
+
+  onLoad(){
+    this.route.paramMap.subscribe(params => this.id = params.get('id'))
+    return new Promise<void>((resolve) => {
+      if(this.id) {
+        this.personService.getById(+this.id).subscribe(console.log)
+        resolve()
+      } else {
+        console.log('criando novo registro')
+        resolve()
+      }
+    })
   }
 
   onSave() {

@@ -15,4 +15,8 @@ export class PersonService {
   getAll(): Observable<person[]> {
     return this.http.get<person[]>(this.url)
   }
+
+  getById(id: number): Observable<person> {
+    return this.http.get<person>(`${this.url}/${id}`)
+  }
 }

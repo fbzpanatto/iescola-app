@@ -26,7 +26,9 @@ export class HomePersonComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.onLoad()
       .then(() => {
-        this.subscription = this.personService.getAll().subscribe(persons => this.persons = persons)
+        this.subscription =
+          this.personService.getAll()
+            .subscribe(persons => this.persons = persons)
       })
   }
 
@@ -41,5 +43,4 @@ export class HomePersonComponent implements OnInit, OnDestroy {
   onEdit(){
     console.log('edit...')
   }
-
 }
