@@ -19,4 +19,14 @@ export class PersonService {
   getById(id: number): Observable<person> {
     return this.http.get<person>(`${this.url}/${id}`)
   }
+
+  getByIdTwo(id: number): Promise<person | string>{
+    return new Promise((resolve, reject) => {
+      this.http.get<person>(`${this.url}/${id}`)
+        .subscribe(person => {
+          if(!person) reject('Pessoa não encontrada')
+          resolve(person)
+        })
+    })
+  }
 }
