@@ -52,118 +52,20 @@
       <thead>
       <tr>
         <th>id</th>
-        <th>coluna1</th>
-        <th>coluna2</th>
-        <th>coluna3</th>
-        <th>coluna4</th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>RG</th>
+        <th>Categoria</th>
       </tr>
       </thead>
       <tbody>
-      <tr routerLink="1">
-        <td>1</td>
-        <td>clicar aqui</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr routerLink="2">
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr routerLink="3">
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
+        <tr *ngFor="let person of persons" routerLink="{{person.id}}">
+          <td>{{ person.id }}</td>
+          <td>{{ person.name }}</td>
+          <td>{{ person.cpf }}</td>
+          <td>{{ person.rg }}</td>
+          <td>{{ person.person_type_id }}</td>
+        </tr>
       </tbody>
     </table>
   </ng-template>
