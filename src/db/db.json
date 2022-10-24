@@ -1,0 +1,11 @@
+{
+  "person_category": [
+    { "id": 1, "name": "Professor", "active": true },
+    { "id": 2, "name": "Alunos", "active": true },
+    { "id": 3, "name": "Responsáveis", "active": true }
+  ],
+  "person": [
+    { "id": 1, "name": "André Thiago", "cpf": "11122232500", "rg": "485211228", "person_type_id": 1},
+    { "id": 2, "name": "Adriana Silva", "cpf": "12122232500", "rg": "185211228", "person_type_id": 2}
+  ]
+}

@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavigationComponent } from './shared/components/navigation/navigation.component';
 import { HelpComponent } from './components/help/help.component';
 import { TermsComponent } from './components/terms/terms.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -28,10 +29,12 @@ import { TermsComponent } from './components/terms/terms.component';
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   exports: [
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
