@@ -35,11 +35,13 @@
     <mat-sidenav mode="side" [(opened)]="opened" fxLayout="column">
       <mat-list>
         <div mat-subheader>Principal</div>
+        <mat-divider></mat-divider>
         <div matRipple routerLink="/home" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="home"></mat-icon>
           <mat-list-item>Home</mat-list-item>
         </div>
         <div mat-subheader>Administrativo</div>
+        <mat-divider></mat-divider>
         <div matRipple routerLink="/employee" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="badge"></mat-icon>
           <mat-list-item>Colaboradores</mat-list-item>
@@ -56,7 +58,10 @@
           <mat-icon fontIcon="category"></mat-icon>
           <mat-list-item>Categoria Educacional</mat-list-item>
         </div>
+
         <div mat-subheader>Corpo Docente</div>
+        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
         <div matRipple routerLink="/teacher" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="school"></mat-icon>
           <mat-list-item>Professores</mat-list-item>
@@ -66,6 +71,7 @@
           <mat-list-item><span>Disciplinas</span></mat-list-item>
         </div>
         <div mat-subheader>Pessoas</div>
+        <mat-divider></mat-divider>
         <div matRipple routerLink="/person" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="people"></mat-icon>
           <mat-list-item>Pessoas</mat-list-item>
@@ -79,6 +85,7 @@
           <mat-list-item>Responsáveis</mat-list-item>
         </div>
         <div mat-subheader>Turmas & Métricas</div>
+        <mat-divider></mat-divider>
         <div matRipple routerLink="/class" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="sensor_door"></mat-icon>
           <mat-list-item>Salas</mat-list-item>
