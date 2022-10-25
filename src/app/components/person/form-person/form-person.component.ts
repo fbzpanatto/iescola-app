@@ -87,10 +87,8 @@ export class FormPersonComponent implements OnInit {
       name: this.form.value.name!,
       cpf: this.form.value.cpf!,
       rg: this.form.value.rg!,
-      person_category_id: +this.form.value.person_category_id!,
-      gender_id: +this.form.value.gender_id!
+      person_category_id: this.form.value.person_category_id!,
+      gender_id: this.form.value.gender_id!
     }
   }
-
-  onSave() {}
 }
