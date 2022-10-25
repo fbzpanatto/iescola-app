@@ -27,4 +27,8 @@ export class PersonService {
   update( id: number | string, body: person ) {
     return this.http.put(`${this.url}/${id}`, body)
   }
+
+  delete( id: number | string) {
+    return this.http.delete(`${this.url}/${id}`)
+  }
 }

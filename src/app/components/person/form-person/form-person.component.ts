@@ -32,7 +32,7 @@ export class FormPersonComponent implements OnInit {
       .then(id => {
         this.personService.getById(id)
           .subscribe({
-            next: (person) => this.onEdit(person),
+            next: (person) => this.pathFormValues(person),
             error: (err) => this.errorHandler(err)
           })
       })
@@ -41,7 +41,7 @@ export class FormPersonComponent implements OnInit {
   onLoad() {
     this.id = this.route.snapshot.params['id']
     return new Promise<string>((resolve) => {
-      this.id ? resolve(this.id) : this.onNew()
+      this.id ? resolve(this.id) : this.form.reset()
     })
   }
 
@@ -52,7 +52,7 @@ export class FormPersonComponent implements OnInit {
     })
   }
 
-  onEdit(person: person) {
+  pathFormValues(person: person) {
     this.form.patchValue({
       name: person.name,
       cpf: person.cpf,
@@ -60,10 +60,6 @@ export class FormPersonComponent implements OnInit {
       person_category_id: person.person_category_id,
       gender_id: person.gender_id
     })
-  }
-
-  onNew() {
-    this.form.reset()
   }
 
   onSubmit(): void {
@@ -79,6 +75,18 @@ export class FormPersonComponent implements OnInit {
           next: (result) => console.log('pessoa criada', result),
           error: (err) => this.errorHandler(err)
         })
+    }
+  }
+
+  onDelete() {
+    if(this.id) {
+      this.personService.delete(this.id)
+        .subscribe({
+          next: (result) => console.log(result),
+          error: (err) => this.errorHandler(err)
+        })
+    } else {
+    //  TODO: delete current form in edition
     }
   }
 

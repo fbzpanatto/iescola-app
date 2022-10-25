@@ -84,12 +84,12 @@
   ],
   "person": [
     {
-      "id": 1,
-      "name": "André Thiago",
+      "name": "André Thiago da Silva",
       "cpf": "11122232500",
       "rg": "485211228",
-      "person_category_id": 1,
-      "gender_id": 2
+      "person_category_id": "1",
+      "gender_id": 2,
+      "id": 1
     },
     {
       "id": 2,
