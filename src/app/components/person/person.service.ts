@@ -19,4 +19,8 @@ export class PersonService {
   getById(id:string): Observable<person>{
     return this.http.get<person>(`${this.url}/${id}`)
   }
+
+  create(body: person) {
+    return this.http.post<person>(this.url, body)
+  }
 }

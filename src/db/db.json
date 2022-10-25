@@ -1,40 +1,143 @@
 {
   "gender": [
-    { "id": 1, "name": "Feminino"},
-    { "id": 2, "name": "Masculino"},
-    { "id": 3, "name": "Outro" }
+    {
+      "id": 1,
+      "name": "Feminino"
+    },
+    {
+      "id": 2,
+      "name": "Masculino"
+    },
+    {
+      "id": 3,
+      "name": "Outro"
+    }
   ],
   "address": [
-    { "id": 1, "person_id": 1, "cep": 13253555},
-    { "id": 2, "person_id": 2, "cep": 13250210}
+    {
+      "id": 1,
+      "person_id": 1,
+      "cep": 13253555
+    },
+    {
+      "id": 2,
+      "person_id": 2,
+      "cep": 13250210
+    }
   ],
   "person_has_phone": [
-    { "id": 1, "phone_id": 1, "person_id": 1},
-    { "id": 2, "phone_id": 2, "person_id": 1},
-    { "id": 3, "phone_id": 3, "person_id": 2},
-    { "id": 4, "phone_id": 4, "person_id": 2}
+    {
+      "id": 1,
+      "phone_id": 1,
+      "person_id": 1
+    },
+    {
+      "id": 2,
+      "phone_id": 2,
+      "person_id": 1
+    },
+    {
+      "id": 3,
+      "phone_id": 3,
+      "person_id": 2
+    },
+    {
+      "id": 4,
+      "phone_id": 4,
+      "person_id": 2
+    }
   ],
   "phone": [
-    { "id": 1, "number": 11969898978},
-    { "id": 2, "number": 11969898971},
-    { "id": 3, "number": 11969398971},
-    { "id": 4, "number": 11969334971}
+    {
+      "id": 1,
+      "number": 11969898978
+    },
+    {
+      "id": 2,
+      "number": 11969898971
+    },
+    {
+      "id": 3,
+      "number": 11969398971
+    },
+    {
+      "id": 4,
+      "number": 11969334971
+    }
   ],
   "person_category": [
-    { "id": 1, "name": "Professor", "active": true },
-    { "id": 2, "name": "Alunos", "active": true },
-    { "id": 3, "name": "Responsáveis", "active": true }
+    {
+      "id": 1,
+      "name": "Professor",
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Alunos",
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Responsáveis",
+      "active": true
+    }
   ],
   "person": [
-    { "id": 1, "name": "André Thiago", "cpf": "11122232500", "rg": "485211228", "person_category_id": 1, "gender": 2},
-    { "id": 2, "name": "Adriana Silva", "cpf": "12122232500", "rg": "185211228", "person_category_id": 1, "gender": 1},
-    { "id": 3, "name": "Larissa Manuela", "cpf": "34522232500", "rg": "555211228", "person_category_id": 2, "gender": 1},
-    { "id": 4, "name": "Claudio Ribas", "cpf": "32122232500", "rg": "775211228", "person_category_id": 3, "gender": 2}
+    {
+      "id": 1,
+      "name": "André Thiago",
+      "cpf": "11122232500",
+      "rg": "485211228",
+      "person_category_id": 1,
+      "gender_id": 2
+    },
+    {
+      "id": 2,
+      "name": "Adriana Silva",
+      "cpf": "12122232500",
+      "rg": "185211228",
+      "person_category_id": 1,
+      "gender_id": 1
+    },
+    {
+      "id": 3,
+      "name": "Larissa Manuela",
+      "cpf": "34522232500",
+      "rg": "555211228",
+      "person_category_id": 2,
+      "gender_id": 1
+    },
+    {
+      "id": 4,
+      "name": "Claudio Ribas",
+      "cpf": "32122232500",
+      "rg": "775211228",
+      "person_category_id": 3,
+      "gender_id": 2
+    },
+    {
+      "name": "Fabrizio Panato",
+      "cpf": "36933425800",
+      "rg": "482499448",
+      "person_category_id": 1,
+      "gender_id": 2,
+      "id": 5
+    }
   ],
   "student": [
-    { "id": 1, "person_id": 3, "ra": "1111111111", "rm": "3334" }
+    {
+      "id": 1,
+      "person_id": 3,
+      "ra": "1111111111",
+      "rm": "3334"
+    }
   ],
   "responsible": [
-    { "id": 1, "person_id": 4, "student_id": 1, "student_person_id": 3 }
+    {
+      "id": 1,
+      "person_id": 4,
+      "student_id": 1,
+      "student_person_id": 3
+    }
   ]
 }

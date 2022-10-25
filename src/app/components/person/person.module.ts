@@ -9,6 +9,7 @@ import { NewPersonComponent } from './new-person/new-person.component';
 import { DetailPersonComponent } from './detail-person/detail-person.component';
 import { HomePersonComponent } from './home-person/home-person.component';
 import { FormPersonComponent } from './form-person/form-person.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,11 +18,12 @@ import { FormPersonComponent } from './form-person/form-person.component';
     HomePersonComponent,
     FormPersonComponent
   ],
-  imports: [
-    CommonModule,
-    PersonRoutingModule,
-    MaterialModule,
-    ToolbarsModule
-  ]
+    imports: [
+        CommonModule,
+        PersonRoutingModule,
+        MaterialModule,
+        ToolbarsModule,
+        ReactiveFormsModule
+    ]
 })
 export class PersonModule { }
