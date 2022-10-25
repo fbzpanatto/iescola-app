@@ -1,8 +1,9 @@
 <h1 mat-dialog-title>Hi</h1>
 <div mat-dialog-content>
-  <p>What's your favorite animal?</p>
+  <p *ngIf="data.status > 10">{{ data.status }}</p>
+  <p>{{ data.message }}</p>
 </div>
 <div mat-dialog-actions>
-  <button mat-button [mat-dialog-close]="false">No Thanks</button>
+  <button mat-button [mat-dialog-close]="false" *ngIf="!(data.status > 10)">No Thanks</button>
   <button mat-button [mat-dialog-close]="true">Ok</button>
 </div>

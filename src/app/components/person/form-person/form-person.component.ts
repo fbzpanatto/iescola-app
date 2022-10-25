@@ -13,6 +13,7 @@ import { DialogService } from "../../../shared/components/dialog/dialog.service"
 export class FormPersonComponent implements OnInit {
 
   id: string | null = null
+  person: person | undefined
 
   form = new FormGroup({
     "name": new FormControl<string | null>(null, Validators.required),
@@ -35,7 +36,7 @@ export class FormPersonComponent implements OnInit {
         this.personService.getById(id)
           .subscribe({
             next: (person) => this.pathFormValues(person),
-            error: (err) => this.handler(err, this.sendAlert)
+            error: (err) => this.errorHandler(err.statusText, err.status)
           })
       })
   }
@@ -47,24 +48,40 @@ export class FormPersonComponent implements OnInit {
     })
   }
 
-  handler(err?:any, callback?: Function): void{
-    if(callback && err) {
-      const { status, message } = err
-      this.router.navigate(['person'])
-        .then(() => {
-          callback(status, message)
+  onSubmit(): void {
+    if(this.id) {
+      this.personService.update(this.id, this.body())
+        .subscribe({
+          next: (_result) => this.backToList(),
+          error: (err) => this.errorHandler(err.statusText, err.status)
         })
     } else {
-      this.router.navigate(['person'])
-        .then(() => {})
+      this.personService.create(this.body())
+        .subscribe({
+          next: (_result) => this.backToList(),
+          error: (err) => this.errorHandler(err.statusText, err.status)
+        })
     }
   }
 
-  sendAlert(status: number, message: string){
-    alert(`${status}-${message}`)
+  errorHandler(statusText: string, errorStatus: number) {
+    this.dialog.openDialog(statusText, errorStatus)
+      .afterClosed()
+      .subscribe(() => this.backToList())
+  }
+
+  onDelete() {
+    this.dialog.openDialog(`Deseja remover ${this.person?.name}?`, 0)
+      .afterClosed()
+      .subscribe(console.log) //TODO: implementar lógica para deletar ou não dentro do subscribe.
+  }
+
+  backToList(){
+    this.router.navigate(['person'])
   }
 
   pathFormValues(person: person) {
+    this.person = person
     this.form.patchValue({
       name: person.name,
       cpf: person.cpf,
@@ -72,35 +89,6 @@ export class FormPersonComponent implements OnInit {
       person_category_id: person.person_category_id,
       gender_id: person.gender_id
     })
-  }
-
-  onSubmit(): void {
-    if(this.id) {
-      this.personService.update(this.id, this.body())
-        .subscribe({
-          next: (_result) => this.handler(),
-          error: (err) => this.handler(err, this.sendAlert)
-        })
-    } else {
-      this.personService.create(this.body())
-        .subscribe({
-          next: (_result) => this.handler(),
-          error: (err) => this.handler(err, this.sendAlert)
-        })
-    }
-  }
-
-  onDelete() {
-    this.dialog.openDialog()
-      .afterClosed()
-      .subscribe(result => {
-        if(!result) return
-        this.personService.delete(this.id!)
-          .subscribe({
-            next: (_result) => this.handler(),
-            error: (err) => this.handler(err, this.sendAlert)
-          })
-      })
   }
 
   body(): person {
