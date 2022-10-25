@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { PersonService } from "../person.service";
 import { person } from "../person";
-import {FormBuilder, Validators} from "@angular/forms";
+import { FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-form-person',
@@ -12,18 +12,16 @@ import {FormBuilder, Validators} from "@angular/forms";
 export class FormPersonComponent implements OnInit {
 
   id: string | null = null
-  person: person | null = null
 
-  form = this.fb.group({
-    "name": ["", Validators.required],
-    "cpf": [""],
-    "rg": [""],
-    "person_category_id": ["", Validators.required],
-    "gender_id": ["", Validators.required]
+  form = new FormGroup({
+    "name": new FormControl<string | null>(null, Validators.required),
+    "cpf": new FormControl<string | null>(null, Validators.required),
+    "rg": new FormControl<string | null>(null, Validators.required),
+    "person_category_id": new FormControl<number | null>(null, Validators.required),
+    "gender_id": new FormControl<number | null>(null, Validators.required)
   })
 
   constructor(
-    private fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
     private personService: PersonService
@@ -55,25 +53,33 @@ export class FormPersonComponent implements OnInit {
   }
 
   onEdit(person: person) {
-    this.person = person
-    console.log('editando', this.person)
-    //  TODO: popular o formulário com os respectivos dados da pessoa encontrada
+    this.form.patchValue({
+      name: person.name,
+      cpf: person.cpf,
+      rg: person.rg,
+      person_category_id: person.person_category_id,
+      gender_id: person.gender_id
+    })
   }
 
   onNew() {
-    console.log('criando novo')
     this.form.reset()
-    //  TODO: resetar o formulário para uma nova insercação de pessoa
   }
 
-  onSubmit() {
-    console.log('enviando form...')
-    console.log(this.form.value)
-    this.personService.create(this.body())
-      .subscribe({
-        next: (result) => console.log('pessoa criada', result),
-        error: (err) => this.errorHandler(err)
-      })
+  onSubmit(): void {
+    if(this.id) {
+      this.personService.update(this.id, this.body())
+        .subscribe({
+          next: (result) => console.log('atualizado com sucesso', result),
+          error: (err) => this.errorHandler(err)
+        })
+    } else {
+      this.personService.create(this.body())
+        .subscribe({
+          next: (result) => console.log('pessoa criada', result),
+          error: (err) => this.errorHandler(err)
+        })
+    }
   }
 
   body(): person {
