@@ -45,7 +45,7 @@ export class FormPersonComponent implements OnInit {
     })
   }
 
-  handler(err?:any, callback?: Function){
+  handler(err?:any, callback?: Function): void{
     if(callback && err) {
       const { status, message } = err
       this.router.navigate(['person'])
@@ -54,6 +54,7 @@ export class FormPersonComponent implements OnInit {
         })
     } else {
       this.router.navigate(['person'])
+        .then(() => {})
     }
   }
 
@@ -75,13 +76,13 @@ export class FormPersonComponent implements OnInit {
     if(this.id) {
       this.personService.update(this.id, this.body())
         .subscribe({
-          next: (result) => this.handler(),
+          next: (_result) => this.handler(),
           error: (err) => this.handler(err, this.sendAlert)
         })
     } else {
       this.personService.create(this.body())
         .subscribe({
-          next: (result) => this.handler(),
+          next: (_result) => this.handler(),
           error: (err) => this.handler(err, this.sendAlert)
         })
     }
