@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { PersonService } from "../person.service";
 import { person } from "../person";
 import { FormControl, FormGroup, Validators} from "@angular/forms";
+import { DialogService } from "../../../shared/components/dialog/dialog.service";
 
 @Component({
   selector: 'app-form-person',
@@ -22,9 +23,10 @@ export class FormPersonComponent implements OnInit {
   })
 
   constructor(
+    private dialog: DialogService,
     private router: Router,
     private route: ActivatedRoute,
-    private personService: PersonService
+    private personService: PersonService,
   ) {}
 
   ngOnInit(): void {
@@ -89,15 +91,16 @@ export class FormPersonComponent implements OnInit {
   }
 
   onDelete() {
-    if(this.id) {
-      this.personService.delete(this.id)
-        .subscribe({
-          next: (_result) => this.handler(),
-          error: (err) => this.handler(err, this.sendAlert)
-        })
-    } else {
-    //  TODO: delete current form in edition
-    }
+    this.dialog.openDialog()
+      .afterClosed()
+      .subscribe(result => {
+        if(!result) return
+        this.personService.delete(this.id!)
+          .subscribe({
+            next: (_result) => this.handler(),
+            error: (err) => this.handler(err, this.sendAlert)
+          })
+      })
   }
 
   body(): person {

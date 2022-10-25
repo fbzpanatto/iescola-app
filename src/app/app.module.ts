@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MaterialModule } from './shared/modules/material.module';
 
 import { AppComponent } from './app.component';
@@ -13,6 +13,7 @@ import { NavigationComponent } from './shared/components/navigation/navigation.c
 import { HelpComponent } from './components/help/help.component';
 import { TermsComponent } from './components/terms/terms.component';
 import { HttpClientModule } from "@angular/common/http";
+import { DialogComponent } from './shared/components/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,15 +23,17 @@ import { HttpClientModule } from "@angular/common/http";
     HomeComponent,
     HelpComponent,
     TermsComponent,
+    DialogComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    ReactiveFormsModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        FormsModule
+    ],
   exports: [
     MaterialModule,
     ReactiveFormsModule,
