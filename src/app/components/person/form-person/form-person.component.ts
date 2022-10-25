@@ -33,7 +33,7 @@ export class FormPersonComponent implements OnInit {
         this.personService.getById(id)
           .subscribe({
             next: (person) => this.pathFormValues(person),
-            error: (err) => this.errorHandler(err)
+            error: (err) => this.handler(err, this.sendAlert)
           })
       })
   }
@@ -45,11 +45,20 @@ export class FormPersonComponent implements OnInit {
     })
   }
 
-  errorHandler(err: any) {
-    const { status, message } = err
-    this.router.navigate(['person']).then(() => {
-      alert(`${status}-${message}`)
-    })
+  handler(err?:any, callback?: Function){
+    if(callback && err) {
+      const { status, message } = err
+      this.router.navigate(['person'])
+        .then(() => {
+          callback(status, message)
+        })
+    } else {
+      this.router.navigate(['person'])
+    }
+  }
+
+  sendAlert(status: number, message: string){
+    alert(`${status}-${message}`)
   }
 
   pathFormValues(person: person) {
@@ -66,14 +75,14 @@ export class FormPersonComponent implements OnInit {
     if(this.id) {
       this.personService.update(this.id, this.body())
         .subscribe({
-          next: (result) => console.log('atualizado com sucesso', result),
-          error: (err) => this.errorHandler(err)
+          next: (result) => this.handler(),
+          error: (err) => this.handler(err, this.sendAlert)
         })
     } else {
       this.personService.create(this.body())
         .subscribe({
-          next: (result) => console.log('pessoa criada', result),
-          error: (err) => this.errorHandler(err)
+          next: (result) => this.handler(),
+          error: (err) => this.handler(err, this.sendAlert)
         })
     }
   }
@@ -82,8 +91,8 @@ export class FormPersonComponent implements OnInit {
     if(this.id) {
       this.personService.delete(this.id)
         .subscribe({
-          next: (result) => console.log(result),
-          error: (err) => this.errorHandler(err)
+          next: (_result) => this.handler(),
+          error: (err) => this.handler(err, this.sendAlert)
         })
     } else {
     //  TODO: delete current form in edition
