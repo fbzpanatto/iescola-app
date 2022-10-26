@@ -21,8 +21,10 @@ export class FormPersonComponent implements OnInit {
     "rg": new FormControl<string | null>(null),
     "person_category_id": new FormControl<number | null>(null, Validators.required),
     "gender_id": new FormControl<number | null>(null, Validators.required),
-    "phone1": new FormControl<number | null>(null),
-    "phone2": new FormControl<number | null>(null)
+    "phone": new FormGroup({
+      "phone1": new FormControl<number | undefined>(undefined),
+      "phone2": new FormControl<number | undefined>(undefined)
+    })
   })
 
   constructor(
@@ -101,7 +103,11 @@ export class FormPersonComponent implements OnInit {
       cpf: person.cpf,
       rg: person.rg,
       person_category_id: person.person_category_id,
-      gender_id: person.gender_id
+      gender_id: person.gender_id,
+      phone: {
+        phone1: person.phone?.phone1,
+        phone2: person.phone?.phone2
+      }
     })
   }
 
@@ -111,7 +117,11 @@ export class FormPersonComponent implements OnInit {
       cpf: this.form.value.cpf!,
       rg: this.form.value.rg!,
       person_category_id: this.form.value.person_category_id!,
-      gender_id: this.form.value.gender_id!
+      gender_id: this.form.value.gender_id!,
+      phone: {
+        phone1: this.form.value.phone?.phone1!,
+        phone2: this.form.value.phone?.phone2!,
+      }
     }
   }
 }

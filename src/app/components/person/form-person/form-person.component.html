@@ -3,14 +3,25 @@
     <label class="group-title" for="name">Nome completo</label>
     <input id="name" formControlName="name" type="text" placeholder="João da Silva">
   </div>
-  <div class="input-group" fxLayout="column">
-    <label class="group-title" for="person_category_id">Categoria</label>
-    <select id="person_category_id" [value]=0 formControlName="person_category_id">
-      <option [value]=0>Selecione uma categoria</option>
-      <option [value]=1>Professores</option>
-      <option [value]=2>Alunos</option>
-      <option [value]=3>Responsáveis</option>
-    </select>
+  <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
+    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group">
+      <label class="group-title" for="person_category_id">Categoria</label>
+      <select id="person_category_id" [value]=0 formControlName="person_category_id">
+        <option [value]=0>Selecione uma categoria</option>
+        <option [value]=1>Professores</option>
+        <option [value]=2>Alunos</option>
+        <option [value]=3>Responsáveis</option>
+      </select>
+    </div>
+    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group">
+      <label class="group-title" for="gender_id">Gênero</label>
+      <select id="gender_id" [value]="0" formControlName="gender_id">
+        <option value="0">Selecione um gênero</option>
+        <option value="1">Feminimo</option>
+        <option value="2">Masculino</option>
+        <option value="3">Outro</option>
+      </select>
+    </div>
   </div>
   <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
     <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
@@ -22,27 +33,16 @@
       <input id="cpf" formControlName="cpf" type="text" placeholder="3333333333">
     </div>
   </div>
-  <div class="input-group" fxLayout="column">
-    <label class="group-title" for="gender_id">Gênero</label>
-    <select id="gender_id" [value]="0" formControlName="gender_id">
-      <option value="0">Selecione um gênero</option>
-      <option value="1">Feminimo</option>
-      <option value="2">Masculino</option>
-      <option value="3">Outro</option>
-    </select>
-  </div>
-  <ng-container *ngIf="id">
-    <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
-      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-        <label class="group-title" for="phone1">Telefone 1</label>
-        <input id="phone1" formControlName="phone1" type="text" placeholder="2022222214">
-      </div>
-      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-        <label for="phone2" class="group-title">Telefone 2</label>
-        <input id="phone2" formControlName="phone2" type="text" placeholder="3333333333">
-      </div>
+  <div formGroupName="phone" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
+    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
+      <label class="group-title" for="phone1">Telefone 1</label>
+      <input id="phone1" formControlName="phone1" type="text" placeholder="2022222214">
     </div>
-  </ng-container>
+    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
+      <label for="phone2" class="group-title">Telefone 2</label>
+      <input id="phone2" formControlName="phone2" type="text" placeholder="3333333333">
+    </div>
+  </div>
   <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
     <button type="button" color="accent" mat-button (click)="askForDelete()">
       <mat-icon fontIcon="delete_forever"></mat-icon>

@@ -114,6 +114,18 @@
       "rg": "775211228",
       "person_category_id": 3,
       "gender_id": 2
+    },
+    {
+      "name": "Fabrizio Panato",
+      "cpf": "36933425800",
+      "rg": "482499448",
+      "person_category_id": "1",
+      "gender_id": "2",
+      "phone": {
+        "phone1": "11968568913",
+        "phone2": "11989564578"
+      },
+      "id": 5
     }
   ],
   "student": [

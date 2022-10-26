@@ -5,6 +5,8 @@ export type person = {
   "rg": string,
   "person_category_id": number,
   "gender_id": number,
-  "phone1"?: number,
-  "phone2"?: number
+  "phone"?: {
+    "phone1"?: number,
+    "phone2"?: number
+  }
 }
