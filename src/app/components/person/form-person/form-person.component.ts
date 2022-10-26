@@ -69,9 +69,17 @@ export class FormPersonComponent implements OnInit {
   }
 
   onDelete() {
+    this.personService.delete(this.id!)
+      .subscribe({
+        next: (_result) => this.backToList(),
+        error: (err) => this.errorHandler(err.statusText, err.statusText)
+      })
+  }
+
+  askForDelete() {
     this.dialog.openDialog(`Deseja excluir ${this.person?.name}?`, 1)
       .afterClosed()
-      .subscribe(console.log) //TODO: implementar lógica para deletar ou não dentro do subscribe.
+      .subscribe(result => result ? this.onDelete() : null)
   }
 
   backToList(){

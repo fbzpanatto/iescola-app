@@ -116,20 +116,12 @@
       "gender_id": 2
     },
     {
-      "name": "JOSEFA",
-      "cpf": "asdasd",
+      "name": "dasdasddas da as123123123123",
+      "cpf": "dasdasd",
       "rg": "dasdasd",
       "person_category_id": "1",
       "gender_id": "1",
       "id": 5
-    },
-    {
-      "name": "444",
-      "cpf": "asdasdas",
-      "rg": "dasdasdas",
-      "person_category_id": "3",
-      "gender_id": "3",
-      "id": 6
     }
   ],
   "student": [

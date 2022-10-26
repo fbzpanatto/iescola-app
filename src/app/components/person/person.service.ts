@@ -28,7 +28,7 @@ export class PersonService {
     return this.http.put(`${this.url}/${id}`, body)
   }
 
-  delete( id: number | string) {
+  delete( id: string) {
     return this.http.delete(`${this.url}/${id}`)
   }
 }

@@ -18,9 +18,9 @@ export class DialogComponent implements OnInit{
       "status": 1,
       "message": this.data.message
     },
-    "default": {
-      "status": this.data.status,
-      "message": this.data.message
+
+    "defaultHttpErros": {
+      "message": "Não foi possível realizar esta ação no momento"
     }
   }
 
@@ -28,7 +28,5 @@ export class DialogComponent implements OnInit{
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
   ) {}
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 }
