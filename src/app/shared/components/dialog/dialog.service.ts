@@ -12,7 +12,7 @@ export class DialogService {
   openDialog(message: string, status: number): MatDialogRef<DialogComponent> {
     return this.dialog.open(DialogComponent, {
       width: '350px',
-      disableClose: true,
+      backdropClass: 'bg-drop-class',
       data: {message, status}
     });
   }

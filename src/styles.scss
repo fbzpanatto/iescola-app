@@ -22,6 +22,11 @@ body, input {
   font-family: 'Roboto', 'Helvetica Neue', monospace, sans-serif;
 }
 
+.bg-drop-class {
+  background-color: rgba(68, 68, 68, 0.16);
+  backdrop-filter: blur(4px);
+}
+
 select option {
   color: #3a3a3a;
   font-size: 16px;
