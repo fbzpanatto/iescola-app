@@ -1,48 +1,52 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutGap="24px">
-  <div class="input-group first" fxLayout="row wrap" fxLayoutGap="16px">
-    <label class="group-title" for="name">Nome completo</label>
-    <input id="name" formControlName="name" type="text" placeholder="João da Silva">
+  <mat-form-field appearance="outline">
+    <mat-label>Nome</mat-label>
+    <input formControlName="name" matInput placeholder="nome completo">
+  </mat-form-field>
+
+  <div class="container" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="24px">
+    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
+      <mat-label>Categoria</mat-label>
+      <mat-select formControlName="person_category_id">
+        <mat-option [value]="0">Selecione uma categoria</mat-option>
+        <mat-option [value]="1">Professores</mat-option>
+        <mat-option [value]="2">Alunos</mat-option>
+        <mat-option [value]="3">Responsáveis</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
+      <mat-label>Gênero</mat-label>
+      <mat-select formControlName="gender_id">
+        <mat-option [value]="0">Selecione um gênero</mat-option>
+        <mat-option [value]="1">Feminino</mat-option>
+        <mat-option [value]="2">Masculino</mat-option>
+        <mat-option [value]="3">Outro</mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
-  <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
-    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group">
-      <label class="group-title" for="person_category_id">Categoria</label>
-      <select id="person_category_id" [value]=0 formControlName="person_category_id">
-        <option [value]=0>Selecione uma categoria</option>
-        <option [value]=1>Professores</option>
-        <option [value]=2>Alunos</option>
-        <option [value]=3>Responsáveis</option>
-      </select>
-    </div>
-    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group">
-      <label class="group-title" for="gender_id">Gênero</label>
-      <select id="gender_id" [value]="0" formControlName="gender_id">
-        <option value="0">Selecione um gênero</option>
-        <option value="1">Feminimo</option>
-        <option value="2">Masculino</option>
-        <option value="3">Outro</option>
-      </select>
-    </div>
+
+  <div class="container" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="24px">
+    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
+      <mat-label>Rg</mat-label>
+      <input formControlName="rg" matInput placeholder="registro geral">
+    </mat-form-field>
+    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
+      <mat-label>Cpf</mat-label>
+      <input formControlName="cpf" matInput placeholder="cadastro de pessoa física">
+    </mat-form-field>
   </div>
-  <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
-    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-      <label class="group-title" for="rg">Rg</label>
-      <input id="rg" formControlName="rg" type="text" placeholder="2022222214">
-    </div>
-    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-      <label for="cpf" class="group-title">Cpf</label>
-      <input id="cpf" formControlName="cpf" type="text" placeholder="3333333333">
-    </div>
+
+  <div class="container" formGroupName="phone" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="24px">
+    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
+      <mat-label>Telefone1</mat-label>
+      <input formControlName="phone1" matInput placeholder="primeiro número">
+    </mat-form-field>
+    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
+      <mat-label>Telefone2</mat-label>
+      <input formControlName="phone2" matInput placeholder="segundo número">
+    </mat-form-field>
   </div>
-  <div formGroupName="phone" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
-    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-      <label class="group-title" for="phone1">Telefone 1</label>
-      <input id="phone1" formControlName="phone1" type="text" placeholder="2022222214">
-    </div>
-    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-      <label for="phone2" class="group-title">Telefone 2</label>
-      <input id="phone2" formControlName="phone2" type="text" placeholder="3333333333">
-    </div>
-  </div>
+
   <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
     <button type="button" color="accent" mat-button (click)="askForDelete()">
       <mat-icon fontIcon="delete_forever"></mat-icon>

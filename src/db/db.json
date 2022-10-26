@@ -87,8 +87,9 @@
       "name": "André Thiago da Silva",
       "cpf": "11122232500",
       "rg": "485211228",
-      "person_category_id": "1",
+      "person_category_id": 1,
       "gender_id": 2,
+      "phone": {},
       "id": 1
     },
     {
@@ -119,8 +120,8 @@
       "name": "Fabrizio Panato",
       "cpf": "36933425800",
       "rg": "482499448",
-      "person_category_id": "1",
-      "gender_id": "2",
+      "person_category_id": 1,
+      "gender_id": 2,
       "phone": {
         "phone1": "11968568913",
         "phone2": "11989564578"
