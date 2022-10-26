@@ -1,4 +1,4 @@
-import {Component, Inject } from '@angular/core';
+import {Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from "@angular/material/dialog";
 
 interface DialogData {
@@ -11,13 +11,24 @@ interface DialogData {
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.scss']
 })
-export class DialogComponent {
+export class DialogComponent implements OnInit{
 
   readonly type = {
-    "delete": 1
+    "delete":  {
+      "status": 1,
+      "message": this.data.message
+    },
+    "default": {
+      "status": this.data.status,
+      "message": this.data.message
+    }
   }
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
   ) {}
+
+  ngOnInit(): void {
+
+  }
 }

@@ -13,6 +13,8 @@ export class DialogService {
     return this.dialog.open(DialogComponent, {
       width: '350px',
       autoFocus: false,
+      // closeOnNavigation: false,
+      disableClose: true,
       backdropClass: 'bg-drop-class',
       data: {message, status}
     });

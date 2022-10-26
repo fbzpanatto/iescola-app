@@ -1,22 +1,22 @@
 <h1 mat-dialog-title>escola.app</h1>
 <div [ngSwitch]="data.status">
   <div mat-dialog-content>
-    <div *ngSwitchCase="type.delete">
-      <p>{{ data.message }}</p>
+    <div *ngSwitchCase="type.delete.status">
+      <p>{{ type.delete.message }}</p>
     </div>
     <div *ngSwitchDefault>
-      <p>{{ data.status }}</p>
-      <p>{{ data.message }}</p>
+      <p>{{ type.default.status }}</p>
+      <p>{{ type.default.message }}</p>
     </div>
   </div>
   <mat-divider></mat-divider>
   <div mat-dialog-actions>
-    <div *ngSwitchCase="type.delete">
+    <div *ngSwitchCase="type.delete.status">
       <button type="button" mat-button color="accent" [mat-dialog-close]="true">
         <mat-icon fontIcon="delete_forever"></mat-icon>
         <span>Excluir</span>
       </button>
-      <button type="submit" mat-flat-button [mat-dialog-close]="false">
+      <button color="primary" style="margin-left: 24px" type="submit" mat-flat-button [mat-dialog-close]="false">
         <mat-icon fontIcon="undo"></mat-icon>
         <span>Não</span>
       </button>

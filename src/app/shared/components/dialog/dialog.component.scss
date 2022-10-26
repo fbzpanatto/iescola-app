@@ -6,11 +6,17 @@ h1 {
   padding-left: 32px;
 }
 
-div.mat-dialog-content {
+div[mat-dialog-content] {
   padding: 32px;
+  padding-bottom: 64px;
   p {
     font-size: 16px;
     color: #444;
 
   }
+}
+
+div[mat-dialog-actions] {
+  display: flex;
+  justify-content: flex-end;
 }
