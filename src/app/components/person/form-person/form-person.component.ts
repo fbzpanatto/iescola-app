@@ -17,10 +17,12 @@ export class FormPersonComponent implements OnInit {
 
   form = new FormGroup({
     "name": new FormControl<string | null>(null, Validators.required),
-    "cpf": new FormControl<string | null>(null, Validators.required),
-    "rg": new FormControl<string | null>(null, Validators.required),
+    "cpf": new FormControl<string | null>(null),
+    "rg": new FormControl<string | null>(null),
     "person_category_id": new FormControl<number | null>(null, Validators.required),
-    "gender_id": new FormControl<number | null>(null, Validators.required)
+    "gender_id": new FormControl<number | null>(null, Validators.required),
+    "phone1": new FormControl<number | null>(null),
+    "phone2": new FormControl<number | null>(null)
   })
 
   constructor(

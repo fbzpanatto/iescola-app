@@ -19,7 +19,7 @@
     </div>
     <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
       <label for="cpf" class="group-title">Cpf</label>
-      <input id="cpf" formControlName="cpf" type="text" placeholder="33333333333">
+      <input id="cpf" formControlName="cpf" type="text" placeholder="3333333333">
     </div>
   </div>
   <div class="input-group" fxLayout="column">
@@ -31,6 +31,18 @@
       <option value="3">Outro</option>
     </select>
   </div>
+  <ng-container *ngIf="id">
+    <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
+      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
+        <label class="group-title" for="phone1">Telefone 1</label>
+        <input id="phone1" formControlName="phone1" type="text" placeholder="2022222214">
+      </div>
+      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
+        <label for="phone2" class="group-title">Telefone 2</label>
+        <input id="phone2" formControlName="phone2" type="text" placeholder="3333333333">
+      </div>
+    </div>
+  </ng-container>
   <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
     <button type="button" color="accent" mat-button (click)="askForDelete()">
       <mat-icon fontIcon="delete_forever"></mat-icon>
