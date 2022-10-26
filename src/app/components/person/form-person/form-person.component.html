@@ -1,4 +1,5 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutGap="24px">
+
   <mat-form-field appearance="outline">
     <mat-label>Nome</mat-label>
     <input formControlName="name" matInput placeholder="nome completo">
@@ -9,7 +10,6 @@
     <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
       <mat-label>Categoria</mat-label>
       <mat-select formControlName="person_category_id">
-        <mat-option [value]="0">Selecione uma categoria</mat-option>
         <mat-option [value]="1">Professores</mat-option>
         <mat-option [value]="2">Alunos</mat-option>
         <mat-option [value]="3">Responsáveis</mat-option>
@@ -18,7 +18,6 @@
     <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
       <mat-label>Gênero</mat-label>
       <mat-select formControlName="gender_id">
-        <mat-option [value]="0">Selecione um gênero</mat-option>
         <mat-option [value]="1">Feminino</mat-option>
         <mat-option [value]="2">Masculino</mat-option>
         <mat-option [value]="3">Outro</mat-option>
@@ -62,4 +61,5 @@
       <span>Salvar</span>
     </button>
   </div>
+
 </form>
