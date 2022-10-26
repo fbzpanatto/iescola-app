@@ -1,10 +1,33 @@
 <h1 mat-dialog-title>escola.app</h1>
-<div mat-dialog-content>
-  <p *ngIf="data.status > 10">{{ data.status }}</p>
-  <p>{{ data.message }}</p>
-</div>
-<mat-divider></mat-divider>
-<div mat-dialog-actions>
-  <button mat-button [mat-dialog-close]="false" *ngIf="!(data.status > 10)">No Thanks</button>
-  <button mat-button [mat-dialog-close]="true">Ok</button>
+<div [ngSwitch]="data.status">
+  <div mat-dialog-content>
+    <div>
+      <div *ngSwitchCase="1">
+        <p>{{ data.message }}</p>
+      </div>
+      <div *ngSwitchDefault>
+        <p>{{ data.status }}</p>
+        <p>{{ data.message }}</p>
+      </div>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <div mat-dialog-actions>
+    <div *ngSwitchCase="1">
+      <button type="button" mat-button color="accent" [mat-dialog-close]="true">
+        <mat-icon fontIcon="delete_forever"></mat-icon>
+        <span>Excluir</span>
+      </button>
+      <button type="submit" mat-flat-button [mat-dialog-close]="false">
+        <mat-icon fontIcon="undo"></mat-icon>
+        <span>Não</span>
+      </button>
+    </div>
+    <div *ngSwitchDefault>
+      <button type="submit" mat-flat-button color="primary" [mat-dialog-close]="true">
+        <mat-icon fontIcon="check"></mat-icon>
+        <span>Ok</span>
+      </button>
+    </div>
+  </div>
 </div>

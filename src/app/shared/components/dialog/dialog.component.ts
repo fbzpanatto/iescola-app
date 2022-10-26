@@ -6,6 +6,8 @@ interface DialogData {
   message: string;
 }
 
+
+
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',

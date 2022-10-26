@@ -69,7 +69,7 @@ export class FormPersonComponent implements OnInit {
   }
 
   onDelete() {
-    this.dialog.openDialog(`Deseja remover ${this.person?.name}?`, 0)
+    this.dialog.openDialog(`Deseja excluir ${this.person?.name}?`, 1)
       .afterClosed()
       .subscribe(console.log) //TODO: implementar lógica para deletar ou não dentro do subscribe.
   }
