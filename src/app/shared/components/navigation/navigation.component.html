@@ -34,12 +34,14 @@
   <mat-sidenav-container>
     <mat-sidenav mode="side" [(opened)]="opened" fxLayout="column">
       <mat-list>
+        <mat-divider></mat-divider>
         <div mat-subheader>Principal</div>
         <mat-divider></mat-divider>
         <div matRipple routerLink="/home" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="home"></mat-icon>
           <mat-list-item>Home</mat-list-item>
         </div>
+        <mat-divider></mat-divider>
         <div mat-subheader>Administrativo</div>
         <mat-divider></mat-divider>
         <div matRipple routerLink="/employee" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
@@ -56,11 +58,10 @@
         </div>
         <div matRipple routerLink="/classtype" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="category"></mat-icon>
-          <mat-list-item>Categoria Educacional</mat-list-item>
+          <mat-list-item>Tipo Sala</mat-list-item>
         </div>
-
-        <div mat-subheader>Corpo Docente</div>
         <mat-divider></mat-divider>
+        <div mat-subheader>Corpo Docente</div>
         <mat-divider></mat-divider>
         <div matRipple routerLink="/teacher" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="school"></mat-icon>
@@ -70,6 +71,7 @@
           <mat-icon fontIcon="contact_page"></mat-icon>
           <mat-list-item><span>Disciplinas</span></mat-list-item>
         </div>
+        <mat-divider></mat-divider>
         <div mat-subheader>Pessoas</div>
         <mat-divider></mat-divider>
         <div matRipple routerLink="/person" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
@@ -84,6 +86,7 @@
           <mat-icon fontIcon="family_restroom"></mat-icon>
           <mat-list-item>Responsáveis</mat-list-item>
         </div>
+        <mat-divider></mat-divider>
         <div mat-subheader>Turmas & Métricas</div>
         <mat-divider></mat-divider>
         <div matRipple routerLink="/class" routerLinkActive="active" class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
@@ -100,7 +103,7 @@
         </div>
         <div matRipple class="list-item-container" fxLayout="row" fxLayoutAlign="start center">
           <mat-icon fontIcon="filter_5"></mat-icon>
-          <mat-list-item>Nota final (Período)</mat-list-item>
+          <mat-list-item>Nota final</mat-list-item>
         </div>
       </mat-list>
     </mat-sidenav>
