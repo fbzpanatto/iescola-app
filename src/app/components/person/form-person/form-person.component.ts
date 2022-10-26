@@ -49,25 +49,23 @@ export class FormPersonComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if(this.id) {
-      this.personService.update(this.id, this.body())
-        .subscribe({
-          next: (_result) => this.backToList(),
-          error: (err) => this.errorHandler(err.statusText, err.status)
-        })
-    } else {
-      this.personService.create(this.body())
-        .subscribe({
-          next: (_result) => this.backToList(),
-          error: (err) => this.errorHandler(err.statusText, err.status)
-        })
-    }
+    this.id ? this.onEdit() : this.onNew()
   }
 
-  errorHandler(statusText: string, errorStatus: number) {
-    this.dialog.openDialog(statusText, errorStatus)
-      .afterClosed()
-      .subscribe(() => this.backToList())
+  onEdit(): void {
+    this.personService.update(this.id!, this.body())
+      .subscribe({
+        next: (_result) => this.backToList(),
+        error: (err) => this.errorHandler(err.statusText, err.status)
+      })
+  }
+
+  onNew(): void {
+    this.personService.create(this.body())
+      .subscribe({
+        next: (_result) => this.backToList(),
+        error: (err) => this.errorHandler(err.statusText, err.status)
+      })
   }
 
   onDelete() {
@@ -78,6 +76,12 @@ export class FormPersonComponent implements OnInit {
 
   backToList(){
     this.router.navigate(['person'])
+  }
+
+  errorHandler(statusText: string, errorStatus: number) {
+    this.dialog.openDialog(statusText, errorStatus)
+      .afterClosed()
+      .subscribe(() => this.backToList())
   }
 
   pathFormValues(person: person) {

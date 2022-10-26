@@ -11,7 +11,7 @@ export class DialogService {
 
   openDialog(message: string, status: number): MatDialogRef<DialogComponent> {
     return this.dialog.open(DialogComponent, {
-      width: '250px',
+      width: '350px',
       disableClose: true,
       data: {message, status}
     });

@@ -24,7 +24,7 @@ export class PersonService {
     return this.http.post<person>(this.url, body)
   }
 
-  update( id: number | string, body: person ) {
+  update( id: string, body: person ) {
     return this.http.put(`${this.url}/${id}`, body)
   }
 

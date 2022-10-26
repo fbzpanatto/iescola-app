@@ -100,12 +100,12 @@
       "gender_id": 1
     },
     {
-      "id": 3,
-      "name": "Larissa Manuela",
+      "name": "Larissa Manuela Ribas",
       "cpf": "34522232500",
       "rg": "555211228",
       "person_category_id": 2,
-      "gender_id": 1
+      "gender_id": 1,
+      "id": 3
     },
     {
       "id": 4,
@@ -116,12 +116,20 @@
       "gender_id": 2
     },
     {
-      "name": "dasdasddas da as123123123123",
+      "name": "dasdasddas",
       "cpf": "asdasd",
       "rg": "dasdasd",
       "person_category_id": "1",
       "gender_id": "1",
       "id": 5
+    },
+    {
+      "name": "adsasd",
+      "cpf": "asdasdas",
+      "rg": "dasdasdas",
+      "person_category_id": "3",
+      "gender_id": "3",
+      "id": 6
     }
   ],
   "student": [
