@@ -4,16 +4,16 @@
   <span class="quantity">{{ firstPhrase }}</span>
   <div fxFlex></div>
   <div fxLayout="row" fxLayoutGap="16px">
-    <div *ngIf="changeViewOptions">
-      <button matTooltip="mudar exibição" *ngIf="control" (click)="changeView()" mat-button>
-        <mat-icon fontIcon="grid_view"></mat-icon>
-        <span>Grid</span>
-      </button>
-      <button matTooltip="mudar exibição" *ngIf="!control" (click)="changeView()" mat-button>
-        <mat-icon fontIcon="list"></mat-icon>
-        <span>Lista</span>
-      </button>
-    </div>
+<!--    <div *ngIf="changeViewOptions">-->
+<!--      <button matTooltip="mudar exibição" *ngIf="control" (click)="changeView()" mat-button>-->
+<!--        <mat-icon fontIcon="grid_view"></mat-icon>-->
+<!--        <span>Grid</span>-->
+<!--      </button>-->
+<!--      <button matTooltip="mudar exibição" *ngIf="!control" (click)="changeView()" mat-button>-->
+<!--        <mat-icon fontIcon="list"></mat-icon>-->
+<!--        <span>Lista</span>-->
+<!--      </button>-->
+<!--    </div>-->
     <button *ngIf="filter" mat-button>
       <mat-icon fontIcon="filter_list"></mat-icon>
       <span>Filtrar</span>
