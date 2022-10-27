@@ -51,15 +51,22 @@ mat-toolbar {
   }
 }
 
+
+
 mat-sidenav-container {
+
   mat-sidenav {
     border-radius: 4px;
     width: 220px;
 
+    mat-list-item {
+      //height: 48px!important;
+    }
+
     mat-list {
 
       &.mat-list-base {
-        padding-right: 8px;
+        padding-right: 16px;
       }
 
       div.mat-subheader {
@@ -73,6 +80,11 @@ mat-sidenav-container {
         cursor: pointer;
         color: #444;
         padding-left: 8px;
+
+        mat-icon {
+          font-size: 22px;
+          z-index: 999;
+        }
 
         &:hover, &.active {
           border-radius: 4px;
