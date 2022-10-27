@@ -18,9 +18,12 @@ body {
   padding: 16px;
 }
 
-.bg-drop-class {
-  background-color: rgba(68, 68, 68, 0.16);
-  backdrop-filter: blur(4px);
+h1 {
+  color: #444;
+}
+
+h1, h2, h3, p {
+  margin-bottom: 0!important;
 }
 
 form {
@@ -29,16 +32,14 @@ form {
   top: 48px;
 }
 
-mat-form-field.mat-form-field {
+.bg-drop-class {
+  background-color: rgba(68, 68, 68, 0.16);
+  backdrop-filter: blur(4px);
+}
 
-  div.container {
-    margin-bottom: 0 !important;
-  }
-
-  div.mat-form-field-wrapper {
-    width: 100%;
-    padding-bottom: 0 !important;
-  }
+.mat-form-field-wrapper {
+  width: 100%;
+  padding-bottom: 0 !important;
 }
 
 .mat-button-wrapper {
@@ -46,14 +47,6 @@ mat-form-field.mat-form-field {
   align-items: center;
   gap: 8px;
   font-weight: lighter;
-}
-
-h1 {
-  color: #444;
-}
-
-h1, h2, h3, p {
-  margin-bottom: 0!important;
 }
 
 div.fill {
@@ -132,84 +125,3 @@ table {
     }
   }
 }
-
-//div.new-view, div.edit-view {
-//  form {
-//    padding: 0 10vw;
-//    position: relative;
-//    top: 48px;
-//
-//    &.half-size {
-//      padding: 0 20vw;
-//    }
-//
-//    div.input-group {
-//      border-radius: 4px;
-//      border: 1px solid #cecece;
-//      position: relative;
-//      padding: 24px 16px 8px 16px;
-//
-//      label.group-title{
-//        position: absolute;
-//        top: -12px;
-//        left: 16px;
-//        padding: 4px 8px;
-//        font-size: 12px;
-//        line-height: 16px;
-//        font-weight: 500;
-//        letter-spacing: 1.2px;
-//        font-style: italic;
-//        border-radius: 4px;
-//        border: 1px solid #cecece;
-//        color: #444;
-//        background-color: #f2f2f2;
-//      }
-//
-//      input[type="text"], input.mat-chip-input {
-//        border-bottom: 1px solid #cecece;
-//      }
-//
-//      input[type="radio"], input[type="checkbox"], .pointer {
-//        cursor: pointer;
-//      }
-//
-//      input[type="checkbox"] {
-//        width: 16px;
-//        height: 16px;
-//      }
-//
-//      input, select {
-//        border: none;
-//        font-size: 16px;
-//        color: #3a3a3a;
-//        width: 100%;
-//        background-color: #ffffff;
-//      }
-//    }
-//
-//    mat-chip-list {
-//      div.mat-chip-list-wrapper {
-//        display: flex;
-//        flex-direction: column;
-//        input.mat-chip-input {
-//          padding: 8px 0 0 0;
-//          flex: 1;
-//          width: 98%;
-//        }
-//        div.chips {
-//          display: flex;
-//          width: 100%;
-//          margin-top: 8px;
-//          mat-chip {
-//            margin-left: 4px;
-//            margin-bottom: 8px;
-//            background-color: #d7d7d7;
-//            letter-spacing: 1.5px;
-//            font-style: italic;
-//            font-weight: lighter;
-//          }
-//        }
-//      }
-//    }
-//  }
-//}
