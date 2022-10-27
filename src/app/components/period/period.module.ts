@@ -15,7 +15,7 @@ import { FormPeriodComponent } from './form-period/form-period.component';
     NewPeriodComponent,
     HomePeriodComponent,
     DetailPeriodComponent,
-    FormPeriodComponent
+    FormPeriodComponent,
   ],
   imports: [
     CommonModule,

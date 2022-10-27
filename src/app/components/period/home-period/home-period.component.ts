@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Title} from "@angular/platform-browser";
+import { Title } from "@angular/platform-browser";
 import { HomeToolbarService } from "../../../shared/components/toolbars/service/home-toolbar.service";
+import { period } from "../../../shared/utils/types";
+import { PeriodService } from "../period.service";
 
 @Component({
   selector: 'app-home-period',
@@ -11,12 +13,24 @@ export class HomePeriodComponent implements OnInit {
 
   title: string | undefined
   listView: boolean | undefined = true
+  periods: period[] = []
 
-  constructor(private titleService: Title) { }
+  constructor(private titleService: Title, private periodService: PeriodService) { }
 
   ngOnInit(): void {
-    this.title = this.titleService.getTitle().split('-')[1]
-    HomeToolbarService.subject.subscribe(v => this.listView = v)
+    this.onLoad()
+      .then(() => {
+        this.periodService.getAll()
+          .subscribe(period => this.periods = period)
+      })
+  }
+
+  onLoad() {
+    return new Promise<void>((resolve) => {
+      this.title = this.titleService.getTitle().split('-')[1]
+      HomeToolbarService.subject.subscribe(v => this.listView = v)
+      resolve()
+    })
   }
 
 }

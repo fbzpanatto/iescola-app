@@ -36,7 +36,7 @@ export type employee = {
 
 export type period = {
   "id": number,
-  "year": number,
+  "name": number,
   "start": string,
   "end": string
 }

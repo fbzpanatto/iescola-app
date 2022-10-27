@@ -52,118 +52,18 @@
       <thead>
         <tr>
           <th>id</th>
-          <th>coluna1</th>
-          <th>coluna2</th>
-          <th>coluna3</th>
-          <th>coluna4</th>
+          <th>Ano</th>
+          <th>Início</th>
+          <th>Fim</th>
         </tr>
       </thead>
       <tbody>
-        <tr routerLink="1">
-          <td>1</td>
-          <td>clicar aqui</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-        </tr>
-        <tr routerLink="2">
-          <td>1</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-        </tr>
-        <tr routerLink="3">
-          <td>1</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-          <td>ipsum</td>
-        </tr>
+      <tr *ngFor="let school_year of school_years" routerLink="{{ school_year.id }}">
+        <td>{{ school_year.id }}</td>
+        <td>{{ school_year.year }}</td>
+        <td>{{ school_year.start }}</td>
+        <td>{{ school_year.end }}</td>
+      </tr>
       </tbody>
     </table>
   </ng-template>
