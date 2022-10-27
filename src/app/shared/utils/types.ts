@@ -1,3 +1,8 @@
+type phone = {
+  "phone1"?: number,
+  "phone2"?: number
+}
+
 export type gender = {
   id: number,
   name: string,
@@ -8,11 +13,6 @@ export type category = {
   id: number,
   name: string,
   active: boolean
-}
-
-type phone = {
-  "phone1"?: number,
-  "phone2"?: number
 }
 
 export type person = {
@@ -32,5 +32,19 @@ export type employee = {
   "contract_type": number,
   "start": string,
   "spot": string
+}
+
+export type period = {
+  "id": number,
+  "year": number,
+  "start": string,
+  "end": string
+}
+
+export type school_year = {
+  "id": number,
+  "year": number,
+  "start": string,
+  "end": string
 }
 

@@ -32,5 +32,4 @@ export class HomeEmployeeComponent implements OnInit {
       resolve()
     })
   }
-
 }
