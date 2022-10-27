@@ -13,58 +13,6 @@
       "name": "Outro"
     }
   ],
-  "address": [
-    {
-      "id": 1,
-      "person_id": 1,
-      "cep": 13253555
-    },
-    {
-      "id": 2,
-      "person_id": 2,
-      "cep": 13250210
-    }
-  ],
-  "person_has_phone": [
-    {
-      "id": 1,
-      "phone_id": 1,
-      "person_id": 1
-    },
-    {
-      "id": 2,
-      "phone_id": 2,
-      "person_id": 1
-    },
-    {
-      "id": 3,
-      "phone_id": 3,
-      "person_id": 2
-    },
-    {
-      "id": 4,
-      "phone_id": 4,
-      "person_id": 2
-    }
-  ],
-  "phone": [
-    {
-      "id": 1,
-      "number": 11969898978
-    },
-    {
-      "id": 2,
-      "number": 11969898971
-    },
-    {
-      "id": 3,
-      "number": 11969398971
-    },
-    {
-      "id": 4,
-      "number": 11969334971
-    }
-  ],
   "person_category": [
     {
       "id": 1,
@@ -141,8 +89,7 @@
     {
       "id": 1,
       "person_id": 4,
-      "student_id": 1,
-      "student_person_id": 3
+      "student_id": 1
     }
   ]
 }

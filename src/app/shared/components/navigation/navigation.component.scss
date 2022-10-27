@@ -51,46 +51,50 @@ mat-toolbar {
   }
 }
 
-mat-sidenav-container mat-sidenav {
-  border-radius: 4px;
-  width: 220px;
+mat-sidenav-container {
+  mat-sidenav {
+    border-radius: 4px;
+    width: 220px;
 
-  mat-list {
+    mat-list {
 
-    &.mat-list-base {
-      padding-right: 16px;
-    }
-
-    div.mat-subheader {
-      height: 36px;
-      padding: 8px 8px 8px 0;
-    }
-
-    div.list-item-container {
-      cursor: pointer;
-      color: #444;
-      padding: 0 16px;
-
-      &:hover, &.active {
-        border-radius: 4px;
+      &.mat-list-base {
+        padding-right: 8px;
       }
 
-      &:hover {
-        background-color: #e3e3e3;
+      div.mat-subheader {
+        height: 32px;
+        font-size: 12px;
+        color: #b2b2b2;
+        padding: 8px 8px 8px 0;
       }
-      &.active {
-        mat-list-item {
+
+      div.list-item-container {
+        cursor: pointer;
+        color: #444;
+        padding-left: 8px;
+
+        &:hover, &.active {
+          border-radius: 4px;
+        }
+
+        &:hover {
+          background-color: #e3e3e3;
+        }
+        &.active {
+          mat-list-item {
+            color: #fff;
+          }
+          background-color: #444;
           color: #fff;
         }
-        background-color: #444;
-        color: #fff;
       }
     }
   }
-}
 
-mat-sidenav-container mat-sidenav-content {
-  height: calc(100vh - 128px);
-  background-color: #fff;
-  padding: 0 16px 16px 16px;
+  mat-sidenav-content {
+    height: calc(100vh - 128px);
+    background-color: #fff;
+    padding: 0 16px 16px 16px;
+  }
 }

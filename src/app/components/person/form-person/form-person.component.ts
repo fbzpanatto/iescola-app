@@ -2,8 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { PersonService } from "../person.service";
 import { person } from "../person";
-import { FormControl, FormGroup, Validators} from "@angular/forms";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { DialogService } from "../../../shared/components/dialog/dialog.service";
+import { FetchService } from "../../../shared/services/fetch.service";
+
+type category = {id: number, name: string, active: boolean}
+type gender = {id: number, name: string, active: boolean}
 
 @Component({
   selector: 'app-form-person',
@@ -14,6 +18,10 @@ export class FormPersonComponent implements OnInit {
 
   id: string | null = null
   person: person | undefined
+  categoryUrl: string = 'http://localhost:3000/person_category'
+  genderUrl: string = 'http://localhost:3000/gender'
+  category: category[] = []
+  gender: gender[] = []
 
   form = new FormGroup({
     "name": new FormControl<string | null>(null, Validators.required),
@@ -32,24 +40,43 @@ export class FormPersonComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private personService: PersonService,
+    private fetchService: FetchService
   ) {}
 
   ngOnInit(): void {
-    this.onLoad()
-      .then(id => {
-        this.personService.getById(id)
-          .subscribe({
-            next: (person) => this.pathFormValues(person),
-            error: (err) => this.errorHandler(err.statusText, err.status)
-          })
+    this.id = this.route.snapshot.params['id']
+    this.start()
+      .then(() => this.fetchPersonCategory())
+      .then(() => this.fetchPersonGender())
+      .then(() => this.onLoad())
+  }
+
+  start(): Promise<boolean> {
+    return new Promise<boolean>((resolve) => resolve(true))
+  }
+
+  fetchPersonCategory(){
+    this.fetchService.getAll(this.categoryUrl)
+      .subscribe({
+        next: (category) => this.category = category as category[],
+        error: (err) => this.errorHandler(err.statusText, err.status)
+      })
+  }
+
+  fetchPersonGender(){
+    this.fetchService.getAll(this.genderUrl)
+      .subscribe({
+        next: (gender) => this.gender = gender as gender[],
+        error: (err) => this.errorHandler(err.statusText, err.status)
       })
   }
 
   onLoad() {
-    this.id = this.route.snapshot.params['id']
-    return new Promise<string>((resolve) => {
-      this.id ? resolve(this.id) : this.form.reset()
-    })
+    this.id? this.personService.getById(this.id)
+      .subscribe({
+        next: (person) => this.pathFormValues(person),
+        error: (err) => this.errorHandler(err.statusText, err.status)
+      }) : null
   }
 
   onSubmit(): void {

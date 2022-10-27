@@ -10,17 +10,17 @@
     <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
       <mat-label>Categoria</mat-label>
       <mat-select formControlName="person_category_id">
-        <mat-option [value]="1">Professores</mat-option>
-        <mat-option [value]="2">Alunos</mat-option>
-        <mat-option [value]="3">Responsáveis</mat-option>
+        <mat-option *ngFor="let option of category" [value]="option.id">
+          {{ option.name }}
+        </mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
       <mat-label>Gênero</mat-label>
       <mat-select formControlName="gender_id">
-        <mat-option [value]="1">Feminino</mat-option>
-        <mat-option [value]="2">Masculino</mat-option>
-        <mat-option [value]="3">Outro</mat-option>
+        <mat-option *ngFor="let option of gender" [value]="option.id">
+          {{ option.name }}
+        </mat-option>
       </mat-select>
     </mat-form-field>
   </div>
