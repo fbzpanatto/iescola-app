@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { PersonService } from "../person.service";
-import { person } from "../person";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { DialogService } from "../../../shared/components/dialog/dialog.service";
 import { FetchService } from "../../../shared/services/fetch.service";
-
-type category = {id: number, name: string, active: boolean}
-type gender = {id: number, name: string, active: boolean}
+import { category, gender, person} from "../../../shared/utils/types";
+import urls from "../../../shared/utils/urls";
 
 @Component({
   selector: 'app-form-person',
@@ -18,8 +16,6 @@ export class FormPersonComponent implements OnInit {
 
   id: string | null = null
   person: person | undefined
-  categoryUrl: string = 'http://localhost:3000/person_category'
-  genderUrl: string = 'http://localhost:3000/gender'
   category: category[] = []
   gender: gender[] = []
 
@@ -56,7 +52,7 @@ export class FormPersonComponent implements OnInit {
   }
 
   fetchPersonCategory(){
-    this.fetchService.getAll(this.categoryUrl)
+    this.fetchService.getAll(urls.category)
       .subscribe({
         next: (category) => this.category = category as category[],
         error: (err) => this.errorHandler(err.statusText, err.status)
@@ -64,7 +60,7 @@ export class FormPersonComponent implements OnInit {
   }
 
   fetchPersonGender(){
-    this.fetchService.getAll(this.genderUrl)
+    this.fetchService.getAll(urls.gender)
       .subscribe({
         next: (gender) => this.gender = gender as gender[],
         error: (err) => this.errorHandler(err.statusText, err.status)
