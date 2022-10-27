@@ -25,3 +25,12 @@ export type person = {
   "phone"?: phone
 }
 
+export type employee = {
+  "id": number,
+  "registration": string,
+  "name": string,
+  "contract_type": number,
+  "start": string,
+  "spot": string
+}
+

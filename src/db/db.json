@@ -77,12 +77,23 @@
       "id": 5
     }
   ],
+  "employee": [
+    {
+      "id": 1,
+      "registration": 9943,
+      "name": "Valéria Fabiana",
+      "contract_type": 1,
+      "start": "15/02/2004",
+      "spot": "EMEB Benno Carlos Claus"
+    }
+  ],
   "student": [
     {
       "id": 1,
       "person_id": 3,
       "ra": "1111111111",
-      "rm": "3334"
+      "rm": "3334",
+      "number_list": 1
     }
   ],
   "responsible": [

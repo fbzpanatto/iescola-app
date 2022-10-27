@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { DialogService } from "../../../shared/components/dialog/dialog.service";
 import { FetchService } from "../../../shared/services/fetch.service";
 import { category, gender, person} from "../../../shared/utils/types";
-import urls from "../../../shared/utils/urls";
+import url from "../../../shared/utils/url";
 
 @Component({
   selector: 'app-form-person',
@@ -52,7 +52,7 @@ export class FormPersonComponent implements OnInit {
   }
 
   fetchPersonCategory(){
-    this.fetchService.getAll(urls.category)
+    this.fetchService.getAll(url.category)
       .subscribe({
         next: (category) => this.category = category as category[],
         error: (err) => this.errorHandler(err.statusText, err.status)
@@ -60,7 +60,7 @@ export class FormPersonComponent implements OnInit {
   }
 
   fetchPersonGender(){
-    this.fetchService.getAll(urls.gender)
+    this.fetchService.getAll(url.gender)
       .subscribe({
         next: (gender) => this.gender = gender as gender[],
         error: (err) => this.errorHandler(err.statusText, err.status)

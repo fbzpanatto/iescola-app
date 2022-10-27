@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Title} from "@angular/platform-browser";
-import {HomeToolbarService} from "../../../shared/components/toolbars/service/home-toolbar.service";
+import { Title } from "@angular/platform-browser";
+import { HomeToolbarService } from "../../../shared/components/toolbars/service/home-toolbar.service";
+import { EmployeeService } from "../employee.service";
+import { employee } from "../../../shared/utils/types";
 
 @Component({
   selector: 'app-home-employee',
@@ -11,14 +13,24 @@ export class HomeEmployeeComponent implements OnInit {
 
   title: string | undefined
   listView: boolean | undefined = true
+  employees: employee[] = []
 
-  constructor(private titleService: Title) { }
+  constructor(private titleService: Title, private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
-    this.title = this.titleService.getTitle().split('-')[1]
-    HomeToolbarService.subject.subscribe(v => this.listView = v)
+    this.onLoad()
+      .then(() => {
+        this.employeeService.getAll()
+          .subscribe(employee => this.employees = employee)
+      })
   }
 
-
+  onLoad() {
+    return new Promise<void>((resolve) => {
+      this.title = this.titleService.getTitle().split('-')[1]
+      HomeToolbarService.subject.subscribe(v => this.listView = v)
+      resolve()
+    })
+  }
 
 }

@@ -1,9 +1,10 @@
 const urlPrefix = 'http://localhost:3000/'
 
-const urls = {
+const url = {
   "category": `${urlPrefix}person_category`,
   "gender": `${urlPrefix}gender`,
-  "person": `${urlPrefix}person`
+  "person": `${urlPrefix}person`,
+  "employee": `${urlPrefix}employee`
 }
 
-export default urls
+export default url
