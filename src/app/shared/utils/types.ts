@@ -48,3 +48,9 @@ export type school_year = {
   "end": string
 }
 
+export type class_type = {
+  "id": number,
+  "name": string
+}
+
+

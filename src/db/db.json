@@ -154,5 +154,15 @@
       "person_id": 4,
       "student_id": 1
     }
+  ],
+  "class_type": [
+    {
+      "id": 1,
+      "name": "PEBI"
+    },
+    {
+      "id": 2,
+      "name": "PEBII"
+    }
   ]
 }

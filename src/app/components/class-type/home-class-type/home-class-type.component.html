@@ -5,7 +5,7 @@
     [changeViewOptions] = "true"
     [title]="title"
     [secondPhrase]="'Categoria Educacional'"
-    [firstPhrase]="'3 encontrado(s)'"
+    [firstPhrase]="class_types.length.toString() + ' encontrado(s)'"
   >
   </app-home-toolbar>
   <ng-container *ngIf="!listView; else listTableView">
@@ -52,118 +52,14 @@
     <table>
       <thead>
       <tr>
-        <th>id</th>
-        <th>coluna1</th>
-        <th>coluna2</th>
-        <th>coluna3</th>
-        <th>coluna4</th>
+        <th>Id</th>
+        <th>Tipo de Sala</th>
       </tr>
       </thead>
       <tbody>
-      <tr routerLink="1">
-        <td>1</td>
-        <td>clicar aqui</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr routerLink="2">
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr routerLink="3">
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
-        <td>ipsum</td>
+      <tr *ngFor="let class_type of class_types" routerLink="{{class_type.id}}">
+        <td>{{ class_type.id }}</td>
+        <td>{{ class_type.name }}</td>
       </tr>
       </tbody>
     </table>

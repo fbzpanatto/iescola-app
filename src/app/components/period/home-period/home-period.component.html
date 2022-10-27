@@ -5,7 +5,7 @@
     [changeViewOptions] = "true"
     [title]="title"
     [secondPhrase]="'Período'"
-    [firstPhrase]="'4 encontrado(s)'"
+    [firstPhrase]="periods.length.toString() + ' encontrado(s)'"
   >
   </app-home-toolbar>
   <ng-container *ngIf="!listView; else listTableView">

@@ -6,7 +6,11 @@ const url = {
   "person": `${urlPrefix}person`,
   "employee": `${urlPrefix}employee`,
   "period": `${urlPrefix}period`,
-  "school_year": `${urlPrefix}school_year`
+  "school_year": `${urlPrefix}school_year`,
+  "class_type": `${urlPrefix}class_type`
 }
+
+
+
 
 export default url
