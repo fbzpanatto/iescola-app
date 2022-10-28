@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Title} from "@angular/platform-browser";
+import { Title } from "@angular/platform-browser";
 import { HomeToolbarService } from "../../../shared/components/toolbars/service/home-toolbar.service";
+import { DisciplineService } from "../discipline.service";
+import { discipline } from "../../../shared/utils/types";
 
 @Component({
   selector: 'app-home-discipline',
@@ -11,11 +13,23 @@ export class HomeDisciplineComponent implements OnInit {
 
   title: string | undefined
   listView: boolean | undefined = true
+  disciplines: discipline[] = []
 
-  constructor(private titleService: Title) { }
+  constructor(private titleService: Title, private disciplineService: DisciplineService) { }
 
   ngOnInit(): void {
-    this.title = this.titleService.getTitle().split('-')[1]
-    HomeToolbarService.subject.subscribe(v => this.listView = v)
+    this.onLoad()
+      .then(() => {
+        this.disciplineService.getAll()
+          .subscribe(discipline => this.disciplines = discipline)
+      })
+  }
+
+  onLoad() {
+    return new Promise<void>((resolve) => {
+      this.title = this.titleService.getTitle().split('-')[1]
+      HomeToolbarService.subject.subscribe(v => this.listView = v)
+      resolve()
+    })
   }
 }

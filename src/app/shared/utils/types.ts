@@ -53,4 +53,10 @@ export type class_type = {
   "name": string
 }
 
+export type discipline = {
+  "id": number,
+  "name": string,
+  "active": boolean
+}
+
 
