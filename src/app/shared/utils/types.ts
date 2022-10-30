@@ -26,17 +26,27 @@ export type person = {
 }
 
 export type employee = {
-  "id": number,
+  "id"?: number,
+  "name": string,
+  "person_category": number,
   "registration": string,
-  "person_id": number,
-  "person": {
-    "name": string
-  }
-  "contract_id": number,
-  "contract": {
-    "name": string
-  },
-  "spot": string
+  "active": boolean,
+  "person_contract": [
+    {
+      "person_id": number,
+      "contract_id": number,
+      "school_id_headquarter": number,
+      "started_at": string,
+      "ended_at": string | null
+    },
+    {
+      "person_id": number,
+      "contract_id": number,
+      "school_id_headquarter": number,
+      "started_at": string,
+      "ended_at": string | null
+    }
+  ]
 }
 
 export type period = {

@@ -81,7 +81,7 @@ export class FormSchoolyearComponent implements OnInit {
   }
 
   backToList(){
-    this.router.navigate(['person'])
+    this.router.navigate(['schoolyear'])
   }
 
   errorHandler(statusText: string, errorStatus: number) {

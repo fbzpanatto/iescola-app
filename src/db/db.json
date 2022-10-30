@@ -108,55 +108,49 @@
   "employee": [
     {
       "id": 1,
-      "registration": 9943,
-      "person_id": 4,
-      "person": {
-        "name": "Valéria Fabiana"
-      },
-      "contract_id": 1,
-      "contract": {
-        "name": "Efetiva"
-      },
-      "spot": "EMEB Benno Carlos Claus"
+      "name": "Valéria Fabiana",
+      "person_category": 1,
+      "registration": "9943",
+      "active": true,
+      "person_contract": [
+        {
+          "person_id": 1,
+          "contract_id": 2,
+          "school_id_headquarter": 1,
+          "started_at": "01/01/2012",
+          "ended_at": "01/01/2015"
+        },
+        {
+          "person_id": 1,
+          "contract_id": 1,
+          "school_id_headquarter": 2,
+          "started_at": "02/01/2015",
+          "ended_at": null
+        }
+      ]
     },
     {
       "id": 2,
-      "registration": 9943,
-      "person_id": 4,
-      "person": {
-        "name": "Valéria Fabiana"
-      },
-      "contract_id": 1,
-      "contract": {
-        "name": "Efetiva"
-      },
-      "spot": "EMEB Benno Carlos Claus"
-    },
-    {
-      "id": 3,
-      "registration": 9943,
-      "person_id": 4,
-      "person": {
-        "name": "Valéria Fabiana"
-      },
-      "contract_id": 1,
-      "contract": {
-        "name": "Efetiva"
-      },
-      "spot": "EMEB Benno Carlos Claus"
-    },
-    {
-      "id": 4,
-      "registration": 9943,
-      "person_id": 4,
-      "person": {
-        "name": "Valéria Fabiana"
-      },
-      "contract_id": 1,
-      "contract": {
-        "name": "Efetiva"
-      },
-      "spot": "EMEB Benno Carlos Claus"
+      "name": "Eduardo Carlos Larentes",
+      "person_category": 2,
+      "registration": "111",
+      "active": true,
+      "person_contract": [
+        {
+          "person_id": 32,
+          "contract_id": 2,
+          "school_id_headquarter": 1,
+          "started_at": "01/01/2012",
+          "ended_at": "01/01/2015"
+        },
+        {
+          "person_id": 1,
+          "contract_id": 1,
+          "school_id_headquarter": 2,
+          "started_at": "02/01/2015",
+          "ended_at": null
+        }
+      ]
     }
   ],
   "school_year": [

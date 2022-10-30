@@ -53,19 +53,21 @@
       <thead>
         <tr>
           <th>id</th>
-          <th>Nº Matricula</th>
+          <th>Registro</th>
           <th>Nome</th>
-          <th>Contrato</th>
+          <th>Categoria</th>
           <th>Sede</th>
+          <th>Desde</th>
         </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let employe of employees" routerLink="{{employe.id}}">
+      <tr *ngFor="let employe of employees" routerLink="{{employe.id}}/contract">
         <td>{{ employe.id }}</td>
         <td>{{ employe.registration }}</td>
-        <td>{{ employe.person.name }}</td>
-        <td>{{ employe.contract.name }}</td>
-        <td>{{ employe.spot }}</td>
+        <td>{{ employe.name }}</td>
+        <td>{{ employe.person_category }}</td>
+        <td>{{ employe.person_contract[0].school_id_headquarter }}</td>
+        <td>{{ employe.person_contract[0].started_at }}</td>
       </tr>
       </tbody>
     </table>

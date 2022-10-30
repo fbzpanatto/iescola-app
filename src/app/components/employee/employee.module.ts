@@ -9,13 +9,15 @@ import { HomeEmployeeComponent } from './home-employee/home-employee.component';
 import { DetailEmployeeComponent } from './detail-employee/detail-employee.component';
 import { NewEmployeeComponent } from './new-employee/new-employee.component';
 import { FormEmployeeComponent } from './form-employee/form-employee.component';
+import { ContractEmployeeComponent } from './contract-employee/contract-employee.component';
 
 @NgModule({
     declarations: [
         HomeEmployeeComponent,
         NewEmployeeComponent,
         DetailEmployeeComponent,
-        FormEmployeeComponent
+        FormEmployeeComponent,
+        ContractEmployeeComponent
     ],
     exports: [
         FormEmployeeComponent

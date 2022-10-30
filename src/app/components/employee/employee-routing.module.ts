@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeEmployeeComponent } from "./home-employee/home-employee.component";
 import { NewEmployeeComponent } from "./new-employee/new-employee.component";
 import { DetailEmployeeComponent } from "./detail-employee/detail-employee.component";
+import { ContractEmployeeComponent } from "./contract-employee/contract-employee.component";
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'new',
     component: NewEmployeeComponent
+  },
+  {
+    path: ':id/contract',
+    component: ContractEmployeeComponent
   },
   {
     path: ':id',
