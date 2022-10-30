@@ -121,17 +121,7 @@ export class FormPersonComponent implements OnInit {
 
   pathFormValues(person: person) {
     this.person = person
-    this.form.patchValue({
-      name: person.name,
-      cpf: person.cpf,
-      rg: person.rg,
-      person_category_id: person.person_category_id,
-      gender_id: person.gender_id,
-      phone: {
-        phone1: person.phone?.phone1,
-        phone2: person.phone?.phone2
-      }
-    })
+    this.form.patchValue(this.person)
   }
 
   body(): person {
