@@ -28,9 +28,14 @@ export type person = {
 export type employee = {
   "id": number,
   "registration": string,
-  "name": string,
-  "contract_type": number,
-  "start": string,
+  "person_id": number,
+  "person": {
+    "name": string
+  }
+  "contract_id": number,
+  "contract": {
+    "name": string
+  },
   "spot": string
 }
 

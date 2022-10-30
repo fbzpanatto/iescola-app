@@ -1,26 +1,40 @@
-<form class="content" fxLayout="column" fxLayoutGap="32px">
-  <div class="input-group first" fxLayout="row wrap" fxLayoutGap="16px">
-    <label class="group-title">Ano letivo</label>
-    <input maxlength="4" type="text" placeholder="digite o ano com quatro algarismos">
+<form [formGroup]="form" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutGap="24px">
+
+  <div class="container" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="24px">
+
+    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="20%" fxLayout="row">
+      <mat-label>Ano</mat-label>
+      <input id="name" formControlName="name" matInput placeholder="ano" maxlength="4">
+      <mat-icon matSuffix fontIcon="boy"></mat-icon>
+      <mat-hint>Informe apenas números</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="40%" fxLayout="row">
+      <mat-label>Data Início</mat-label>
+      <input formControlName="start" matInput placeholder="Data início">
+      <mat-icon matSuffix fontIcon="calendar_month"></mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="40%" fxLayout="row">
+      <mat-label>Data Fim</mat-label>
+      <input formControlName="end" matInput placeholder="data encerramento">
+      <mat-icon matSuffix fontIcon="calendar_month"></mat-icon>
+    </mat-form-field>
+
   </div>
-  <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
-    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-      <label class="group-title">Data início</label>
-      <input type="date">
-    </div>
-    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-      <label class="group-title">Data fim</label>
-      <input type="date">
-    </div>
-  </div>
+
   <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
-    <button color="accent" mat-button>
+
+    <button type="button" color="accent" mat-button (click)="askForDelete()">
       <mat-icon fontIcon="delete_forever"></mat-icon>
       <span>Excluir</span>
     </button>
-    <button mat-flat-button (click)="onSave()" color="primary">
+
+    <button type="submit" [disabled]="!form.valid" mat-flat-button color="primary">
       <mat-icon fontIcon="save"></mat-icon>
       <span>Salvar</span>
     </button>
+
   </div>
+
 </form>

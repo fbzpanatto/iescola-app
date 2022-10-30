@@ -28,6 +28,11 @@
       "id": 3,
       "name": "Responsáveis",
       "active": true
+    },
+    {
+      "id": 4,
+      "name": "Gestão Escolar",
+      "active": true
     }
   ],
   "person": [
@@ -77,15 +82,80 @@
         "phone2": "11989564578"
       },
       "id": 5
+    },
+    {
+      "name": "Valeria Fabiana",
+      "cpf": "36933425800",
+      "rg": "482499448",
+      "person_category_id": 4,
+      "gender_id": 2,
+      "phone": {
+        "phone1": "11968568913",
+        "phone2": "11989564578"
+      },
+      "id": 6
+    }
+  ],
+  "teacher": [
+    {
+      "id": 1,
+      "person_id": 1,
+      "person": {
+        "name": "André Thiago da Silva"
+      }
     }
   ],
   "employee": [
     {
       "id": 1,
       "registration": 9943,
-      "name": "Valéria Fabiana",
-      "contract_type": 1,
-      "start": "15/02/2004",
+      "person_id": 4,
+      "person": {
+        "name": "Valéria Fabiana"
+      },
+      "contract_id": 1,
+      "contract": {
+        "name": "Efetiva"
+      },
+      "spot": "EMEB Benno Carlos Claus"
+    },
+    {
+      "id": 2,
+      "registration": 9943,
+      "person_id": 4,
+      "person": {
+        "name": "Valéria Fabiana"
+      },
+      "contract_id": 1,
+      "contract": {
+        "name": "Efetiva"
+      },
+      "spot": "EMEB Benno Carlos Claus"
+    },
+    {
+      "id": 3,
+      "registration": 9943,
+      "person_id": 4,
+      "person": {
+        "name": "Valéria Fabiana"
+      },
+      "contract_id": 1,
+      "contract": {
+        "name": "Efetiva"
+      },
+      "spot": "EMEB Benno Carlos Claus"
+    },
+    {
+      "id": 4,
+      "registration": 9943,
+      "person_id": 4,
+      "person": {
+        "name": "Valéria Fabiana"
+      },
+      "contract_id": 1,
+      "contract": {
+        "name": "Efetiva"
+      },
       "spot": "EMEB Benno Carlos Claus"
     }
   ],
@@ -153,8 +223,24 @@
   "responsible": [
     {
       "id": 1,
-      "person_id": 4,
-      "student_id": 1
+      "person_id": 1,
+      "student_person_id": 2,
+      "person": {
+        "id": 1,
+        "name": "José Claudio Ribas"
+      },
+      "student": {
+        "id": 2,
+        "person": {
+          "id": 1,
+          "name": "Larissa Manuela"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "person_id": 1,
+      "student_person_id": 7
     }
   ],
   "class_type": [
@@ -210,7 +296,7 @@
     },
     {
       "id": 9,
-      "name": "Artes",
+      "name": "Práticas de Leitura",
       "active": true
     }
   ]

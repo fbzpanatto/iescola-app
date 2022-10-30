@@ -9,6 +9,7 @@ import { HomeSchoolyearComponent } from './home-schoolyear/home-schoolyear.compo
 import { DetailSchoolyearComponent } from './detail-schoolyear/detail-schoolyear.component';
 import { NewSchoolyearComponent } from './new-schoolyear/new-schoolyear.component';
 import { FormSchoolyearComponent } from './form-schoolyear/form-schoolyear.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,11 +18,12 @@ import { FormSchoolyearComponent } from './form-schoolyear/form-schoolyear.compo
     NewSchoolyearComponent,
     FormSchoolyearComponent
   ],
-  imports: [
-    CommonModule,
-    SchoolyearRoutingModule,
-    MaterialModule,
-    ToolbarsModule
-  ]
+    imports: [
+        CommonModule,
+        SchoolyearRoutingModule,
+        MaterialModule,
+        ToolbarsModule,
+        ReactiveFormsModule
+    ]
 })
 export class SchoolyearModule { }
