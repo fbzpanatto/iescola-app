@@ -105,24 +105,54 @@
       }
     }
   ],
+  "person_contract": [
+    {
+      "person_id": 40,
+      "contract_id": 1,
+      "school_id_headquarter": 1,
+      "started_at": "01/01/2012",
+      "ended_at": "01/01/2015"
+    },
+    {
+      "person_id": 40,
+      "contract_id": 2,
+      "school_id_headquarter": 2,
+      "started_at": "02/01/2015",
+      "ended_at": null
+    },
+    {
+      "person_id": 32,
+      "contract_id": 2,
+      "school_id_headquarter": 1,
+      "started_at": "01/01/2012",
+      "ended_at": "01/01/2015"
+    },
+    {
+      "person_id": 32,
+      "contract_id": 1,
+      "school_id_headquarter": 2,
+      "started_at": "02/01/2015",
+      "ended_at": null
+    }
+  ],
   "employee": [
     {
-      "id": 1,
+      "id": 40,
       "name": "Valéria Fabiana",
       "person_category": 1,
       "registration": "9943",
       "active": true,
       "person_contract": [
         {
-          "person_id": 1,
-          "contract_id": 2,
+          "person_id": 40,
+          "contract_id": 1,
           "school_id_headquarter": 1,
           "started_at": "01/01/2012",
           "ended_at": "01/01/2015"
         },
         {
-          "person_id": 1,
-          "contract_id": 1,
+          "person_id": 40,
+          "contract_id": 2,
           "school_id_headquarter": 2,
           "started_at": "02/01/2015",
           "ended_at": null
@@ -130,7 +160,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": 32,
       "name": "Eduardo Carlos Larentes",
       "person_category": 2,
       "registration": "111",
