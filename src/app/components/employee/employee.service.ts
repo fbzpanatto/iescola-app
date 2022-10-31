@@ -15,8 +15,8 @@ export class EmployeeService {
     return this.http.get<employee[]>(url.employee)
   }
 
-  getById(id:string, fragment?:string): Observable<employee>{
-    return this.http.get<employee>(`${url.employee}/${id}/${fragment}`)
+  getById(id:string): Observable<employee>{
+    return this.http.get<employee>(`${url.employee}/${id}`)
   }
 
   create(body: employee) {
