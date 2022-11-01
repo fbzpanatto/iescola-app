@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { EmployeeService } from "../employee.service";
 import { person_contract } from "../../../shared/utils/types";
-import {HttpClient} from "@angular/common/http";
-import {filter, map} from "rxjs";
+import { HttpClient } from "@angular/common/http";
+import { map } from "rxjs";
 
 @Component({
   selector: 'app-contract-employee',
@@ -11,6 +11,8 @@ import {filter, map} from "rxjs";
   styleUrls: ['./contract-employee.component.scss']
 })
 export class ContractEmployeeComponent implements OnInit {
+
+  person_contracts: person_contract[] = []
 
   constructor(private route: ActivatedRoute, private router: Router, private employeeService: EmployeeService, private http: HttpClient) { }
 
@@ -21,6 +23,6 @@ export class ContractEmployeeComponent implements OnInit {
       .pipe(
         map((result:person_contract[]) => result.filter(item => item.person_id === employeeId))
       )
-      .subscribe(result => console.log('my result', result))
+      .subscribe(result => this.person_contracts = result)
   }
 }

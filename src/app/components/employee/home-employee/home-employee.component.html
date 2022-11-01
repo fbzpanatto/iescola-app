@@ -52,22 +52,18 @@
     <table>
       <thead>
         <tr>
-          <th>id</th>
+          <th>Id</th>
+          <th>Pessoa</th>
           <th>Registro</th>
-          <th>Nome</th>
-          <th>Categoria</th>
-          <th>Sede</th>
-          <th>Desde</th>
+          <th>Ativo</th>
         </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let employe of employees" routerLink="{{employe.id}}/contract">
+      <tr *ngFor="let employe of employees" routerLink="{{employe.person_id}}/contract">
         <td>{{ employe.id }}</td>
+        <td>{{ employe.person_id }}</td>
         <td>{{ employe.registration }}</td>
-        <td>{{ employe.name }}</td>
-        <td>{{ employe.person_category }}</td>
-        <td>{{ employe.person_contract[0].school_id_headquarter }}</td>
-        <td>{{ employe.person_contract[0].started_at }}</td>
+        <td>{{ employe.active }}</td>
       </tr>
       </tbody>
     </table>
