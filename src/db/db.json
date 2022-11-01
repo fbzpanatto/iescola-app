@@ -273,5 +273,15 @@
       "name": "Práticas de Leitura",
       "active": true
     }
+  ],
+  "contract": [
+    {
+      "id": 1,
+      "name": "Contratado"
+    },
+    {
+      "id": 2,
+      "name": "Efetivo"
+    }
   ]
 }

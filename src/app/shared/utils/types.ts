@@ -16,6 +16,11 @@ export type employee = {
   "active": boolean
 }
 
+export type contract = {
+  "id": number,
+  "name": string
+}
+
 export type gender = {
   id: number,
   name: string,

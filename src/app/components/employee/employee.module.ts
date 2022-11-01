@@ -10,6 +10,7 @@ import { DetailEmployeeComponent } from './detail-employee/detail-employee.compo
 import { NewEmployeeComponent } from './new-employee/new-employee.component';
 import { FormEmployeeComponent } from './form-employee/form-employee.component';
 import { ContractEmployeeComponent } from './contract-employee/contract-employee.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
     declarations: [
@@ -27,6 +28,7 @@ import { ContractEmployeeComponent } from './contract-employee/contract-employee
         EmployeeRoutingModule,
         MaterialModule,
         ToolbarsModule,
+        ReactiveFormsModule,
     ]
 })
 export class EmployeeModule { }
