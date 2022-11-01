@@ -1,6 +1,19 @@
-type phone = {
-  "phone1"?: number,
-  "phone2"?: number
+//ok
+export type person_contract = {
+  "id": number,
+  "person_id": number,
+  "contract_id": number,
+  "school_id_headquarter": number,
+  "started_at": string,
+  "ended_at": string | null
+}
+
+//ok
+export type employee = {
+  "id": number,
+  "person_id": number,
+  "registration": string,
+  "active": boolean
 }
 
 export type gender = {
@@ -23,22 +36,6 @@ export type person = {
   "person_category_id": number,
   "gender_id": number,
   "phone"?: phone
-}
-
-export type person_contract = {
-  "id": number,
-  "person_id": number,
-  "contract_id": number,
-  "school_id_headquarter": number,
-  "started_at": string,
-  "ended_at": string | null
-}
-
-export type employee = {
-  "id": number,
-  "person_id": number,
-  "registration": string,
-  "active": boolean
 }
 
 export type period = {
@@ -64,6 +61,11 @@ export type discipline = {
   "id": number,
   "name": string,
   "active": boolean
+}
+
+type phone = {
+  "phone1"?: number,
+  "phone2"?: number
 }
 
 
