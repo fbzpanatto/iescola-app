@@ -52,6 +52,7 @@ export class FormPeriodComponent implements OnInit {
   }
 
   onEdit(): void {
+
     this.periodService.update(this.id!, this.body())
       .subscribe({
         next: (_result) => this.backToList(),
@@ -94,13 +95,14 @@ export class FormPeriodComponent implements OnInit {
   pathFormValues(period: period) {
     this.period = period
     this.form.patchValue(this.period)
-    this.form.get('yearId')?.disable()
   }
 
-  body(): period {
+  body(): Partial<period> {
     return {
       name: this.form.value.name!,
-      yearId: this.form.value.yearId!,
+      year: {
+        id: this.form.value.yearId!
+      },
       start: this.form.value.start!,
       end: this.form.value.end!
     }

@@ -20,11 +20,11 @@ export class PeriodService {
     return this.http.get(`${this.url}(${id})`)
   }
 
-  create(body: period) {
+  create(body: Partial<period>) {
     return this.http.post<period>(this.url, body)
   }
 
-  update( id: string, body: period ) {
+  update( id: string, body: Partial<period> ) {
     return this.http.put(`${this.url}(${id})`, body)
   }
 

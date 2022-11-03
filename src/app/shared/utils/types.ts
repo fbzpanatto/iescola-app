@@ -42,11 +42,14 @@ export type person = {
 }
 
 export type period = {
-  "id"?: number,
+  "id": number,
   "yearId": number,
+  "year" : {
+    "id": number
+  },
   "name": string,
-  "start"?: Date,
-  "end"?: Date
+  "start": Date,
+  "end": Date
 }
 
 export type year = {
