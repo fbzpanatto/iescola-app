@@ -57,8 +57,8 @@ export type year = {
   "end": Date
 }
 
-export type class_type = {
-  "id": number,
+export type classType = {
+  "id"?: number,
   "name": string
 }
 

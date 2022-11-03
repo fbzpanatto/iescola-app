@@ -1,34 +1,35 @@
 import { Injectable } from '@angular/core';
-import { Observable } from "rxjs";
-import { class_type } from "../../shared/utils/types";
+import { classType } from "../../shared/utils/types";
 import { HttpClient } from "@angular/common/http";
-import url from "../../shared/utils/url";
+import { environment } from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClassTypeService {
 
+  url = `${environment.GIGABASE.ODATA_URL}/Escola/ClassType`
+
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<class_type[]> {
-    return this.http.get<class_type[]>(url.class_type)
+  getAll() {
+    return this.http.get(this.url)
   }
 
-  getById(id:string): Observable<class_type>{
-    return this.http.get<class_type>(`${url.class_type}/${id}`)
+  getById(id:string) {
+    return this.http.get(`${this.url}(${id})`)
   }
 
-  create(body: class_type) {
-    return this.http.post<class_type>(url.class_type, body)
+  create(body: classType) {
+    return this.http.post<classType>(this.url, body)
   }
 
-  update( id: string, body: class_type ) {
-    return this.http.put(`${url.class_type}/${id}`, body)
+  update( id: string, body: classType ) {
+    return this.http.put(`${this.url}(${id})`, body)
   }
 
   delete( id: string) {
-    return this.http.delete(`${url.class_type}/${id}`)
+    return this.http.delete(`${this.url}(${id})`)
   }
 }
 

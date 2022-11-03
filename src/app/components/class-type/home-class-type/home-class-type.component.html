@@ -5,7 +5,7 @@
     [changeViewOptions] = "true"
     [title]="title"
     [secondPhrase]="'Categoria Educacional'"
-    [firstPhrase]="class_types.length.toString() + ' encontrado(s)'"
+    [firstPhrase]="classTypes.length.toString() + ' encontrado(s)'"
   >
   </app-home-toolbar>
   <ng-container *ngIf="!listView; else listTableView">
@@ -57,10 +57,10 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let class_type of class_types" routerLink="{{class_type.id}}">
-        <td>{{ class_type.id }}</td>
-        <td>{{ class_type.name }}</td>
-      </tr>
+        <tr *ngFor="let classType of classTypes" routerLink="{{classType.id}}">
+          <td>{{ classType.id }}</td>
+          <td>{{ classType.name }}</td>
+        </tr>
       </tbody>
     </table>
   </ng-template>

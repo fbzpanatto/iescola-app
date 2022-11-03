@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from "@angular/platform-browser";
 import { HomeToolbarService } from "../../../shared/components/toolbars/service/home-toolbar.service";
-import { class_type } from "../../../shared/utils/types";
+import { classType } from "../../../shared/utils/types";
 import { ClassTypeService } from "../class-type.service";
 
 
@@ -14,15 +14,17 @@ export class HomeClassTypeComponent implements OnInit {
 
   title: string | undefined
   listView: boolean | undefined = true
-  class_types: class_type[] = []
+  classTypes: classType[] = []
 
-  constructor(private titleService: Title, private class_typeService: ClassTypeService) { }
+  constructor(private titleService: Title, private classTypeService: ClassTypeService) { }
 
   ngOnInit(): void {
     this.onLoad()
       .then(() => {
-        this.class_typeService.getAll()
-          .subscribe(class_type => this.class_types = class_type)
+        this.classTypeService.getAll()
+          .subscribe((classType: any) => {
+            this.classTypes = classType.value as classType[]
+          })
       })
   }
 

@@ -9,6 +9,7 @@ import { HomeClassTypeComponent } from './home-class-type/home-class-type.compon
 import { DetailClassTypeComponent } from './detail-class-type/detail-class-type.component';
 import { NewClassTypeComponent } from './new-class-type/new-class-type.component';
 import { FormClassTypeComponent } from './form-class-type/form-class-type.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,11 +18,12 @@ import { FormClassTypeComponent } from './form-class-type/form-class-type.compon
     NewClassTypeComponent,
     FormClassTypeComponent
   ],
-  imports: [
-    CommonModule,
-    ClassTypeRoutingModule,
-    MaterialModule,
-    ToolbarsModule,
-  ]
+    imports: [
+        CommonModule,
+        ClassTypeRoutingModule,
+        MaterialModule,
+        ToolbarsModule,
+        ReactiveFormsModule,
+    ]
 })
 export class ClassTypeModule { }
