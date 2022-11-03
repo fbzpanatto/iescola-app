@@ -3,7 +3,8 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { DialogService } from "../../../shared/components/dialog/dialog.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { PeriodService } from "../period.service";
-import { period } from "../../../shared/utils/types";
+import {period, year} from "../../../shared/utils/types";
+import {YearService} from "../../schoolyear/year.service";
 
 @Component({
   selector: 'app-form-period',
@@ -14,6 +15,7 @@ export class FormPeriodComponent implements OnInit {
 
   id: string | null = null
   period: period | undefined
+  years: year[] = []
 
   form = new FormGroup({
     "name": new FormControl<string | null>(null, [Validators.required,]),
@@ -27,11 +29,13 @@ export class FormPeriodComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private periodService: PeriodService,
+    private yearService: YearService
   ) {}
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id']
     this.start()
+      .then(() => this.fetchYears())
       .then(() => this.onLoad())
   }
 
@@ -45,6 +49,14 @@ export class FormPeriodComponent implements OnInit {
         next: (period:any) => this.pathFormValues(period),
         error: (err) => this.errorHandler(err.statusText, err.status)
       }) : null
+  }
+
+  fetchYears(){
+    this.yearService.getAll()
+      .subscribe({
+        next: (result:any) => this.years = result.value as year[],
+        error: (err) => this.errorHandler(err.statusText, err.status)
+      })
   }
 
   onSubmit(): void {

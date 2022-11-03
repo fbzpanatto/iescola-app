@@ -62,7 +62,7 @@
       <tbody>
         <tr *ngFor="let period of periods" routerLink="{{ period.id }}">
           <td>{{ period.id }}</td>
-          <td>{{ period.yearId }}</td>
+          <td>{{ period.year.year }}</td>
           <td>{{ period.name }}</td>
           <td>{{ period.start }}</td>
           <td>{{ period.end }}</td>

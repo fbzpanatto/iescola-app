@@ -5,9 +5,14 @@
       <mat-label>Nome do Período</mat-label>
       <input matInput placeholder="nome do período" formControlName="name">
     </mat-form-field>
+
     <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
       <mat-label>Ano do Período</mat-label>
-      <input  matInput placeholder="ano do período" formControlName="yearId">
+      <mat-select formControlName="yearId">
+        <mat-option *ngFor="let option of years" [value]="option.id">
+          {{ option.year }}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
   </div>
 

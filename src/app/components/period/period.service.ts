@@ -13,11 +13,11 @@ export class PeriodService {
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get(this.url)
+    return this.http.get(`${this.url}?$expand=year`)
   }
 
   getById(id:string) {
-    return this.http.get(`${this.url}(${id})`)
+    return this.http.get(`${this.url}(${id})?$expand=year`)
   }
 
   create(body: Partial<period>) {
