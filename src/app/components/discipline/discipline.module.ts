@@ -9,6 +9,7 @@ import { HomeDisciplineComponent } from './home-discipline/home-discipline.compo
 import { DetailDisciplineComponent } from './detail-discipline/detail-discipline.component';
 import { NewDisciplineComponent } from './new-discipline/new-discipline.component';
 import { FormDisciplineComponent } from './form-discipline/form-discipline.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,11 +18,12 @@ import { FormDisciplineComponent } from './form-discipline/form-discipline.compo
     NewDisciplineComponent,
     FormDisciplineComponent
   ],
-  imports: [
-    CommonModule,
-    DisciplineRoutingModule,
-    MaterialModule,
-    ToolbarsModule
-  ]
+    imports: [
+        CommonModule,
+        DisciplineRoutingModule,
+        MaterialModule,
+        ToolbarsModule,
+        ReactiveFormsModule
+    ]
 })
 export class DisciplineModule { }

@@ -63,9 +63,8 @@ export type classType = {
 }
 
 export type discipline = {
-  "id": number,
-  "name": string,
-  "active": boolean
+  "id"?: number,
+  "name": string
 }
 
 type phone = {

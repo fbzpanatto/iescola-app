@@ -21,7 +21,9 @@ export class HomeDisciplineComponent implements OnInit {
     this.onLoad()
       .then(() => {
         this.disciplineService.getAll()
-          .subscribe(discipline => this.disciplines = discipline)
+          .subscribe((discipline: any) => {
+            this.disciplines = discipline.value as discipline[]
+          })
       })
   }
 

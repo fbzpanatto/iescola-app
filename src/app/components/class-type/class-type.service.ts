@@ -32,4 +32,3 @@ export class ClassTypeService {
     return this.http.delete(`${this.url}(${id})`)
   }
 }
-
