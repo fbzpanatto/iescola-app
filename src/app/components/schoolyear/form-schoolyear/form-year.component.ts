@@ -17,8 +17,8 @@ export class FormYearComponent implements OnInit {
 
   form = new FormGroup({
     "year": new FormControl<string | null>(null, [Validators.required, Validators.pattern('^[0-9]+$'), Validators.maxLength(4)]),
-    "start": new FormControl<string | null>(null, [Validators.required]),
-    "end": new FormControl<string | null>(null)
+    "start": new FormControl<Date | null>(null, [Validators.required]),
+    "end": new FormControl<Date | null>(null, [Validators.required])
   })
 
   constructor(

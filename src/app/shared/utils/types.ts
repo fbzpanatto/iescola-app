@@ -53,8 +53,8 @@ export type period = {
 export type year = {
   "id"?: number,
   "year": string,
-  "start": string,
-  "end": string
+  "start": Date,
+  "end": Date
 }
 
 export type class_type = {

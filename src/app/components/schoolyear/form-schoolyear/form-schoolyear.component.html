@@ -12,7 +12,7 @@
     <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="40%" fxLayout="row">
       <mat-label>Data Início</mat-label>
       <input matInput [matDatepicker]="startPicker" formControlName="start">
-      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-hint>DD/MM/YYYY</mat-hint>
       <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
       <mat-datepicker #startPicker></mat-datepicker>
     </mat-form-field>
@@ -20,7 +20,7 @@
     <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="40%" fxLayout="row">
       <mat-label>Data Fim</mat-label>
       <input matInput [matDatepicker]="endPicker" formControlName="end">
-      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-hint>DD/MM/YYYY</mat-hint>
       <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
       <mat-datepicker #endPicker></mat-datepicker>
     </mat-form-field>
