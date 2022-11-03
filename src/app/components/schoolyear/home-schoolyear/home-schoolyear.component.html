@@ -4,7 +4,7 @@
     [filter]="true"
     [changeViewOptions] = "true"
     [title]="title"
-    [firstPhrase]="school_years.length.toString() + ' encontrado(s)'"
+    [firstPhrase]="years.length.toString() + ' encontrado(s)'"
   >
   </app-home-toolbar>
   <ng-container *ngIf="!listView; else listTableView">
@@ -58,11 +58,11 @@
         </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let school_year of school_years" routerLink="{{ school_year.id }}">
-        <td>{{ school_year.id }}</td>
-        <td>{{ school_year.year }}</td>
-        <td>{{ school_year.start }}</td>
-        <td>{{ school_year.end }}</td>
+      <tr *ngFor="let year of years" routerLink="{{ year.id }}">
+        <td>{{ year.id }}</td>
+        <td>{{ year.year }}</td>
+        <td>{{ year.start | date:'dd MMM yyyy' }}</td>
+        <td>{{ year.end | date:'dd MMM yyyy' }}</td>
       </tr>
       </tbody>
     </table>

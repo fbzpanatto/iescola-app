@@ -8,7 +8,7 @@ import { SchoolyearRoutingModule } from './schoolyear-routing.module';
 import { HomeSchoolyearComponent } from './home-schoolyear/home-schoolyear.component';
 import { DetailSchoolyearComponent } from './detail-schoolyear/detail-schoolyear.component';
 import { NewSchoolyearComponent } from './new-schoolyear/new-schoolyear.component';
-import { FormSchoolyearComponent } from './form-schoolyear/form-schoolyear.component';
+import { FormYearComponent } from './form-schoolyear/form-year.component';
 import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
@@ -16,7 +16,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     HomeSchoolyearComponent,
     DetailSchoolyearComponent,
     NewSchoolyearComponent,
-    FormSchoolyearComponent
+    FormYearComponent
   ],
     imports: [
         CommonModule,

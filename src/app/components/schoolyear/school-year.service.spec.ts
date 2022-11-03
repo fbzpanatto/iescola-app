@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SchoolYearService } from './school-year.service';
+import { YearService } from './year.service';
 
 describe('SchoolYearService', () => {
-  let service: SchoolYearService;
+  let service: YearService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SchoolYearService);
+    service = TestBed.inject(YearService);
   });
 
   it('should be created', () => {

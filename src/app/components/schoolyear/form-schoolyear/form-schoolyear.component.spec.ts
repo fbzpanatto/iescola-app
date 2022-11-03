@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormSchoolyearComponent } from './form-schoolyear.component';
+import { FormYearComponent } from './form-year.component';
 
 describe('FormSchoolyearComponent', () => {
-  let component: FormSchoolyearComponent;
-  let fixture: ComponentFixture<FormSchoolyearComponent>;
+  let component: FormYearComponent;
+  let fixture: ComponentFixture<FormYearComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormSchoolyearComponent ]
+      declarations: [ FormYearComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FormSchoolyearComponent);
+    fixture = TestBed.createComponent(FormYearComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

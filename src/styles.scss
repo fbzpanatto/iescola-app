@@ -30,6 +30,12 @@ form {
   padding: 0 10vw;
   position: relative;
   top: 48px;
+
+  mat-form-field {
+    mat-icon {
+      color: #7e7e7e;
+    }
+  }
 }
 
 .bg-drop-class {

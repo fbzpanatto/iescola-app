@@ -50,7 +50,7 @@ export type period = {
   "end": string
 }
 
-export type school_year = {
+export type year = {
   "id"?: number,
   "year": string,
   "start": string,

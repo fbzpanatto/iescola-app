@@ -15,6 +15,7 @@ import { TermsComponent } from './components/terms/terms.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { DialogComponent } from './shared/components/dialog/dialog.component';
 import {TokenInterceptorService} from "./shared/interceptors/token-interceptor.service";
+import {MAT_DATE_LOCALE} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {TokenInterceptorService} from "./shared/interceptors/token-interceptor.s
     HttpClientModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true},
+    {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}
   ],
   bootstrap: [AppComponent]
 })

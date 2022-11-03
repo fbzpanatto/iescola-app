@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from "@angular/platform-browser";
 import { HomeToolbarService } from "../../../shared/components/toolbars/service/home-toolbar.service";
-import { school_year } from "../../../shared/utils/types";
-import { SchoolYearService } from "../school-year.service";
+import { year } from "../../../shared/utils/types";
+import { YearService } from "../year.service";
 
 @Component({
   selector: 'app-home-schoolyear',
@@ -13,15 +13,17 @@ export class HomeSchoolyearComponent implements OnInit {
 
   title: string | undefined
   listView: boolean | undefined = true
-  school_years: school_year[] = []
+  years: year[] = []
 
-  constructor(private titleService: Title, private schoolYearService: SchoolYearService) { }
+  constructor(private titleService: Title, private schoolYearService: YearService) { }
 
   ngOnInit(): void {
     this.onLoad()
       .then(() => {
         this.schoolYearService.getAll()
-          .subscribe(school_year => this.school_years = school_year)
+          .subscribe((year: any) => {
+            this.years = year.value as year[]
+          })
       })
   }
 
@@ -32,5 +34,4 @@ export class HomeSchoolyearComponent implements OnInit {
       resolve()
     })
   }
-
 }

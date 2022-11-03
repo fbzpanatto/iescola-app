@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { DialogService } from "../../../shared/components/dialog/dialog.service";
 import { ActivatedRoute, Router } from "@angular/router";
-import { SchoolYearService } from "../school-year.service";
-import { school_year as schoolYear } from "../../../shared/utils/types";
+import { YearService } from "../year.service";
+import { year as schoolYear } from "../../../shared/utils/types";
 
 @Component({
   selector: 'app-form-schoolyear',
   templateUrl: './form-schoolyear.component.html',
   styleUrls: ['./form-schoolyear.component.scss']
 })
-export class FormSchoolyearComponent implements OnInit {
+export class FormYearComponent implements OnInit {
 
   id: string | null = null
   schoolYear: schoolYear | undefined
@@ -18,14 +18,14 @@ export class FormSchoolyearComponent implements OnInit {
   form = new FormGroup({
     "year": new FormControl<string | null>(null, [Validators.required, Validators.pattern('^[0-9]+$'), Validators.maxLength(4)]),
     "start": new FormControl<string | null>(null, [Validators.required]),
-    "end": new FormControl<string | null>(null, [Validators.required])
+    "end": new FormControl<string | null>(null)
   })
 
   constructor(
     private dialog: DialogService,
     private router: Router,
     private route: ActivatedRoute,
-    private schoolYearService: SchoolYearService,
+    private yearService: YearService,
   ) {}
 
   ngOnInit(): void {
@@ -39,9 +39,9 @@ export class FormSchoolyearComponent implements OnInit {
   }
 
   onLoad() {
-    this.id? this.schoolYearService.getById(this.id)
+    this.id? this.yearService.getById(this.id)
       .subscribe({
-        next: (schoolYear) => this.pathFormValues(schoolYear),
+        next: (schoolYear:any) => this.pathFormValues(schoolYear),
         error: (err) => this.errorHandler(err.statusText, err.status)
       }) : null
   }
@@ -51,7 +51,7 @@ export class FormSchoolyearComponent implements OnInit {
   }
 
   onEdit(): void {
-    this.schoolYearService.update(this.id!, this.body())
+    this.yearService.update(this.id!, this.body())
       .subscribe({
         next: (_result) => this.backToList(),
         error: (err) => this.errorHandler(err.statusText, err.status)
@@ -59,7 +59,7 @@ export class FormSchoolyearComponent implements OnInit {
   }
 
   onNew(): void {
-    this.schoolYearService.create(this.body())
+    this.yearService.create(this.body())
       .subscribe({
         next: (_result) => this.backToList(),
         error: (err) => this.errorHandler(err.statusText, err.status)
@@ -67,7 +67,7 @@ export class FormSchoolyearComponent implements OnInit {
   }
 
   onDelete() {
-    this.schoolYearService.delete(this.id!)
+    this.yearService.delete(this.id!)
       .subscribe({
         next: (_result) => this.backToList(),
         error: (err) => this.errorHandler(err.statusText, err.statusText)
