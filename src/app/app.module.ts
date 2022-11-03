@@ -12,8 +12,9 @@ import { HomeComponent } from './components/home/home.component';
 import { NavigationComponent } from './shared/components/navigation/navigation.component';
 import { HelpComponent } from './components/help/help.component';
 import { TermsComponent } from './components/terms/terms.component';
-import { HttpClientModule } from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { DialogComponent } from './shared/components/dialog/dialog.component';
+import {TokenInterceptorService} from "./shared/interceptors/token-interceptor.service";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,9 @@ import { DialogComponent } from './shared/components/dialog/dialog.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

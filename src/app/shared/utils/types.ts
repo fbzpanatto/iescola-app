@@ -10,7 +10,7 @@ export type person_contract = {
 
 //ok
 export type employee = {
-  "id": number,
+  "id"?: number,
   "person_id": number,
   "registration": string,
   "active": boolean

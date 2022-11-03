@@ -9,7 +9,8 @@ const url = {
   "period": `${urlPrefix}period`,
   "school_year": `${urlPrefix}school_year`,
   "class_type": `${urlPrefix}class_type`,
-  "discipline": `${urlPrefix}discipline`
+  "discipline": `${urlPrefix}discipline`,
+  "contract": `${urlPrefix}contract`
 }
 
 export default url
