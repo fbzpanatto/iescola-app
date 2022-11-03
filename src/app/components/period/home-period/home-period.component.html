@@ -53,18 +53,20 @@
       <thead>
       <tr>
         <th>id</th>
+        <th>Ano</th>
         <th>Período</th>
         <th>Início</th>
         <th>Fim</th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let period of periods" routerLink="{{period.id}}">
-        <td>{{ period.id }}</td>
-        <td>{{ period.name }}</td>
-        <td>{{ period.start }}</td>
-        <td>{{ period.end }}</td>
-      </tr>
+        <tr *ngFor="let period of periods" routerLink="{{ period.id }}">
+          <td>{{ period.id }}</td>
+          <td>{{ period.yearId }}</td>
+          <td>{{ period.name }}</td>
+          <td>{{ period.start }}</td>
+          <td>{{ period.end }}</td>
+        </tr>
       </tbody>
     </table>
   </ng-template>

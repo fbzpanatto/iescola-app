@@ -1,4 +1,3 @@
-//ok
 export type person_contract = {
   "id": number,
   "person_id": number,
@@ -8,7 +7,6 @@ export type person_contract = {
   "ended_at": string | null
 }
 
-//ok
 export type employee = {
   "id"?: number,
   "person_id": number,
@@ -44,10 +42,11 @@ export type person = {
 }
 
 export type period = {
-  "id": number,
-  "name": number,
-  "start": string,
-  "end": string
+  "id"?: number,
+  "yearId": number,
+  "name": string,
+  "start"?: Date,
+  "end"?: Date
 }
 
 export type year = {

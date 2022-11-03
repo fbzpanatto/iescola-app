@@ -21,7 +21,9 @@ export class HomePeriodComponent implements OnInit {
     this.onLoad()
       .then(() => {
         this.periodService.getAll()
-          .subscribe(period => this.periods = period)
+          .subscribe((period: any) => {
+            this.periods = period.value as period[]
+          })
       })
   }
 
@@ -32,5 +34,4 @@ export class HomePeriodComponent implements OnInit {
       resolve()
     })
   }
-
 }

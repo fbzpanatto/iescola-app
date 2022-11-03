@@ -1,34 +1,35 @@
 import { Injectable } from '@angular/core';
-import { Observable } from "rxjs";
 import { period } from "../../shared/utils/types";
 import { HttpClient } from "@angular/common/http";
-import url from "../../shared/utils/url";
+import { environment } from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PeriodService {
 
+  url = `${environment.GIGABASE.ODATA_URL}/Escola/Period`
+
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<period[]> {
-    return this.http.get<period[]>(url.period)
+  getAll() {
+    return this.http.get(this.url)
   }
 
-  getById(id:string): Observable<period>{
-    return this.http.get<period>(`${url.period}/${id}`)
+  getById(id:string) {
+    return this.http.get(`${this.url}(${id})`)
   }
 
   create(body: period) {
-    return this.http.post<period>(url.period, body)
+    return this.http.post<period>(this.url, body)
   }
 
   update( id: string, body: period ) {
-    return this.http.put(`${url.period}/${id}`, body)
+    return this.http.put(`${this.url}(${id})`, body)
   }
 
   delete( id: string) {
-    return this.http.delete(`${url.period}/${id}`)
+    return this.http.delete(`${this.url}(${id})`)
   }
 }
 

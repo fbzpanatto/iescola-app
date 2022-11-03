@@ -9,6 +9,7 @@ import { NewPeriodComponent } from './new-period/new-period.component';
 import { HomePeriodComponent } from './home-period/home-period.component';
 import { DetailPeriodComponent } from './detail-period/detail-period.component';
 import { FormPeriodComponent } from './form-period/form-period.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,11 +18,12 @@ import { FormPeriodComponent } from './form-period/form-period.component';
     DetailPeriodComponent,
     FormPeriodComponent,
   ],
-  imports: [
-    CommonModule,
-    PeriodRoutingModule,
-    MaterialModule,
-    ToolbarsModule
-  ]
+    imports: [
+        CommonModule,
+        PeriodRoutingModule,
+        MaterialModule,
+        ToolbarsModule,
+        ReactiveFormsModule
+    ]
 })
 export class PeriodModule { }
