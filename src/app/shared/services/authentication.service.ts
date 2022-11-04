@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+import { LoginDialogService } from "../components/login/login-dialog.service";
 
 @Injectable({
   providedIn: 'root'
@@ -6,8 +8,30 @@ import { Injectable } from '@angular/core';
 export class AuthenticationService {
 
   private _token: string | undefined
+  private _isLogged: boolean = false
 
-  constructor() { }
+  constructor(private http: HttpClient, private loginService: LoginDialogService) { }
+
+  openDialogLogin() {
+    this.loginService.openLoginDialog()
+      .afterClosed()
+      .subscribe({
+        next: (token) => this.setLoggedVariables(token)
+      })
+  }
+
+  setLoggedVariables(token: string) {
+    this.isLogged = true
+    this.token = token
+  }
+
+  get isLogged() {
+    return  this._isLogged
+  }
+
+  set isLogged(boolean) {
+    this._isLogged = boolean
+  }
 
   get token () {
     return this._token

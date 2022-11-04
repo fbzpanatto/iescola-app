@@ -7,7 +7,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MaterialModule } from './shared/modules/material.module';
 
 import { AppComponent } from './app.component';
-import { AuthenticationComponent } from './shared/components/authentication/authentication.component';
+import { LoginComponent } from './shared/components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavigationComponent } from './shared/components/navigation/navigation.component';
 import { HelpComponent } from './components/help/help.component';
@@ -21,7 +21,7 @@ import {MAT_DATE_LOCALE} from "@angular/material/core";
   declarations: [
     AppComponent,
     NavigationComponent,
-    AuthenticationComponent,
+    LoginComponent,
     HomeComponent,
     HelpComponent,
     TermsComponent,
