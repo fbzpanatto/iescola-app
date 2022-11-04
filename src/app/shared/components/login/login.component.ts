@@ -4,6 +4,8 @@ import {environment} from "../../../../environments/environment";
 import {shareReplay} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {MatDialogRef} from "@angular/material/dialog";
+import {DialogService} from "../dialog/dialog.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -19,6 +21,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
+    private dialog: DialogService,
+    private router: Router,
     private dialogRef: MatDialogRef<LoginComponent>
   ) { }
 
@@ -39,11 +43,23 @@ export class LoginComponent implements OnInit {
   }
 
   login(email: string, password: string) {
-    return this.http.post(environment.GIGABASE.PROOF_URL,{email, password, application: environment.bodyPost.application},{responseType: 'text'})
+    return this.http.post(environment.GIGABASE.PROOF_URL,
+      {email, password: '123', application: environment.bodyPost.application},
+      {responseType: 'text'})
       .pipe(shareReplay())
       .subscribe({
-        next: (result) => this.dialogRef.close(result)
-      //  TODO: Error
+        next: (result) => this.dialogRef.close(result),
+        error: (err) => this.errorHandler(err.statusText, err.status)
       })
+  }
+
+  back(){
+    this.router.navigate(['home'])
+  }
+
+  errorHandler(statusText: string, errorStatus: number) {
+    this.dialog.openDialog(statusText, errorStatus)
+      .afterClosed()
+      .subscribe(() => this.back())
   }
 }

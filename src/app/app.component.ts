@@ -15,7 +15,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit() {
     if(!this.authService.isLogged) {
-      this.authService.openDialogLogin()
+      this.authService.openLoginDialog()
     }
   }
 }

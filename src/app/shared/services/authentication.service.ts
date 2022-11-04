@@ -12,7 +12,7 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient, private loginService: LoginDialogService) { }
 
-  openDialogLogin() {
+  openLoginDialog() {
     this.loginService.openLoginDialog()
       .afterClosed()
       .subscribe({
