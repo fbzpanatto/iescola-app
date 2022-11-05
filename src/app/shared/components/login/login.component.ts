@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
 
   login(email: string, password: string) {
     return this.http.post(environment.GIGABASE.PROOF_URL,
-      {email, password: '123', application: environment.bodyPost.application},
+      {email, password, application: environment.bodyPost.application},
       {responseType: 'text'})
       .pipe(shareReplay())
       .subscribe({

@@ -19,6 +19,11 @@ export class DialogComponent implements OnInit{
       "message": this.data.message
     },
 
+    "invalidCredentials": {
+      "status": 401,
+      "message": "Credenciais inválidas"
+    },
+
     "defaultHttpErros": {
       "message": "Não foi possível realizar esta ação no momento"
     }
