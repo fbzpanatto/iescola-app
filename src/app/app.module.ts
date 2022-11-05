@@ -1,4 +1,4 @@
-import {LOCALE_ID, NgModule} from '@angular/core';
+import { NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -43,7 +43,6 @@ import {MAT_DATE_LOCALE} from "@angular/material/core";
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: HttpHandlerInterceptor, multi: true},
-    {provide: LOCALE_ID, useValue: 'pt-BR' },
     {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}
   ],
   bootstrap: [AppComponent]
