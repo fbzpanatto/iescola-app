@@ -20,6 +20,8 @@ export class AuthenticationService {
       })
   }
 
+  private setSession() {}
+
   setLoggedVariables(token: string) {
     this.isLogged = true
     this.token = token
