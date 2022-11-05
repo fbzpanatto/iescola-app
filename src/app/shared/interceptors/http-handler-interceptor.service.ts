@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 import { AuthenticationService } from "../services/authentication.service";
 
 const AUTHORIZATION_KEY = 'Authorization';
+const LOCAL_STORAGE_TOKEN_KEY = 'token';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,11 @@ export class HttpHandlerInterceptor implements HttpInterceptor{
 
     const modifiedHttpRequest = httpRequest.clone() as any;
 
-    HttpHandlerInterceptor.setHeader(modifiedHttpRequest, AUTHORIZATION_KEY, 'Bearer ' + this.authService.token)
+    const idToken = window.localStorage.getItem(LOCAL_STORAGE_TOKEN_KEY)
+
+    if(idToken) {
+      HttpHandlerInterceptor.setHeader(modifiedHttpRequest, AUTHORIZATION_KEY, 'Bearer ' + this.authService.token)
+    }
 
     return next.handle(modifiedHttpRequest)
   }
