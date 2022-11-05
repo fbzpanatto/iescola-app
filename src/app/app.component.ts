@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { AuthenticationService } from "./shared/services/authentication.service";
+import { LoginDialogService } from "./shared/components/login/login-dialog.service";
 
 @Component({
   selector: 'app-root',
@@ -11,11 +11,9 @@ export class AppComponent implements OnInit{
 
   title = 'iescola-app';
 
-  constructor(private http: HttpClient, private authService: AuthenticationService) {}
+  constructor(private http: HttpClient, private loginService: LoginDialogService) {}
 
   ngOnInit() {
-    if(!this.authService.isLogged) {
-      this.authService.openLoginDialog()
-    }
+    this.loginService.openLoginDialog()
   }
 }

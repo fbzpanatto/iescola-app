@@ -1,18 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup } from "@angular/forms";
-import {environment} from "../../../../environments/environment";
-import {shareReplay} from "rxjs";
-import {HttpClient} from "@angular/common/http";
-import {MatDialogRef} from "@angular/material/dialog";
-import {DialogService} from "../dialog/dialog.service";
-import {Router} from "@angular/router";
+import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
+import { FormControl, FormGroup } from "@angular/forms";
+import { environment } from "src/environments/environment"
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
+import { AuthenticationService } from "src/app/shared/services/authentication.service";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
 
   form = new FormGroup({
     "email": new FormControl<string | null>(null),
@@ -20,52 +17,33 @@ export class LoginComponent implements OnInit {
 })
 
   constructor(
-    private http: HttpClient,
-    private dialog: DialogService,
-    private router: Router,
-    private dialogRef: MatDialogRef<LoginComponent>
+    private dialogRef: MatDialogRef<LoginComponent>,
+    @Inject(MAT_DIALOG_DATA) private dialogData: any,
+    private authService: AuthenticationService,
   ) { }
 
-  ngOnInit(): void {}
-
-  onSubmit() {
-
-    this.wrapper()
-      .then((value) => this.login(value.email!, value.password!))
+  ngOnInit(): void {
+    console.log(this.dialogData)
   }
 
-  wrapper() {
-    const val = {
-      email: environment.bodyPost.email,
-      password: environment.bodyPost.password
-    }
-    return new Promise<Partial<{email: string | null, password: string | null}>>((resolve) => resolve(val))
+  ngOnDestroy(): void {}
+
+  close() {
+    this.dialogRef.close({
+      request: this.dialogData,
+      response: {
+        authenticated: 'this.authService.authenticated'
+      }
+    })
   }
 
-  login(email: string, password: string) {
-    return this.http.post(environment.GIGABASE.PROOF_URL,
-      {
-        email,
-        password,
-        application: environment.bodyPost.application
-      },
-      {
-        responseType: 'text'
-      })
-      .pipe(shareReplay())
-      .subscribe({
-        next: (result) => this.dialogRef.close(result),
-        error: (err) => this.errorHandler(err.statusText, err.status)
-      })
+  signIn() {
+    this.authService.signIn(environment.bodyPost.email, environment.bodyPost.password)
+      .then(() => this.close())
+      .catch(error => console.log(error))
   }
 
-  back(){
-    this.router.navigate(['home'])
-  }
-
-  errorHandler(statusText: string, errorStatus: number) {
-    this.dialog.openDialog(statusText, errorStatus)
-      .afterClosed()
-      .subscribe(() => this.back())
+  reset() {
+  //  TODO:
   }
 }

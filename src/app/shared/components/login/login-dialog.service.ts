@@ -15,7 +15,10 @@ export class LoginDialogService {
       width: '500px',
       autoFocus: false,
       disableClose: true,
-      backdropClass: 'bg-drop-class'
+      backdropClass: 'bg-drop-class',
+      data: {
+        teste: 'something to see'
+      }
     })
   }
 }

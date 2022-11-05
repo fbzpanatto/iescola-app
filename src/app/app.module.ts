@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,7 +14,7 @@ import { HelpComponent } from './components/help/help.component';
 import { TermsComponent } from './components/terms/terms.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { DialogComponent } from './shared/components/dialog/dialog.component';
-import {TokenInterceptorService} from "./shared/interceptors/token-interceptor.service";
+import {HttpHandlerInterceptor} from "./shared/interceptors/http-handler-interceptor.service";
 import {MAT_DATE_LOCALE} from "@angular/material/core";
 
 @NgModule({
@@ -42,7 +42,8 @@ import {MAT_DATE_LOCALE} from "@angular/material/core";
     HttpClientModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: HttpHandlerInterceptor, multi: true},
+    {provide: LOCALE_ID, useValue: 'pt-BR' },
     {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}
   ],
   bootstrap: [AppComponent]
