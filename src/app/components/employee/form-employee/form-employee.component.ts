@@ -42,10 +42,10 @@ export class FormEmployeeComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id']
     this.start()
-      // .then(async () => this.fetchContracts())
-      // .then(async () => this.fetchOccupations())
-      // .then(async () => this.fetchPersons())
-      .then(async () => await this.onLoad())
+      .then(() => this.fetchContracts())
+      .then(() => this.fetchOccupations())
+      .then(() => this.fetchPersons())
+      .then(() => this.onLoad())
   }
 
   start(): Promise<boolean> {
