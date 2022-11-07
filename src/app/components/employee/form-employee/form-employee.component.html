@@ -1,46 +1,81 @@
-<!--TODO: criar o formulário-->
-<form fxLayout="column" fxLayoutGap="24px">
-  <div class="input-group first" fxLayout="column">
-    <label for="personSelector" class="group-title">Colaborador</label>
-    <select name="personSelector" id="personSelector" [value]="0">
-      <option value="0">Selecione uma pessoa</option>
-      <option value="1">Maria José Fernandes Rocha</option>
-      <option value="2">Pessoa 2</option>
-    </select>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutGap="24px">
+
+  <mat-form-field appearance="outline">
+    <mat-label>Número de matrícula</mat-label>
+    <input formControlName="registration" matInput placeholder="número da matrícula">
+    <mat-icon matSuffix fontIcon="edit"></mat-icon>
+  </mat-form-field>
+
+  <div class="container" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="24px">
+    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
+      <mat-label>Pessoa</mat-label>
+      <mat-select formControlName="personId">
+        <mat-option *ngFor="let option of fakeSelectArr" [value]="option.id">
+          {{ option.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
+      <mat-label>Cargo</mat-label>
+      <mat-select formControlName="occupationId">
+        <mat-option *ngFor="let option of fakeSelectArr" [value]="option.id">
+          {{ option.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
-  <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
-    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" class="input-group">
-      <label class="group-title" for="registration">Nº. Matrícula</label>
-      <input type="text" name="registration" id="registration">
-    </div>
-    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" class="input-group">
-      <label class="group-title" for="contractSelector">Contrato</label>
-      <select name="schoolSelector" id="contractSelector" [value]="0">
-        <option value="0">Selecione um tipo de contrato</option>
-        <option value="1">Efetivo</option>
-        <option value="2">Contratado</option>
-        <option value="2">Terceirizado</option>
-      </select>
-    </div>
+
+  <div class="container" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="24px">
+    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
+      <mat-label>Escola sede</mat-label>
+      <mat-select formControlName="schoolPrincipalId">
+        <mat-option *ngFor="let option of fakeSelectArr" [value]="option.id">
+          {{ option.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
+      <mat-label>Contrato</mat-label>
+      <mat-select formControlName="contractId">
+        <mat-option *ngFor="let option of fakeSelectArr" [value]="option.id">
+          {{ option.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
-  <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="16px">
-    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-      <label class="group-title" for="startDate">Data início</label>
-      <input type="date" name="startDate" id="startDate">
-    </div>
-    <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row" class="input-group" >
-      <label class="group-title" for="endDate">Data Fim</label>
-      <input type="date" id="endDate">
-    </div>
+
+  <div class="container" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="24px">
+    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
+      <mat-label>Data Início</mat-label>
+      <input matInput [matDatepicker]="startPicker" formControlName="start">
+      <mat-hint>DD/MM/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+      <mat-datepicker #startPicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
+      <mat-label>Data Fim</mat-label>
+      <input matInput [matDatepicker]="endPicker" formControlName="end">
+      <mat-hint>DD/MM/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+      <mat-datepicker #endPicker></mat-datepicker>
+    </mat-form-field>
   </div>
+
   <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
-    <button color="accent" mat-button>
+    <button type="button" color="accent" mat-button (click)="askForDelete()">
       <mat-icon fontIcon="delete_forever"></mat-icon>
       <span>Excluir</span>
     </button>
-    <button mat-flat-button color="primary">
+    <button type="submit" [disabled]="!form.valid" mat-flat-button color="primary">
       <mat-icon fontIcon="save"></mat-icon>
       <span>Salvar</span>
     </button>
   </div>
+
 </form>
+
+
+

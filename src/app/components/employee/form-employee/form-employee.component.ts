@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogService } from "../../../shared/components/dialog/dialog.service";
 import { ActivatedRoute, Router } from "@angular/router";
-import { contract, employment_contract, occupation } from "src/app/shared/utils/types";
+import {contract, employment_contract, occupation, person} from "src/app/shared/utils/types";
 import { EmployeeService } from "../employee.service";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
@@ -18,6 +18,8 @@ export class FormEmployeeComponent implements OnInit {
   employment_contract: employment_contract | undefined
   contracts: contract[] = []
   occupations: occupation[] = []
+  persons: person[] = []
+  fakeSelectArr = [{id: 1, name: 'um'}, {id: 2, name: 'dois'}]
 
   form = new FormGroup({
     "personId": new FormControl<number | null>(null, [Validators.required,]),
@@ -26,7 +28,7 @@ export class FormEmployeeComponent implements OnInit {
     "schoolPrincipalId": new FormControl<number | null>(null, [Validators.required]),
     "registration": new FormControl<string | null>(null, [Validators.required]),
     "start": new FormControl<string | Date | null>(null, [Validators.required]),
-    "end": new FormControl<string | Date | null>(null, [Validators.required])
+    "end": new FormControl<string | Date | null>(null)
   })
 
   constructor(
@@ -40,8 +42,9 @@ export class FormEmployeeComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id']
     this.start()
-      .then(async () => this.fetchContracts())
-      .then(async () => this.fetchOccupations())
+      // .then(async () => this.fetchContracts())
+      // .then(async () => this.fetchOccupations())
+      // .then(async () => this.fetchPersons())
       .then(async () => await this.onLoad())
   }
 
@@ -73,13 +76,13 @@ export class FormEmployeeComponent implements OnInit {
       })
   }
 
-  // async fetchYears(){
-  //   this.yearService.getAll()
-  //     .subscribe({
-  //       next: (result:any) => this.years = result.value as year[],
-  //       error: (err) => this.errorHandler(err.statusText, err.status)
-  //     })
-  // }
+  fetchPersons(){
+    this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/Person`)
+      .subscribe({
+        next: (result:any) => this.persons = result.value as person[],
+        error: (err) => this.errorHandler(err.statusText, err.status)
+      })
+  }
 
   onSubmit(): void {
     this.id ? this.onEdit() : this.onNew()
