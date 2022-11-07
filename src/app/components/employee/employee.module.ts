@@ -9,8 +9,7 @@ import { HomeEmployeeComponent } from './home-employee/home-employee.component';
 import { DetailEmployeeComponent } from './detail-employee/detail-employee.component';
 import { NewEmployeeComponent } from './new-employee/new-employee.component';
 import { FormEmployeeComponent } from './form-employee/form-employee.component';
-import { ContractEmployeeComponent } from './contract-employee/contract-employee.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
     declarations: [
@@ -18,7 +17,6 @@ import {ReactiveFormsModule} from "@angular/forms";
         NewEmployeeComponent,
         DetailEmployeeComponent,
         FormEmployeeComponent,
-        ContractEmployeeComponent
     ],
     exports: [
         FormEmployeeComponent

@@ -7,14 +7,23 @@ export type person_contract = {
   "ended_at": string | null
 }
 
-export type employee = {
+export type employment_contract = {
   "id"?: number,
-  "person_id": number,
+  "personId": number,
+  "contractId": number,
+  "occupationId": number,
+  "schoolPrincipalId": number,
   "registration": string,
-  "active": boolean
+  "start": string | Date,
+  "end"?: string | Date | null
 }
 
 export type contract = {
+  "id": number,
+  "name": string
+}
+
+export type occupation = {
   "id": number,
   "name": string
 }

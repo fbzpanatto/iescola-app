@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from "@angular/platform-browser";
 import { HomeToolbarService } from "../../../shared/components/toolbars/service/home-toolbar.service";
 import { EmployeeService } from "../employee.service";
-import { employee } from "../../../shared/utils/types";
+import { employment_contract } from "../../../shared/utils/types";
 
 @Component({
   selector: 'app-home-employee',
@@ -13,16 +13,13 @@ export class HomeEmployeeComponent implements OnInit {
 
   title: string | undefined
   listView: boolean | undefined = true
-  employees: employee[] = []
+  employees: employment_contract[] = []
 
   constructor(private titleService: Title, private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
     this.onLoad()
-      .then(() => {
-        this.employeeService.getAll()
-          .subscribe(employee => this.employees = employee)
-      })
+      .then(() => this.fetchAll())
   }
 
   onLoad() {
@@ -31,5 +28,10 @@ export class HomeEmployeeComponent implements OnInit {
       HomeToolbarService.subject.subscribe(v => this.listView = v)
       resolve()
     })
+  }
+
+  fetchAll(){
+    this.employeeService.getAll()
+      .subscribe((result:any) => this.employees = result.value as employment_contract[])
   }
 }

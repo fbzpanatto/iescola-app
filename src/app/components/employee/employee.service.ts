@@ -1,33 +1,34 @@
 import { Injectable } from '@angular/core';
-import { Observable } from "rxjs";
-import { employee } from "../../shared/utils/types";
+import { employment_contract } from "src/app/shared/utils/types";
 import { HttpClient } from "@angular/common/http";
-import url from "../../shared/utils/url";
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
 
+  url = `${environment.GIGABASE.ODATA_URL}/Escola/EmploymentContract`
+
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<employee[]> {
-    return this.http.get<employee[]>(url.employee)
+  getAll() {
+    return this.http.get(`${this.url}?$expand=contract,occupation,person,schoolPrincipal`)
   }
 
-  getById(id:string): Observable<employee>{
-    return this.http.get<employee>(`${url.employee}/${id}`)
+  getById(id:string) {
+    return this.http.get(`${this.url}(${id})?$expand=contract,occupation,person,schoolPrincipal`)
   }
 
-  create(body: employee) {
-    return this.http.post<employee>(url.employee, body)
+  create(body: Partial<employment_contract>) {
+    return this.http.post<employment_contract>(this.url, body)
   }
 
-  update( id: string, body: employee ) {
-    return this.http.put(`${url.employee}/${id}`, body)
+  update( id: string, body: Partial<employment_contract> ) {
+    return this.http.put(`${this.url}(${id})`, body)
   }
 
   delete( id: string) {
-    return this.http.delete(`${url.employee}/${id}`)
+    return this.http.delete(`${this.url}(${id})`)
   }
 }

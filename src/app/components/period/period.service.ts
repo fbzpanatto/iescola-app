@@ -32,4 +32,3 @@ export class PeriodService {
     return this.http.delete(`${this.url}(${id})`)
   }
 }
-
