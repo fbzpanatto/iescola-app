@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogService } from "../../../shared/components/dialog/dialog.service";
 import { ActivatedRoute, Router } from "@angular/router";
-import {contract, employment_contract, occupation, person} from "src/app/shared/utils/types";
+import { contract, employment_contract, occupation, person } from "src/app/shared/utils/types";
 import { EmployeeService } from "../employee.service";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
-import {environment} from "../../../../environments/environment";
+import { environment } from "../../../../environments/environment";
 
 @Component({
   selector: 'app-form-employee',
@@ -61,7 +61,7 @@ export class FormEmployeeComponent implements OnInit {
   }
 
   fetchContracts(){
-    this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/Contract`)
+     this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/Contract`)
       .subscribe({
         next: (result:any) => this.contracts = result.value as contract[],
         error: (err) => this.errorHandler(err.statusText, err.status)
