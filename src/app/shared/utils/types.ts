@@ -15,7 +15,23 @@ export type employment_contract = {
   "schoolPrincipalId": number,
   "registration": string,
   "start": string | Date,
-  "end"?: string | Date | null
+  "end"?: string | Date | null,
+  "person": {
+    "id": number,
+    "name": string
+  },
+  "occupation": {
+    "id": number,
+    "name": string
+  },
+  "contract": {
+    "id": number,
+    "name": string
+  },
+  "schoolPrincipal": {
+    "id": number,
+    "name": string
+  }
 }
 
 export type contract = {

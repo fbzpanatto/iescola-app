@@ -65,10 +65,10 @@
       <tr *ngFor="let employe of employees" routerLink="{{employe.id}}/contract">
         <td>{{ employe.id }}</td>
         <td>{{ employe.registration }}</td>
-        <td>{{ employe.personId }}</td>
-        <td>{{ employe.contractId }}</td>
-        <td>{{ employe.occupationId }}</td>
-        <td>{{ employe.schoolPrincipalId }}</td>
+        <td>{{ employe.person.name }}</td>
+        <td>{{ employe.contract.name }}</td>
+        <td>{{ employe.occupation.name }}</td>
+        <td>{{ employe.schoolPrincipal.name }}</td>
         <td>{{ employe.start }}</td>
       </tr>
       </tbody>
