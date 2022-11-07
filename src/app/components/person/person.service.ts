@@ -1,33 +1,34 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { person } from '../../shared/utils/types'
-import url from '../../shared/utils/url'
+import { person } from 'src/app/shared/utils/types'
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonService {
 
-  constructor(private http: HttpClient ) { }
+  url = `${environment.GIGABASE.ODATA_URL}/Escola/Person`
 
-  getAll(): Observable<person[]> {
-    return this.http.get<person[]>(url.person)
+  constructor(private http: HttpClient) { }
+
+  getAll() {
+    return this.http.get(this.url)
   }
 
-  getById(id:string): Observable<person>{
-    return this.http.get<person>(`${url.person}/${id}`)
+  getById(id:string) {
+    return this.http.get(`${this.url}(${id})`)
   }
 
   create(body: person) {
-    return this.http.post<person>(url.person, body)
+    return this.http.post<person>(this.url, body)
   }
 
   update( id: string, body: person ) {
-    return this.http.put(`${url.person}/${id}`, body)
+    return this.http.put(`${this.url}(${id})`, body)
   }
 
   delete( id: string) {
-    return this.http.delete(`${url.person}/${id}`)
+    return this.http.delete(`${this.url}(${id})`)
   }
 }

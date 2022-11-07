@@ -6,24 +6,25 @@
     <mat-icon matSuffix fontIcon="boy"></mat-icon>
   </mat-form-field>
 
-  <div class="container" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="24px">
-    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
-      <mat-label>Categoria</mat-label>
-      <mat-select formControlName="person_category_id">
-        <mat-option *ngFor="let option of category" [value]="option.id">
-          {{ option.name }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
-      <mat-label>Gênero</mat-label>
-      <mat-select formControlName="gender_id">
-        <mat-option *ngFor="let option of gender" [value]="option.id">
-          {{ option.name }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
+<!--  TODO: create person_category and gender entities in database-->
+<!--  <div class="container" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="24px">-->
+<!--    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">-->
+<!--      <mat-label>Categoria</mat-label>-->
+<!--      <mat-select formControlName="person_category_id">-->
+<!--        <mat-option *ngFor="let option of category" [value]="option.id">-->
+<!--          {{ option.name }}-->
+<!--        </mat-option>-->
+<!--      </mat-select>-->
+<!--    </mat-form-field>-->
+<!--    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">-->
+<!--      <mat-label>Gênero</mat-label>-->
+<!--      <mat-select formControlName="gender_id">-->
+<!--        <mat-option *ngFor="let option of gender" [value]="option.id">-->
+<!--          {{ option.name }}-->
+<!--        </mat-option>-->
+<!--      </mat-select>-->
+<!--    </mat-form-field>-->
+<!--  </div>-->
 
   <div class="container" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="24px">
     <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
@@ -38,18 +39,18 @@
     </mat-form-field>
   </div>
 
-  <div class="container" formGroupName="phone" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="24px">
-    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
-      <mat-label>Telefone1</mat-label>
-      <input formControlName="phone1" matInput placeholder="primeiro número">
-      <mat-icon matSuffix fontIcon="phone"></mat-icon>
-    </mat-form-field>
-    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
-      <mat-label>Telefone2</mat-label>
-      <input formControlName="phone2" matInput placeholder="segundo número">
-      <mat-icon matSuffix fontIcon="phone"></mat-icon>
-    </mat-form-field>
-  </div>
+<!--  <div class="container" formGroupName="phone" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="24px">-->
+<!--    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">-->
+<!--      <mat-label>Telefone1</mat-label>-->
+<!--      <input formControlName="phone1" matInput placeholder="primeiro número">-->
+<!--      <mat-icon matSuffix fontIcon="phone"></mat-icon>-->
+<!--    </mat-form-field>-->
+<!--    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">-->
+<!--      <mat-label>Telefone2</mat-label>-->
+<!--      <input formControlName="phone2" matInput placeholder="segundo número">-->
+<!--      <mat-icon matSuffix fontIcon="phone"></mat-icon>-->
+<!--    </mat-form-field>-->
+<!--  </div>-->
 
   <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
     <button type="button" color="accent" mat-button (click)="askForDelete()">

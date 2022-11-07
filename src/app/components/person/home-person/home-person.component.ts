@@ -2,7 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { Title } from "@angular/platform-browser";
 import { HomeToolbarService } from "../../../shared/components/toolbars/service/home-toolbar.service";
 import { PersonService } from "../person.service";
-import { person } from "../../../shared/utils/types";
+import { person } from "src/app/shared/utils/types";
 
 @Component({
   selector: 'app-home-person',
@@ -21,7 +21,9 @@ export class HomePersonComponent implements OnInit {
     this.onLoad()
       .then(() => {
         this.personService.getAll()
-          .subscribe(persons => this.persons = persons)
+          .subscribe((result: any) => {
+            this.persons = result.value as person[]
+          })
       })
   }
 

@@ -16,6 +16,7 @@ export class AuthenticationService {
   private refreshTimeout: any
 
   private _token: string | null = null
+  private _isLogged: boolean = false
   private readonly authenticate = new Subject<string | null>()
 
   constructor(
@@ -59,6 +60,7 @@ export class AuthenticationService {
 
   private async setToken(token: string) {
     this.token = token
+    this.isLogged = true
     window.localStorage.setItem(LOCAL_STORAGE_TOKEN_KEY, token)
   }
 
@@ -78,5 +80,13 @@ export class AuthenticationService {
 
   set token(token) {
     this._token = token
+  }
+
+  get isLogged() {
+    return this._isLogged
+  }
+
+  set isLogged(boolean: boolean) {
+    this._isLogged = boolean
   }
 }

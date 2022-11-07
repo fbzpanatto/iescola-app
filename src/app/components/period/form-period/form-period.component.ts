@@ -3,8 +3,8 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { DialogService } from "../../../shared/components/dialog/dialog.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { PeriodService } from "../period.service";
-import {period, year} from "../../../shared/utils/types";
-import {YearService} from "../../schoolyear/year.service";
+import { period, year } from "../../../shared/utils/types";
+import { YearService } from "../../schoolyear/year.service";
 
 @Component({
   selector: 'app-form-period',
@@ -35,15 +35,15 @@ export class FormPeriodComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id']
     this.start()
-      .then(() => this.fetchYears())
-      .then(() => this.onLoad())
+      .then(async () => await this.fetchYears())
+      .then(async () => await this.onLoad())
   }
 
   start(): Promise<boolean> {
     return new Promise<boolean>((resolve) => resolve(true))
   }
 
-  onLoad() {
+  async onLoad() {
     this.id? this.periodService.getById(this.id)
       .subscribe({
         next: (period:any) => this.pathFormValues(period),
@@ -51,7 +51,7 @@ export class FormPeriodComponent implements OnInit {
       }) : null
   }
 
-  fetchYears(){
+  async fetchYears(){
     this.yearService.getAll()
       .subscribe({
         next: (result:any) => this.years = result.value as year[],

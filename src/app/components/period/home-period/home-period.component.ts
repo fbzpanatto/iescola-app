@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from "@angular/platform-browser";
 import { HomeToolbarService } from "../../../shared/components/toolbars/service/home-toolbar.service";
 import { period } from "../../../shared/utils/types";
-import { PeriodService } from "../period.service";
+import { PeriodService } from "src/app/components/period/period.service";
 
 @Component({
   selector: 'app-home-period',
@@ -19,12 +19,7 @@ export class HomePeriodComponent implements OnInit {
 
   ngOnInit(): void {
     this.onLoad()
-      .then(() => {
-        this.periodService.getAll()
-          .subscribe((period: any) => {
-            this.periods = period.value as period[]
-          })
-      })
+      .then(() => this.fetchAll())
   }
 
   onLoad() {
@@ -33,5 +28,10 @@ export class HomePeriodComponent implements OnInit {
       HomeToolbarService.subject.subscribe(v => this.listView = v)
       resolve()
     })
+  }
+
+  fetchAll(){
+    this.periodService.getAll()
+      .subscribe((result:any) => this.periods = result.value as period[])
   }
 }
