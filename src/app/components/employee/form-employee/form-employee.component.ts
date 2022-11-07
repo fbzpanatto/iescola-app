@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { contract, employment_contract, occupation } from "src/app/shared/utils/types";
 import { EmployeeService } from "../employee.service";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { HttpClient } from "@angular/common/http";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-form-employee',
@@ -14,8 +16,8 @@ export class FormEmployeeComponent implements OnInit {
 
   id: string | null = null
   employment_contract: employment_contract | undefined
-  contract: contract[] = []
-  occupation: occupation[] = []
+  contracts: contract[] = []
+  occupations: occupation[] = []
 
   form = new FormGroup({
     "personId": new FormControl<number | null>(null, [Validators.required,]),
@@ -31,13 +33,15 @@ export class FormEmployeeComponent implements OnInit {
     private dialog: DialogService,
     private router: Router,
     private route: ActivatedRoute,
-    private employeeService: EmployeeService
+    private employeeService: EmployeeService,
+    private httpClient: HttpClient
   ) {}
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id']
     this.start()
-      // .then(async () => await this.fetchYears())
+      .then(async () => this.fetchContracts())
+      .then(async () => this.fetchOccupations())
       .then(async () => await this.onLoad())
   }
 
@@ -51,6 +55,22 @@ export class FormEmployeeComponent implements OnInit {
         next: (employment_contract:any) => this.pathFormValues(employment_contract),
         error: (err) => this.errorHandler(err.statusText, err.status)
       }) : null
+  }
+
+  fetchContracts(){
+    this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/Contract`)
+      .subscribe({
+        next: (result:any) => this.contracts = result.value as contract[],
+        error: (err) => this.errorHandler(err.statusText, err.status)
+      })
+  }
+
+  fetchOccupations(){
+    this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/Occupation`)
+      .subscribe({
+        next: (result:any) => this.occupations = result.value as occupation[],
+        error: (err) => this.errorHandler(err.statusText, err.status)
+      })
   }
 
   // async fetchYears(){
@@ -97,7 +117,7 @@ export class FormEmployeeComponent implements OnInit {
   }
 
   backToList(){
-    this.router.navigate(['period'])
+    this.router.navigate(['employee'])
   }
 
   errorHandler(statusText: string, errorStatus: number) {
