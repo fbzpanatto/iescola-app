@@ -161,7 +161,8 @@ export class FormEmployeeComponent implements OnInit {
   }
 
   askForDelete() {
-    this.dialog.openDialog(`Deseja excluir o contrato ${this.employment_contract?.id} de ${this.employment_contract?.personId}?`, 1)
+    this.dialog.openDialog(
+      `Deseja excluir o contrato ${this.employment_contract?.id} de ${this.employment_contract?.personId}?`, 1)
       .afterClosed()
       .subscribe(result => result ? this.onDelete() : null)
   }
