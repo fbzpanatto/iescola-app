@@ -5,7 +5,7 @@ import { HttpClient } from "@angular/common/http";
 import { TeacherService } from "../teacher.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { COMMA, ENTER } from "@angular/cdk/keycodes";
-import { FormControl } from "@angular/forms";
+import { FormControl, FormGroup } from "@angular/forms";
 import { map, Observable, startWith } from "rxjs";
 import { MatChipInputEvent } from "@angular/material/chips";
 import { MatAutocomplete, MatAutocompleteSelectedEvent } from "@angular/material/autocomplete";
@@ -31,6 +31,10 @@ export class FormTeacherComponent implements OnInit {
 
   @ViewChild('disciplineInput') disciplineInput!: ElementRef<HTMLInputElement>
   @ViewChild('auto') matAutocomplete!: MatAutocomplete;
+
+  form = new FormGroup({
+
+  })
 
   constructor(
     private httpClient: HttpClient,
@@ -181,11 +185,9 @@ export class FormTeacherComponent implements OnInit {
     }
   }
 
-
-
-
-  onSave(){
-    console.log('saving...')
+  onSubmit(){
+    //TODO: criar form de envio: chipSelectedDisciplines são as matérias selecionadas
+    console.log(this.chipSelectedDisciplines)
   }
 
   backToList(){
