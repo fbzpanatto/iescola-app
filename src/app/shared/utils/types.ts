@@ -7,6 +7,11 @@ export type person_contract = {
   "ended_at": string | null
 }
 
+export type clasroom = {
+  "id": number,
+  "name": string
+}
+
 export type employment_contract = {
   "id"?: number,
   "personId": number,
@@ -32,6 +37,12 @@ export type employment_contract = {
     "id": number,
     "name": string
   }
+}
+
+export type teacher = {
+  "id": number,
+  "name": string,
+
 }
 
 export type contract = {

@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Title} from "@angular/platform-browser";
+import { Title } from "@angular/platform-browser";
 import { HomeToolbarService } from "../../../shared/components/toolbars/service/home-toolbar.service";
+import { teacher } from "../../../shared/utils/types";
+import { TeacherService } from "../teacher.service";
 
 @Component({
   selector: 'app-teacher',
@@ -11,15 +13,27 @@ export class HomeTeacherComponent implements OnInit {
 
   title: string | undefined
   listView: boolean | undefined = true
+  //TODO: definir melhor a tipagem para teachers
+  personTeachers: any[] = []
 
-  constructor(private titleService: Title) { }
+  constructor(private titleService: Title, private teacherService: TeacherService) { }
 
   ngOnInit(): void {
-    this.title = this.titleService.getTitle().split('-')[1]
-    HomeToolbarService.subject.subscribe(v => this.listView = v)
+    this.onLoad()
+      .then(() => this.fetchAll())
   }
 
-  onEdit(){
-    console.log('edit...')
+  onLoad() {
+    return new Promise<void>((resolve) => {
+      this.title = this.titleService.getTitle().split('-')[1]
+      HomeToolbarService.subject.subscribe(v => this.listView = v)
+      resolve()
+    })
+  }
+
+  fetchAll(){
+    this.teacherService.getAll()
+      //todo: criar um map para melhorar o retorno, e não setar [0] no html
+      .subscribe((result:any) => this.personTeachers = result.value)
   }
 }
