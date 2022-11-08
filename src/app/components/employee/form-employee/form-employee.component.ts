@@ -48,10 +48,11 @@ export class FormEmployeeComponent implements OnInit {
       .then(() => this.fetchPersons())
       .then(() => this.fetchSchools())
       .then(() => this.onLoad())
+      .catch(error => this.errorHandler(error.statusText, error.status))
   }
 
-  start(): Promise<boolean> {
-    return new Promise<boolean>((resolve) => resolve(true))
+  start() {
+    return new Promise<void>((resolve) => resolve())
   }
 
   onLoad() {
@@ -63,35 +64,71 @@ export class FormEmployeeComponent implements OnInit {
   }
 
   fetchContracts(){
-     this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/Contract`)
-      .subscribe({
-        next: (result:any) => this.contracts = result.value as contract[],
-        error: (err) => this.errorHandler(err.statusText, err.status)
-      })
+    return new Promise<void>((resolve, reject) => {
+      try {
+        this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/Contract`)
+          .subscribe({
+            next: (result:any) => {
+              this.contracts = result.value as contract[]
+              resolve()
+            },
+            error: (err) => reject(err)
+          })
+      } catch (error) {
+        reject(error)
+      }
+    })
   }
 
   fetchOccupations(){
-    this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/Occupation`)
-      .subscribe({
-        next: (result:any) => this.occupations = result.value as occupation[],
-        error: (err) => this.errorHandler(err.statusText, err.status)
-      })
+    return new Promise<void>((resolve, reject) => {
+      try {
+        this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/Occupation`)
+          .subscribe({
+            next: (result:any) => {
+              this.occupations = result.value as occupation[]
+              resolve()
+            },
+            error: (err) => reject(err)
+          })
+      } catch (error) {
+        reject(error)
+      }
+    })
   }
 
   fetchPersons(){
-    this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/Person`)
-      .subscribe({
-        next: (result:any) => this.persons = result.value as person[],
-        error: (err) => this.errorHandler(err.statusText, err.status)
-      })
+    return new Promise<void>((resolve, reject) => {
+      try {
+        this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/Person`)
+          .subscribe({
+            next: (result:any) => {
+              this.persons = result.value as person[]
+              resolve()
+            },
+            error: (err) => reject(err)
+          })
+      } catch (error) {
+        reject(error)
+      }
+    })
   }
 
   fetchSchools(){
-    this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/School`)
-      .subscribe({
-        next: (result:any) => this.schools = result.value as school[],
-        error: (err) => this.errorHandler(err.statusText, err.status)
-      })
+    return new Promise<void>((resolve, reject) => {
+      try {
+        this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/School`)
+          .subscribe({
+            next: (result:any) => {
+              this.schools = result.value as school[]
+              resolve()
+            },
+            error: (err) => reject(err)
+          })
+      } catch (error) {
+        reject(error)
+      }
+    })
   }
 
   onSubmit(): void {
