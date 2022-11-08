@@ -18,19 +18,24 @@ import { MatAutocomplete, MatAutocompleteSelectedEvent } from "@angular/material
 export class FormTeacherComponent implements OnInit {
 
   id: string | null = null
-  classes: clasroom[] = []
+
+  allClasses: clasroom[] = []
+  public chipSelectedClasses: clasroom[] = []
+  public filteredClasses: Observable<String[]> | undefined;
+  private allowFreeTextAddClass = false;
+  public classControl = new FormControl();
+  @ViewChild('classInput') classInput!: ElementRef<HTMLInputElement>
+  @ViewChild('autoClass') matAutocompleteClass!: MatAutocomplete;
 
   allDisciplines: discipline[] = []
   public chipSelectedDisciplines: discipline[] = []
   public filteredDisciplines: Observable<String[]> | undefined;
-
   private allowFreeTextAddDiscipline = false;
-
   public disciplineControl = new FormControl();
-  readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-
   @ViewChild('disciplineInput') disciplineInput!: ElementRef<HTMLInputElement>
-  @ViewChild('auto') matAutocomplete!: MatAutocomplete;
+  @ViewChild('autoDiscipline') matAutocompleteDiscipline!: MatAutocomplete;
+
+  readonly separatorKeysCodes: number[] = [ENTER, COMMA];
 
   form = new FormGroup({
 
@@ -54,7 +59,6 @@ export class FormTeacherComponent implements OnInit {
       .then(() => this.fetchClasses())
       .then(() => this.fetchDisciplines())
   }
-
   start() {
     return new Promise<void>((resolve) => resolve())
   }
@@ -81,7 +85,7 @@ export class FormTeacherComponent implements OnInit {
         this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/Class`)
           .subscribe({
             next: (result:any) => {
-              this.classes = result.value as clasroom[]
+              this.allClasses = result.value as clasroom[]
               resolve()
             },
             error: (err) => reject(err)
@@ -91,7 +95,18 @@ export class FormTeacherComponent implements OnInit {
       }
     })
   }
+  backToList(){
+    this.router.navigate(['employee'])
+  }
+  onSubmit(){
+    //TODO: criar form de envio: chipSelectedDisciplines são as matérias selecionadas
+    console.log(this.chipSelectedDisciplines)
+  }
 
+  //ClassChips
+
+
+  //DisciplineChips
   public addDiscipline(event: MatChipInputEvent): void {
     if (!this.allowFreeTextAddDiscipline) {
       // only allowed to select from the filtered autocomplete list
@@ -103,7 +118,7 @@ export class FormTeacherComponent implements OnInit {
     // Only add when MatAutocomplete is not open
     // To make sure this does not conflict with OptionSelected Event
     //
-    if (this.matAutocomplete.isOpen) {
+    if (this.matAutocompleteDiscipline.isOpen) {
       return;
     }
 
@@ -185,12 +200,4 @@ export class FormTeacherComponent implements OnInit {
     }
   }
 
-  onSubmit(){
-    //TODO: criar form de envio: chipSelectedDisciplines são as matérias selecionadas
-    console.log(this.chipSelectedDisciplines)
-  }
-
-  backToList(){
-    this.router.navigate(['employee'])
-  }
 }

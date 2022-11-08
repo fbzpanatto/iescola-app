@@ -23,13 +23,13 @@
         placeholder="Disciplinas do professor"
         #disciplineInput
         [formControl]="disciplineControl"
-        [matAutocomplete]="auto"
+        [matAutocomplete]="autoDiscipline"
         [matChipInputFor]="chipList"
         [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
         [matChipInputAddOnBlur]=true
         (matChipInputTokenEnd)="addDiscipline($event)">
     </mat-chip-list>
-    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="disciplineSelected($event)">
+    <mat-autocomplete #autoDiscipline="matAutocomplete" (optionSelected)="disciplineSelected($event)">
       <mat-option *ngFor="let thisDisciplineName of filteredDisciplines | async" [value]="thisDisciplineName">
         {{thisDisciplineName}}
       </mat-option>
