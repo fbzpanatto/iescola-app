@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogService } from "../../../shared/components/dialog/dialog.service";
 import { ActivatedRoute, Router } from "@angular/router";
-import { contract, employment_contract, occupation, person } from "src/app/shared/utils/types";
+import { contract, employment_contract, occupation, person, school } from "src/app/shared/utils/types";
 import { EmployeeService } from "../employee.service";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
@@ -19,6 +19,7 @@ export class FormEmployeeComponent implements OnInit {
   contracts: contract[] = []
   occupations: occupation[] = []
   persons: person[] = []
+  schools: school[] = []
   fakeSelectArr = [{id: 1, name: 'um'}, {id: 2, name: 'dois'}]
 
   form = new FormGroup({
@@ -45,6 +46,7 @@ export class FormEmployeeComponent implements OnInit {
       .then(() => this.fetchContracts())
       .then(() => this.fetchOccupations())
       .then(() => this.fetchPersons())
+      .then(() => this.fetchSchools())
       .then(() => this.onLoad())
   }
 
@@ -52,7 +54,7 @@ export class FormEmployeeComponent implements OnInit {
     return new Promise<boolean>((resolve) => resolve(true))
   }
 
-  async onLoad() {
+  onLoad() {
     this.id? this.employeeService.getById(this.id)
       .subscribe({
         next: (employment_contract:any) => this.pathFormValues(employment_contract),
@@ -80,6 +82,14 @@ export class FormEmployeeComponent implements OnInit {
     this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/Person`)
       .subscribe({
         next: (result:any) => this.persons = result.value as person[],
+        error: (err) => this.errorHandler(err.statusText, err.status)
+      })
+  }
+
+  fetchSchools(){
+    this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/School`)
+      .subscribe({
+        next: (result:any) => this.schools = result.value as school[],
         error: (err) => this.errorHandler(err.statusText, err.status)
       })
   }

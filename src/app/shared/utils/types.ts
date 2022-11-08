@@ -92,6 +92,11 @@ export type discipline = {
   "name": string
 }
 
+export type school = {
+  "id": number,
+  "name": string
+}
+
 type phone = {
   "phone1"?: number,
   "phone2"?: number

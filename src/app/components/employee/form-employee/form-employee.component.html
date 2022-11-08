@@ -10,7 +10,7 @@
     <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
       <mat-label>Pessoa</mat-label>
       <mat-select formControlName="personId">
-        <mat-option *ngFor="let option of fakeSelectArr" [value]="option.id">
+        <mat-option *ngFor="let option of persons" [value]="option.id">
           {{ option.name }}
         </mat-option>
       </mat-select>
@@ -19,7 +19,7 @@
     <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
       <mat-label>Cargo</mat-label>
       <mat-select formControlName="occupationId">
-        <mat-option *ngFor="let option of fakeSelectArr" [value]="option.id">
+        <mat-option *ngFor="let option of occupations" [value]="option.id">
           {{ option.name }}
         </mat-option>
       </mat-select>
@@ -30,7 +30,7 @@
     <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
       <mat-label>Escola sede</mat-label>
       <mat-select formControlName="schoolPrincipalId">
-        <mat-option *ngFor="let option of fakeSelectArr" [value]="option.id">
+        <mat-option *ngFor="let option of schools" [value]="option.id">
           {{ option.name }}
         </mat-option>
       </mat-select>
@@ -39,7 +39,7 @@
     <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
       <mat-label>Contrato</mat-label>
       <mat-select formControlName="contractId">
-        <mat-option *ngFor="let option of fakeSelectArr" [value]="option.id">
+        <mat-option *ngFor="let option of contracts" [value]="option.id">
           {{ option.name }}
         </mat-option>
       </mat-select>
