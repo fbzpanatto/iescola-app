@@ -98,7 +98,7 @@ export class FormDisciplineComponent implements OnInit {
     this.form.patchValue(this.discipline)
   }
 
-  body(): discipline {
+  body(): Partial<discipline> {
     return {
       name: this.form.value.name!
     }

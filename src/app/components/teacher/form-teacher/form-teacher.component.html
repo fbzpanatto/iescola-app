@@ -7,17 +7,38 @@
       <option value="2">Pessoa 2</option>
     </select>
   </div>
-  <div class="input-group" fxLayout="row wrap" fxLayoutGap="32px">
-    <label class="group-title">Disciplinas</label>
-    <div>
-      <input type="checkbox" id="vehicle1" name="vehicle1" value="matematica">
-      <label class="pointer" for="vehicle1">Matemática</label>
-    </div>
-    <div>
-      <input type="checkbox" id="vehicle2" name="vehicle2" value="matematica">
-      <label class="pointer" for="vehicle2">Português</label>
-    </div>
-  </div>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Disciplinas</mat-label>
+    <mat-chip-list #chipList>
+      <mat-chip
+        *ngFor="let discipline of chipSelectedDisciplines"
+        [selectable]=true
+        [removable]=true
+        (removed)="removeDiscipline(discipline)">
+        {{discipline.name}}
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+      <input
+        placeholder="Disciplinas do professor"
+        #disciplineInput
+        [formControl]="disciplineControl"
+        [matAutocomplete]="auto"
+        [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [matChipInputAddOnBlur]=true
+        (matChipInputTokenEnd)="addDiscipline($event)">
+    </mat-chip-list>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="disciplineSelected($event)">
+      <mat-option *ngFor="let thisDisciplineName of filteredDisciplines | async" [value]="thisDisciplineName">
+        {{thisDisciplineName}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+
+
+
   <div class="input-group" fxLayout="row wrap" fxLayoutGap="32px">
     <label class="group-title">Salas</label>
     <div>

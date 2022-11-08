@@ -99,7 +99,7 @@ export type classType = {
 }
 
 export type discipline = {
-  "id"?: number,
+  "id": number,
   "name": string
 }
 

@@ -9,6 +9,7 @@ import { HomeTeacherComponent } from './home-teacher/home-teacher.component';
 import { DetailTeacherComponent } from './detail-teacher/detail-teacher.component';
 import { NewTeacherComponent } from "./new-teacher/new-teacher.component";
 import { FormTeacherComponent } from './form-teacher/form-teacher.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,11 +18,12 @@ import { FormTeacherComponent } from './form-teacher/form-teacher.component';
     NewTeacherComponent,
     FormTeacherComponent
   ],
-  imports: [
-    CommonModule,
-    TeacherRoutingModule,
-    MaterialModule,
-    ToolbarsModule,
-  ]
+    imports: [
+        CommonModule,
+        TeacherRoutingModule,
+        MaterialModule,
+        ToolbarsModule,
+        ReactiveFormsModule,
+    ]
 })
 export class TeacherModule { }

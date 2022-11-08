@@ -20,11 +20,11 @@ export class DisciplineService {
     return this.http.get(`${this.url}(${id})`)
   }
 
-  create(body: discipline) {
+  create(body: Partial<discipline>) {
     return this.http.post<discipline>(this.url, body)
   }
 
-  update( id: string, body: discipline ) {
+  update( id: string, body: Partial<discipline> ) {
     return this.http.put(`${this.url}(${id})`, body)
   }
 
