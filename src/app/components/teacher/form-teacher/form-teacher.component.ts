@@ -115,6 +115,7 @@ export class FormTeacherComponent implements OnInit {
   onSubmit(){
     //TODO: criar form de envio: chipSelectedDisciplines são as matérias selecionadas
     console.log(this.chipSelectedDisciplines)
+    console.log(this.chipSelectedClasses)
   }
 
   //ClassChips
