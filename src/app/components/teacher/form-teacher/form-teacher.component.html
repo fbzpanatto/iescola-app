@@ -1,13 +1,13 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutGap="32px">
 
-  <div class="input-group first" fxLayout="column">
-    <label for="personSelector" class="group-title">Professor</label>
-    <select name="personSelector" id="personSelector" [value]="0">
-      <option value="0">Selecione uma pessoa</option>
-      <option value="1">Maria José Fernandes Rocha</option>
-      <option value="2">Pessoa 2</option>
-    </select>
-  </div>
+  <mat-form-field appearance="outline">
+    <mat-label>Professor</mat-label>
+    <mat-select formControlName="personId">
+      <mat-option *ngFor="let personTeacher of personTeachers" [value]="personTeacher.id">
+        {{ personTeacher.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
   <mat-form-field appearance="outline">
     <mat-label>Disciplinas</mat-label>

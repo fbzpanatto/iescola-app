@@ -5,10 +5,11 @@ import { HttpClient } from "@angular/common/http";
 import { TeacherService } from "../teacher.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { COMMA, ENTER } from "@angular/cdk/keycodes";
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { map, Observable, startWith } from "rxjs";
 import { MatChipInputEvent } from "@angular/material/chips";
 import { MatAutocomplete, MatAutocompleteSelectedEvent } from "@angular/material/autocomplete";
+import { DialogService } from "src/app/shared/components/dialog/dialog.service";
 
 @Component({
   selector: 'app-form-teacher',
@@ -18,6 +19,8 @@ import { MatAutocomplete, MatAutocompleteSelectedEvent } from "@angular/material
 export class FormTeacherComponent implements OnInit {
 
   id: string | null = null
+
+  personTeachers: any[] = []
 
   allClasses: clasroom[] = []
   public chipSelectedClasses: clasroom[] = []
@@ -38,14 +41,15 @@ export class FormTeacherComponent implements OnInit {
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
 
   form = new FormGroup({
-
+    "personId": new FormControl<number | null>(null, [Validators.required,]),
   })
 
   constructor(
     private httpClient: HttpClient,
     private teacherService: TeacherService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private dialog: DialogService
   ) {
     this.filteredDisciplines = this.disciplineControl.valueChanges.pipe(
       startWith(''),
@@ -62,10 +66,14 @@ export class FormTeacherComponent implements OnInit {
     this.start()
       .then(() => this.fetchClasses())
       .then(() => this.fetchDisciplines())
+      .then(() => this.fetchPersonTeacher())
+      .catch(error => this.errorHandler(error.statusText, error.status))
   }
+
   start() {
     return new Promise<void>((resolve) => resolve())
   }
+
   fetchDisciplines(){
     return new Promise<void>((resolve, reject) => {
       try {
@@ -83,23 +91,15 @@ export class FormTeacherComponent implements OnInit {
       }
     })
   }
+
   fetchClasses(){
     return new Promise<void>((resolve, reject) => {
       try {
         this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/Class`)
           .subscribe({
             next: (result:any) => {
-              // this.allClasses = result.value as clasroom[]
-              this.allClasses = [
-                {
-                  "id": 1,
-                  "name": "1A"
-                },{
-                  "id": 2,
-                  "name": "1B"
-                }
+              this.allClasses = result.value as clasroom[]
 
-              ]
               resolve()
             },
             error: (err) => reject(err)
@@ -109,13 +109,55 @@ export class FormTeacherComponent implements OnInit {
       }
     })
   }
-  backToList(){
-    this.router.navigate(['employee'])
+
+  fetchPersonTeacher(){
+    return new Promise<void>((resolve, reject) => {
+      try {
+        this.teacherService.getAll()
+          .subscribe({
+            next: (result: any) => {
+              this.personTeachers = result.value
+
+              resolve()
+            },
+            error: (err) => reject(err)
+          })
+      } catch (error) {
+        reject(error)
+      }
+    })
   }
+
+  backToList(){
+    this.router.navigate(['teacher'])
+  }
+
   onSubmit(){
-    //TODO: criar form de envio: chipSelectedDisciplines são as matérias selecionadas
-    console.log(this.chipSelectedDisciplines)
-    console.log(this.chipSelectedClasses)
+    let object = []
+
+     for (let discipline of this.chipSelectedDisciplines) {
+      for(let classroom of this.chipSelectedClasses) {
+        object.push({
+          person: { id: this.form.value.personId },
+          discipline: { id: discipline.id },
+          class: { id: classroom.id }
+        })
+      }
+    }
+
+     console.log(object)
+
+    // this.teacherService.create(object)
+    //   .subscribe({
+    //     next: (_result) => this.backToList(),
+    //     error: (err) => this.errorHandler(err.statusText, err.status)
+    //   })
+  }
+
+  errorHandler(statusText: string, errorStatus: number) {
+    this.dialog.openDialog(statusText, errorStatus)
+      .afterClosed()
+      .subscribe(() => this.backToList())
   }
 
   //ClassChips
@@ -293,5 +335,4 @@ export class FormTeacherComponent implements OnInit {
       this.chipSelectedDisciplines.push({ name: disciplineName, id: highestDisciplineId + 1 });
     }
   }
-
 }
