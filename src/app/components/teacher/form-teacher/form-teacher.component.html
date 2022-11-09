@@ -1,4 +1,5 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutGap="32px">
+
   <div class="input-group first" fxLayout="column">
     <label for="personSelector" class="group-title">Professor</label>
     <select name="personSelector" id="personSelector" [value]="0">
@@ -10,24 +11,28 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Disciplinas</mat-label>
-    <mat-chip-list #chipList>
-      <mat-chip
-        *ngFor="let discipline of chipSelectedDisciplines"
-        [selectable]=true
-        [removable]=true
-        (removed)="removeDiscipline(discipline)">
-        {{discipline.name}}
-        <mat-icon matChipRemove>cancel</mat-icon>
-      </mat-chip>
-      <input
-        placeholder="Disciplinas do professor"
-        #disciplineInput
-        [formControl]="disciplineControl"
-        [matAutocomplete]="autoDiscipline"
-        [matChipInputFor]="chipList"
-        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-        [matChipInputAddOnBlur]=true
-        (matChipInputTokenEnd)="addDiscipline($event)">
+    <mat-chip-list #chipList fxLayout="column">
+      <div fxLayout="row" fxLayoutAlign="start">
+        <input class="inside-mat-input"
+          placeholder="Disciplinas do professor"
+          #disciplineInput
+          [formControl]="disciplineControl"
+          [matAutocomplete]="autoDiscipline"
+          [matChipInputFor]="chipList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          [matChipInputAddOnBlur]=true
+          (matChipInputTokenEnd)="addDiscipline($event)">
+      </div>
+      <div fxLayout="row wrap" fxLayoutAlign="start">
+        <mat-chip
+          *ngFor="let discipline of chipSelectedDisciplines"
+          [selectable]=true
+          [removable]=true
+          (removed)="removeDiscipline(discipline)">
+          {{discipline.name}}
+          <mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+      </div>
     </mat-chip-list>
     <mat-autocomplete #autoDiscipline="matAutocomplete" (optionSelected)="disciplineSelected($event)">
       <mat-option *ngFor="let thisDisciplineName of filteredDisciplines | async" [value]="thisDisciplineName">
@@ -36,35 +41,37 @@
     </mat-autocomplete>
   </mat-form-field>
 
-
-  <div class="input-group" fxLayout="row wrap" fxLayoutGap="32px">
-    <label class="group-title">Salas</label>
-    <div>
-      <input type="checkbox" id="class1" name="class1" value="matematica">
-      <label class="pointer" for="class1">1ºA</label>
-    </div>
-    <div>
-      <input type="checkbox" id="class2" name="class2" value="matematica">
-      <label class="pointer" for="class2">1ºB</label>
-    </div>
-    <div>
-      <input type="checkbox" id="class3" name="class3" value="matematica">
-      <label class="pointer" for="class3">2ºA</label>
-    </div>
-    <div>
-      <input type="checkbox" id="class4" name="class4" value="matematica">
-      <label class="pointer" for="class4">2ºB</label>
-    </div>
-    <div>
-      <input type="checkbox" id="class5" name="class5" value="matematica">
-      <label class="pointer" for="class5">3ºA</label>
-    </div>
-    <div>
-      <input type="checkbox" id="class6" name="class6" value="matematica">
-      <label class="pointer" for="class6">3ºB</label>
-    </div>
-  </div>
-
+  <mat-form-field appearance="outline">
+    <mat-label>Classes</mat-label>
+    <mat-chip-list #chipClassList fxLayout="column">
+      <div fxLayout="row" fxLayoutAlign="start">
+        <input class="inside-mat-input"
+               placeholder="Salas que lecionará"
+               #classInput
+               [formControl]="classControl"
+               [matAutocomplete]="autoClass"
+               [matChipInputFor]="chipClassList"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               [matChipInputAddOnBlur]=true
+               (matChipInputTokenEnd)="addClass($event)">
+      </div>
+      <div fxLayout="row wrap" fxLayoutAlign="start">
+        <mat-chip
+          *ngFor="let classroom of chipSelectedClasses"
+          [selectable]=true
+          [removable]=true
+          (removed)="removeClass(classroom)">
+          {{classroom.name}}
+          <mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+      </div>
+    </mat-chip-list>
+    <mat-autocomplete #autoClass="matAutocomplete" (optionSelected)="classSelected($event)">
+      <mat-option *ngFor="let thisClassName of filteredClasses | async" [value]="thisClassName">
+        {{thisClassName}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
 
   <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="32px">
     <button type="button" color="accent" mat-button>
