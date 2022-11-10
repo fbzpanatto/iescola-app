@@ -2,6 +2,7 @@ SET FOREIGN_KEY_CHECKS=0;
 TRUNCATE TABLE activity;
 TRUNCATE TABLE activity_type;
 TRUNCATE TABLE address;
+TRUNCATE TABLE category;
 TRUNCATE TABLE class;
 TRUNCATE TABLE class_student;
 TRUNCATE TABLE class_type;
