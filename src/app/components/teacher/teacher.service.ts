@@ -15,7 +15,7 @@ export class TeacherService {
 
   url = `${environment.GIGABASE.ODATA_URL}/Escola/Person`
   createUrl = `${environment.GIGABASE.ODATA_URL}/Escola/Teacher`
-  allActiveTeachers = '?$expand=employmentContracts($filter=occupationId eq 1  and end eq null&$expand=occupation,schoolPrincipal),teachers'
+  allActiveTeachers = '?$expand=employmentContracts($filter=occupationId eq 1 and end eq null&$expand=occupation,schoolPrincipal),teachers'
 
   constructor(private http: HttpClient) { }
 

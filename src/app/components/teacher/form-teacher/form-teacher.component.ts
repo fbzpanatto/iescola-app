@@ -62,6 +62,7 @@ export class FormTeacherComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //TODO: this.chipSelectedClasses.push({id: 1, name: 'TESTANDO'}) para editar
     this.id = this.route.snapshot.params['id']
     this.start()
       .then(() => this.fetchClasses())
