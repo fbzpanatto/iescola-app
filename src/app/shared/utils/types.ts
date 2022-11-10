@@ -64,7 +64,7 @@ export type gender = {
 export type category = {
   id: number,
   name: string,
-  active: boolean
+  active?: boolean
 }
 
 export type person = {

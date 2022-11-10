@@ -1,30 +1,43 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutGap="24px">
 
+
   <mat-form-field appearance="outline">
     <mat-label>Nome</mat-label>
     <input formControlName="name" matInput placeholder="nome completo">
     <mat-icon matSuffix fontIcon="boy"></mat-icon>
   </mat-form-field>
 
-<!--  TODO: create person_category and gender entities in database-->
-<!--  <div class="container" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="24px">-->
-<!--    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">-->
-<!--      <mat-label>Categoria</mat-label>-->
-<!--      <mat-select formControlName="person_category_id">-->
-<!--        <mat-option *ngFor="let option of category" [value]="option.id">-->
-<!--          {{ option.name }}-->
-<!--        </mat-option>-->
-<!--      </mat-select>-->
-<!--    </mat-form-field>-->
-<!--    <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">-->
-<!--      <mat-label>Gênero</mat-label>-->
-<!--      <mat-select formControlName="gender_id">-->
-<!--        <mat-option *ngFor="let option of gender" [value]="option.id">-->
-<!--          {{ option.name }}-->
-<!--        </mat-option>-->
-<!--      </mat-select>-->
-<!--    </mat-form-field>-->
-<!--  </div>-->
+  <mat-form-field appearance="outline">
+    <mat-label>Categorias</mat-label>
+    <mat-chip-list #chipList fxLayout="column">
+      <div fxLayout="row" fxLayoutAlign="start">
+        <input class="inside-mat-input"
+               placeholder="Categorias da pessoa"
+               #categoryInput
+               [formControl]="categoryControl"
+               [matAutocomplete]="autoCategory"
+               [matChipInputFor]="chipList"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               [matChipInputAddOnBlur]=true
+               (matChipInputTokenEnd)="addCategory($event)">
+      </div>
+      <div fxLayout="row wrap" fxLayoutAlign="start">
+        <mat-chip
+          *ngFor="let category of chipSelectedCategories"
+          [selectable]=true
+          [removable]=true
+          (removed)="removeCategory(category)">
+          {{category.name}}
+          <mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+      </div>
+    </mat-chip-list>
+    <mat-autocomplete #autoCategory="matAutocomplete" (optionSelected)="categorySelected($event)">
+      <mat-option *ngFor="let thisCategoryName of filteredCategories | async" [value]="thisCategoryName">
+        {{thisCategoryName}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
 
   <div class="container" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap="24px">
     <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
@@ -32,6 +45,7 @@
       <input formControlName="rg" matInput placeholder="registro geral">
       <mat-icon matSuffix fontIcon="boy"></mat-icon>
     </mat-form-field>
+
     <mat-form-field appearance="outline" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="row">
       <mat-label>Cpf</mat-label>
       <input formControlName="cpf" matInput placeholder="cadastro de pessoa física">
