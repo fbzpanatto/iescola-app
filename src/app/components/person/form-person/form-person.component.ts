@@ -151,6 +151,26 @@ export class FormPersonComponent implements OnInit {
     this.form.patchValue(this.person)
   }
 
+  body() {
+
+    const personCategories: {
+      "category": {
+        "id": number
+      }
+    }[] = []
+
+    for (let category of this.chipSelectedCategories) {
+      personCategories.push({category: {id: category.id}})
+    }
+
+    return {
+      name: this.form.value.name!,
+      cpf: this.form.value.cpf!,
+      rg: this.form.value.rg!,
+      personCategories
+    }
+  }
+
   // CategoryChips
   public addCategory(event: MatChipInputEvent): void {
     if (!this.allowFreeTextAddCategory) {
@@ -245,13 +265,6 @@ export class FormPersonComponent implements OnInit {
     }
   }
 
-  body(): person {
-    return {
-      name: this.form.value.name!,
-      cpf: this.form.value.cpf!,
-      rg: this.form.value.rg!,
-    }
-  }
 }
 
 

@@ -20,8 +20,8 @@ export class PersonService {
     return this.http.get(`${this.url}(${id})`)
   }
 
-  create(body: person) {
-    return this.http.post<person>(this.url, body)
+  create(body: any) {
+    return this.http.post(this.url, body)
   }
 
   update( id: string, body: person ) {
