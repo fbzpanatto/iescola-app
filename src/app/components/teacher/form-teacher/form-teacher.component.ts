@@ -1,15 +1,15 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { environment } from "../../../../environments/environment";
-import { discipline, clasroom } from "../../../shared/utils/types";
-import { HttpClient } from "@angular/common/http";
-import { TeacherService } from "../teacher.service";
-import { ActivatedRoute, Router } from "@angular/router";
-import { COMMA, ENTER } from "@angular/cdk/keycodes";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { map, Observable, startWith } from "rxjs";
-import { MatChipInputEvent } from "@angular/material/chips";
-import { MatAutocomplete, MatAutocompleteSelectedEvent } from "@angular/material/autocomplete";
-import { DialogService } from "src/app/shared/components/dialog/dialog.service";
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {environment} from "../../../../environments/environment";
+import {clasroom, discipline} from "../../../shared/utils/types";
+import {HttpClient} from "@angular/common/http";
+import {TeacherService} from "../teacher.service";
+import {ActivatedRoute, Router} from "@angular/router";
+import {COMMA, ENTER} from "@angular/cdk/keycodes";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {map, Observable, startWith} from "rxjs";
+import {MatChipInputEvent} from "@angular/material/chips";
+import {MatAutocomplete, MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
+import {DialogService} from "src/app/shared/components/dialog/dialog.service";
 
 @Component({
   selector: 'app-form-teacher',
@@ -128,36 +128,52 @@ export class FormTeacherComponent implements OnInit {
     })
   }
 
-  backToList(){
-    this.router.navigate(['teacher'])
+  onSubmit(){
+    this.id ? this.onEdit() : this.onNew()
   }
 
-  onSubmit(){
-    let object = []
+  onEdit() {
 
-     for (let discipline of this.chipSelectedDisciplines) {
-      for(let classroom of this.chipSelectedClasses) {
-        object.push({
-          person: { id: this.form.value.personId },
-          discipline: { id: discipline.id },
-          class: { id: classroom.id }
-        })
-      }
-    }
+  }
 
-     console.log(object)
+  onNew(): void {
+    this.teacherService.create(this.body())
+      .subscribe({
+        next: (_result) => this.backToList(),
+        error: (err) => this.errorHandler(err.statusText, err.status)
+      })
+  }
 
-    // this.teacherService.create(object)
-    //   .subscribe({
-    //     next: (_result) => this.backToList(),
-    //     error: (err) => this.errorHandler(err.statusText, err.status)
-    //   })
+  backToList(){
+    this.router.navigate(['teacher'])
   }
 
   errorHandler(statusText: string, errorStatus: number) {
     this.dialog.openDialog(statusText, errorStatus)
       .afterClosed()
       .subscribe(() => this.backToList())
+  }
+
+  body() {
+    const teacherDisciplines: {
+      "disciplineId": number
+    }[] = []
+    const teacherClasses: {
+      "classId": number
+    }[] = []
+
+    for (let discipline of this.chipSelectedDisciplines) {
+      teacherDisciplines.push({disciplineId: discipline.id})
+    }
+    for (let classroom of this.chipSelectedClasses) {
+      teacherClasses.push({classId: classroom.id})
+    }
+
+    return {
+      person: {id: this.form.value.personId},
+      teacherDisciplines,
+      teacherClasses
+    }
   }
 
   //ClassChips

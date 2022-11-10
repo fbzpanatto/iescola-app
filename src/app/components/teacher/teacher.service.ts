@@ -3,6 +3,11 @@ import { environment } from "../../../environments/environment";
 import { HttpClient } from "@angular/common/http";
 import { teacher } from "../../shared/utils/types";
 
+type bodyPOST = {
+  person: {id: number | null | undefined},
+  teacherDisciplines: {disciplineId: number}[],
+  teacherClasses: {classId: number}[]}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -22,7 +27,7 @@ export class TeacherService {
     return this.http.get(`${this.url}(${id})`)
   }
 
-  create(body: any) {
+  create(body: bodyPOST) {
     return this.http.post(this.createUrl, body)
   }
 
