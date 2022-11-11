@@ -1,6 +1,6 @@
 <div class="component-container">
   <app-home-toolbar
-    [actionNew]="true"
+    [actionNew]="false"
     [filter]="true"
     [changeViewOptions] = "true"
     [title]="title"
@@ -52,18 +52,20 @@
     <table>
       <thead>
         <tr>
-          <th>Id</th>
           <th>Nº Matrícula</th>
           <th>Nome</th>
           <th>Escola sede</th>
+          <th>Contrato</th>
+          <th>Iniciado em</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let personTeacher of personTeachers" routerLink="{{personTeacher.id}}">
-          <td>{{personTeacher.id}}</td>
-          <td>{{personTeacher.employmentContracts[0].registration}}</td>
-          <td>{{personTeacher.name}}</td>
-          <td>{{personTeacher.employmentContracts[0].schoolPrincipal.name}}</td>
+          <td>{{personTeacher.registration}}</td>
+          <td>{{personTeacher.person.name}}</td>
+          <td>{{personTeacher.schoolPrincipal.name}}</td>
+          <td>{{personTeacher.contract.name}}</td>
+          <td>{{personTeacher.start}}</td>
         </tr>
       </tbody>
     </table>

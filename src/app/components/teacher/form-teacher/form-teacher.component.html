@@ -1,12 +1,9 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutGap="32px">
 
   <mat-form-field appearance="outline">
-    <mat-label>Professor</mat-label>
-    <mat-select formControlName="personId">
-      <mat-option *ngFor="let personTeacher of personTeachers" [value]="personTeacher.id">
-        {{ personTeacher.name }}
-      </mat-option>
-    </mat-select>
+    <mat-label>Nome</mat-label>
+    <input formControlName="name" matInput placeholder="nome completo">
+    <mat-icon matSuffix fontIcon="boy"></mat-icon>
   </mat-form-field>
 
   <mat-form-field appearance="outline">

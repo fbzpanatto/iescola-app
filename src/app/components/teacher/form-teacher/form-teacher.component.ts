@@ -22,6 +22,8 @@ export class FormTeacherComponent implements OnInit {
 
   personTeachers: any[] = []
 
+  personTeacherId: number | undefined
+
   allClasses: clasroom[] = []
   public chipSelectedClasses: clasroom[] = []
   public filteredClasses: Observable<String[]> | undefined;
@@ -42,6 +44,7 @@ export class FormTeacherComponent implements OnInit {
 
   form = new FormGroup({
     "personId": new FormControl<number | null>(null, [Validators.required,]),
+    "name": new FormControl<string | null>(null, [Validators.required,]),
   })
 
   constructor(
@@ -114,11 +117,10 @@ export class FormTeacherComponent implements OnInit {
   fetchPersonTeacher(){
     return new Promise<void>((resolve, reject) => {
       try {
-        this.teacherService.getAll()
+        this.teacherService.getById(this.id!)
           .subscribe({
             next: (result: any) => {
-              this.personTeachers = result.value
-
+              this.pathFormValues(result)
               resolve()
             },
             error: (err) => reject(err)
@@ -138,6 +140,7 @@ export class FormTeacherComponent implements OnInit {
   }
 
   onNew(): void {
+    console.log('body...', this.body())
     this.teacherService.create(this.body())
       .subscribe({
         next: (_result) => this.backToList(),
@@ -153,6 +156,14 @@ export class FormTeacherComponent implements OnInit {
     this.dialog.openDialog(statusText, errorStatus)
       .afterClosed()
       .subscribe(() => this.backToList())
+  }
+
+  pathFormValues(data: any) {
+    console.log('data', data)
+    this.form.patchValue({
+      name: data.person.name,
+      personId: data.person.id
+    })
   }
 
   body() {

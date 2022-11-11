@@ -14,17 +14,18 @@ type bodyPOST = {
 export class TeacherService {
 
   url = `${environment.GIGABASE.ODATA_URL}/Escola/Person`
+  urlEmploymentContract = `${environment.GIGABASE.ODATA_URL}/Escola/EmploymentContract`
+  activeTeachers = `?$select=id,registration,start,end&$filter=occupationId eq 1 and end eq null&$expand=contract,occupation,person($expand=teachers),schoolPrincipal`
   createUrl = `${environment.GIGABASE.ODATA_URL}/Escola/Teacher`
-  allActiveTeachers = '?$expand=employmentContracts($filter=occupationId eq 1 and end eq null&$expand=occupation,schoolPrincipal),teachers'
 
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get(`${this.url}${this.allActiveTeachers}`)
+    return this.http.get(`${this.urlEmploymentContract}${this.activeTeachers}`)
   }
 
   getById(id:string) {
-    return this.http.get(`${this.url}(${id})`)
+    return this.http.get(`${this.urlEmploymentContract}(${id})?$expand=person($select=name)`)
   }
 
   create(body: bodyPOST) {

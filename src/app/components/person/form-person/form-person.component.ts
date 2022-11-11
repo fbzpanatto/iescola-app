@@ -264,7 +264,6 @@ export class FormPersonComponent implements OnInit {
       this.chipSelectedCategories.push({ name: categoryName, id: highestCategoryId + 1 });
     }
   }
-
 }
 
 
