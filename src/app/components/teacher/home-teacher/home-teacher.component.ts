@@ -31,7 +31,7 @@ export class HomeTeacherComponent implements OnInit {
   }
 
   fetchAll(){
-    this.teacherService.getAll()
+    this.teacherService.getAllContracts()
       //todo: criar um map para melhorar o retorno, e não setar [0] no html
       .subscribe((result:any) => this.personTeachers = result.value)
   }

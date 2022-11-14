@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from "../../../environments/environment";
 import { HttpClient } from "@angular/common/http";
-import { teacher } from "../../shared/utils/types";
 
 type bodyPOST = {
   person: {id: number | null | undefined},
@@ -21,24 +20,24 @@ export class TeacherService {
 
   teacherDisciplinesAndClasses = '?$select=personId,registration&$expand=person($expand=teachers($expand=teacherClasses,teacherDisciplines))'
 
-  createUrl = `${environment.GIGABASE.ODATA_URL}/Escola/Teacher`
+  postAndPutUrl = `${environment.GIGABASE.ODATA_URL}/Escola/Teacher`
 
   constructor(private http: HttpClient) { }
 
-  getAll() {
+  getAllContracts() {
     return this.http.get(`${this.urlEmploymentContract}${this.activeTeachers}`)
   }
 
-  getById(id:string) {
+  getContractById(id:string) {
     return this.http.get(`${this.urlEmploymentContract}(${id})${this.teacherDisciplinesAndClasses}`)
   }
 
   create(body: bodyPOST) {
-    return this.http.post(this.createUrl, body)
+    return this.http.post(this.postAndPutUrl, body)
   }
 
-  update( id: string, body: Partial<teacher> ) {
-    return this.http.put(`${this.url}(${id})`, body)
+  updateClassAndDisciplines(id: number, body: bodyPOST ) {
+    return this.http.put(`${this.postAndPutUrl}(${id})`, body)
   }
 
   delete( id: string) {
