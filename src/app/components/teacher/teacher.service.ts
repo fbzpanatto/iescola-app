@@ -2,42 +2,33 @@ import { Injectable } from '@angular/core';
 import { environment } from "../../../environments/environment";
 import { HttpClient } from "@angular/common/http";
 
-type bodyPOST = {
-  person: {id: number | null | undefined},
-  teacherDisciplines: {disciplineId: number}[],
-  teacherClasses: {classId: number}[]}
-
 @Injectable({
   providedIn: 'root'
 })
 export class TeacherService {
 
-  url = `${environment.GIGABASE.ODATA_URL}/Escola/Person`
+  url = `${environment.GIGABASE.ODATA_URL}/Escola/Teacher`
 
-  urlEmploymentContract = `${environment.GIGABASE.ODATA_URL}/Escola/EmploymentContract`
+  activeTeachers = '?$expand=person($expand=employmentContracts($filter=occupationId eq 1 and end eq null&$expand=contract,schoolPrincipal))'
 
-  activeTeachers = `?$select=id,registration,start,end&$filter=occupationId eq 1 and end eq null&$expand=contract,occupation,person($expand=teachers),schoolPrincipal`
-
-  teacherDisciplinesAndClasses = '?$select=personId,registration&$expand=person($expand=teachers($expand=teacherClasses,teacherDisciplines))'
-
-  postAndPutUrl = `${environment.GIGABASE.ODATA_URL}/Escola/Teacher`
+  classesAndDisciplines = '?$expand=person,teacherClasses,teacherDisciplines'
 
   constructor(private http: HttpClient) { }
 
-  getAllContracts() {
-    return this.http.get(`${this.urlEmploymentContract}${this.activeTeachers}`)
+  getAllActiveTeachers() {
+    return this.http.get(`${this.url}${this.activeTeachers}`)
   }
 
-  getContractById(id:string) {
-    return this.http.get(`${this.urlEmploymentContract}(${id})${this.teacherDisciplinesAndClasses}`)
+  getTeacherById(id:string) {
+    return this.http.get(`${this.url}(${id})${this.classesAndDisciplines}`)
   }
 
-  create(body: bodyPOST) {
-    return this.http.post(this.postAndPutUrl, body)
+  create(body: any) {
+    return this.http.post(this.url, body)
   }
 
-  updateClassAndDisciplines(id: number, body: bodyPOST ) {
-    return this.http.put(`${this.postAndPutUrl}(${id})`, body)
+  updateClassAndDisciplines(id: number, body: any ) {
+    return this.http.post(`${this.url}(${id})`, body)
   }
 
   delete( id: string) {

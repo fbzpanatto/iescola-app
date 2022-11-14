@@ -5,7 +5,7 @@
     [changeViewOptions] = "true"
     [title]="title"
     [secondPhrase]="'Professor'"
-    [firstPhrase]="activeContracts.length.toString() + ' encontrado(s)'"
+    [firstPhrase]="allActiveTeachers.length.toString() + ' encontrado(s)'"
   >
   </app-home-toolbar>
   <ng-container *ngIf="!listView; else listTableView">
@@ -54,18 +54,18 @@
         <tr>
           <th>Nº Matrícula</th>
           <th>Nome</th>
-          <th>Escola sede</th>
           <th>Contrato</th>
-          <th>Iniciado em</th>
+          <th>Escola sede</th>
+          <th>Iniciado</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let ac of activeContracts" routerLink="{{ac.id}}">
-          <td>{{ac.registration}}</td>
-          <td>{{ac.person.name}}</td>
-          <td>{{ac.schoolPrincipal.name}}</td>
-          <td>{{ac.contract.name}}</td>
-          <td>{{ac.start}}</td>
+        <tr *ngFor="let teacher of allActiveTeachers" routerLink="{{teacher.id}}">
+          <td>{{teacher.person.employmentContracts[0].registration}}</td>
+          <td>{{teacher.person.name}}</td>
+          <td>{{teacher.person.employmentContracts[0].contract.name}}</td>
+          <td>{{teacher.person.employmentContracts[0].schoolPrincipal.name}}</td>
+          <td>{{teacher.person.employmentContracts[0].start}}</td>
         </tr>
       </tbody>
     </table>

@@ -13,7 +13,7 @@ export class HomeTeacherComponent implements OnInit {
   title: string | undefined
   listView: boolean | undefined = true
   //TODO: definir melhor a tipagem para teachers
-  activeContracts: any[] = []
+  allActiveTeachers: any[] = []
 
   constructor(private titleService: Title, private teacherService: TeacherService) { }
 
@@ -31,8 +31,8 @@ export class HomeTeacherComponent implements OnInit {
   }
 
   fetchAll(){
-    this.teacherService.getAllContracts()
+    this.teacherService.getAllActiveTeachers()
       //todo: criar um map para melhorar o retorno, e não setar [0] no html
-      .subscribe((result:any) => this.activeContracts = result.value)
+      .subscribe((result:any) => this.allActiveTeachers = result.value)
   }
 }

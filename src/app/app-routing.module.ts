@@ -36,7 +36,7 @@ const routes: Routes = [
     loadChildren: () => import('./components/responsible/responsible.module').then(m => m.ResponsibleModule)
   },
   {
-    path: 'teacher-contract',
+    path: 'teacher',
     title: 'escola.app - Professores',
     loadChildren: () => import('./components/teacher/teacher.module').then(m => m.TeacherModule)
   },

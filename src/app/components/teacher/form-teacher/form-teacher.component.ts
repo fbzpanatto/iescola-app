@@ -18,9 +18,8 @@ import {DialogService} from "src/app/shared/components/dialog/dialog.service";
 })
 export class FormTeacherComponent implements OnInit {
 
-  contractId: string | null = null
   personId: number | undefined
-  teacherId: number | undefined
+  teacherId: string | undefined
 
   allClasses: clasroom[] = []
   public chipSelectedClasses: clasroom[] = []
@@ -42,8 +41,7 @@ export class FormTeacherComponent implements OnInit {
 
   form = new FormGroup({
     "personId": new FormControl<number | null>(null, [Validators.required,]),
-    "teacherId": new FormControl<number | null>(null, [Validators.required,]),
-    "name": new FormControl<string | null>(null, [Validators.required,]),
+    "name": new FormControl<string | null>(null, [Validators.required,])
   })
 
   constructor(
@@ -64,11 +62,11 @@ export class FormTeacherComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.contractId = this.route.snapshot.params['id']
+    this.teacherId = this.route.snapshot.params['id']
     this.start()
       .then(() => this.fetchClasses())
       .then(() => this.fetchDisciplines())
-      .then(() => this.fetchContractById())
+      .then(() => this.fetchTeacher())
       .catch(error => this.errorHandler(error.statusText, error.status))
   }
 
@@ -112,10 +110,10 @@ export class FormTeacherComponent implements OnInit {
     })
   }
 
-  fetchContractById(){
+  fetchTeacher(){
     return new Promise<void>((resolve, reject) => {
       try {
-        this.teacherService.getContractById(this.contractId!)
+        this.teacherService.getTeacherById(this.teacherId!)
           .subscribe({
             next: (result: any) => {
               this.pathFormValues(result)
@@ -130,23 +128,14 @@ export class FormTeacherComponent implements OnInit {
   }
 
   onSubmit(){
-    this.contractId ? this.onEdit() : this.onNew()
+    this.onEdit()
   }
 
   onEdit() {
-    this.teacherService.updateClassAndDisciplines(this.teacherId!, this.body())
+    this.teacherService.updateClassAndDisciplines(+this.teacherId!, this.body())
       .subscribe({
         next: (_result) => this.backToList(),
         error: (err) => this.errorHandler(err.statusText, err.Status)
-      })
-  }
-
-  onNew(): void {
-    console.log('body...', this.body())
-    this.teacherService.create(this.body())
-      .subscribe({
-        next: (_result) => this.backToList(),
-        error: (err) => this.errorHandler(err.statusText, err.status)
       })
   }
 
@@ -162,17 +151,17 @@ export class FormTeacherComponent implements OnInit {
 
   pathFormValues(data: any) {
 
-    const teacher = data.person.teachers[0]
-    this.teacherId = teacher.id
-    this.personId = teacher.personId
+    this.personId = data.personId
+
+    console.log('pathFormValues: data', data)
 
     const teacherDisciplines =
-      teacher.teacherDisciplines as Array<{
+      data.teacherDisciplines as Array<{
       "disciplineId": number
     }>
 
     const teacherClasses =
-      teacher.teacherClasses as Array<{
+      data.teacherClasses as Array<{
       "classId": number
     }>
 
@@ -184,28 +173,29 @@ export class FormTeacherComponent implements OnInit {
 
     this.form.patchValue({
       name: data.person.name,
-      personId: this.personId,
-      teacherId: this.teacherId
+      personId: this.personId
     })
   }
 
   body() {
     const teacherDisciplines: {
-      "disciplineId": number
+      "discipline": { id: number }
+      "teacher": { "id": number }
     }[] = []
     const teacherClasses: {
-      "classId": number
+      "class": { id: number },
+      "teacher": { "id": number }
     }[] = []
 
     for (let discipline of this.chipSelectedDisciplines) {
-      teacherDisciplines.push({disciplineId: discipline.id})
+      teacherDisciplines.push({discipline: { id: discipline.id }, teacher: { id: +this.teacherId! }})
     }
     for (let classroom of this.chipSelectedClasses) {
-      teacherClasses.push({classId: classroom.id})
+      teacherClasses.push({class: { id: classroom.id }, teacher: { id: +this.teacherId! }})
     }
 
     return {
-      person: {id: this.form.value.personId},
+      person: {id: this.personId},
       teacherDisciplines,
       teacherClasses
     }
