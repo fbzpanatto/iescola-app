@@ -136,7 +136,7 @@ export class FormTeacherComponent implements OnInit {
   }
 
   onEdit() {
-
+    console.log('preciso implementar o método onEdit agora')
   }
 
   onNew(): void {
