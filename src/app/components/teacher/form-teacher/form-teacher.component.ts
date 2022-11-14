@@ -20,7 +20,7 @@ export class FormTeacherComponent implements OnInit {
 
   id: string | null = null
 
-  personTeachers: any[] = []
+  // personTeachers: any[] = []
 
   personTeacherId: number | undefined
 
@@ -159,7 +159,13 @@ export class FormTeacherComponent implements OnInit {
   }
 
   pathFormValues(data: any) {
-    console.log('data', data)
+    const teacher = data.person.teachers[0]
+    const teacherDisciplines = teacher.teacherDisciplines as Array<any>
+    const teacherClasses = teacher.teacherClasses as Array<any>
+
+    this.chipSelectedDisciplines = this.allDisciplines.filter(a => teacherDisciplines.some(b => a.id === b.disciplineId))
+    this.chipSelectedClasses = this.allClasses.filter(a => teacherClasses.some(b => a.id === b.classId))
+
     this.form.patchValue({
       name: data.person.name,
       personId: data.person.id
