@@ -132,7 +132,8 @@ export class FormTeacherComponent implements OnInit {
   }
 
   onEdit() {
-    this.teacherService.updateClassAndDisciplines(+this.teacherId!, this.body())
+    console.log('body to edit', this.body())
+    this.teacherService.update(+this.teacherId!, this.body())
       .subscribe({
         next: (_result) => this.backToList(),
         error: (err) => this.errorHandler(err.statusText, err.Status)

@@ -27,8 +27,8 @@ export class TeacherService {
     return this.http.post(this.url, body)
   }
 
-  updateClassAndDisciplines(id: number, body: any ) {
-    return this.http.post(`${this.url}(${id})`, body)
+  update(id: number, body: any ) {
+    return this.http.put(`${this.url}(${id})`, body)
   }
 
   delete( id: string) {
