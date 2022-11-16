@@ -22,6 +22,8 @@ export class FormTeacherComponent implements OnInit {
   teacherId: string | undefined
   id: string | null = null
 
+  personsWithoutTeacher: any[] = []
+
   allClasses: clasroom[] = []
   public chipSelectedClasses: clasroom[] = []
   public filteredClasses: Observable<String[]> | undefined;
@@ -114,10 +116,12 @@ export class FormTeacherComponent implements OnInit {
   fetchPersons(){
     return new Promise<void>((resolve, reject) => {
       try {
-        this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/Discipline`)
+        this.teacherService.getTeacherListWithoutClassesAndDisciplines()
           .subscribe({
             next: (result:any) => {
-              this.allDisciplines = result.value as discipline[]
+
+              this.personsWithoutTeacher =
+                result.value.filter((person:any) => person.teachers.length < 1)
 
               resolve()
             },
@@ -130,6 +134,7 @@ export class FormTeacherComponent implements OnInit {
   }
 
   fetchTeacher(id: string){
+    console.log(this.fetchTeacher.name)
     return new Promise<void>((resolve, reject) => {
       try {
         this.teacherService.getTeacherById(id)

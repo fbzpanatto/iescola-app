@@ -11,8 +11,9 @@ export class TeacherService {
 
   url = `${environment.GIGABASE.ODATA_URL}/Escola/Teacher`
   urlAll = `?$expand=person($select=name&$expand=employmentContracts($filter=occupationId eq ${this._occupation} and end eq null&$expand=contract,schoolPrincipal))`
-
   classesAndDisciplines = '?$expand=person,teacherClasses,teacherDisciplines'
+
+  urlPerson = `${environment.GIGABASE.ODATA_URL}/Escola/Person?$expand=teachers`
 
   constructor(private http: HttpClient) { }
 
@@ -25,7 +26,7 @@ export class TeacherService {
   }
 
   getTeacherListWithoutClassesAndDisciplines(){
-  //  TODO: retorne pra mim a lista de todas as pessoas que o vinculo com teachers ainda não existe.
+    return this.http.get(`${this.urlPerson}`)
   }
 
   create(body: any) {
