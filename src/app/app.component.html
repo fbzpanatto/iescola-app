@@ -1,3 +1,11 @@
+<div *ngIf="loading" class="loading-container" fxLayout="row" fxLayoutAlign="center center">
+
+  <mat-progress-spinner
+    color="primary"
+    mode="indeterminate">
+  </mat-progress-spinner>
+</div>
+
 <div class="app-container">
   <app-navigation>
     <router-outlet></router-outlet>

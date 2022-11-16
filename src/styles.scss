@@ -26,6 +26,17 @@ h1, h2, h3, p {
   margin-bottom: 0!important;
 }
 
+.loading-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 5;
+}
+
 form {
   padding: 0 10vw;
   position: relative;

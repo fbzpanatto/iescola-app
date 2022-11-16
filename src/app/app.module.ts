@@ -16,6 +16,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { DialogComponent } from './shared/components/dialog/dialog.component';
 import {HttpHandlerInterceptor} from "./shared/interceptors/http-handler-interceptor.service";
 import {MAT_DATE_LOCALE} from "@angular/material/core";
+import {LoadingInterceptor} from "./shared/interceptors/loading.interceptor";
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {MAT_DATE_LOCALE} from "@angular/material/core";
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: HttpHandlerInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi:true },
     {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}
   ],
   bootstrap: [AppComponent]
