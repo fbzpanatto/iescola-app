@@ -20,6 +20,7 @@ export class FormTeacherComponent implements OnInit {
 
   personId: number | undefined
   teacherId: string | undefined
+  id: string | null = null
 
   allClasses: clasroom[] = []
   public chipSelectedClasses: clasroom[] = []
@@ -62,34 +63,16 @@ export class FormTeacherComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.teacherId = this.route.snapshot.params['id']
+    this.id = this.route.snapshot.params['id']
     this.start()
       .then(() => this.fetchClasses())
       .then(() => this.fetchDisciplines())
-      .then(() => this.fetchTeacher())
+      .then(() => this.onLoad())
       .catch(error => this.errorHandler(error.statusText, error.status))
   }
 
   start() {
     return new Promise<void>((resolve) => resolve())
-  }
-
-  fetchDisciplines(){
-    return new Promise<void>((resolve, reject) => {
-      try {
-        this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/Discipline`)
-          .subscribe({
-            next: (result:any) => {
-              this.allDisciplines = result.value as discipline[]
-
-              resolve()
-            },
-            error: (err) => reject(err)
-          })
-      } catch (error) {
-        reject(error)
-      }
-    })
   }
 
   fetchClasses(){
@@ -110,10 +93,46 @@ export class FormTeacherComponent implements OnInit {
     })
   }
 
-  fetchTeacher(){
+  fetchDisciplines(){
     return new Promise<void>((resolve, reject) => {
       try {
-        this.teacherService.getTeacherById(this.teacherId!)
+        this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/Discipline`)
+          .subscribe({
+            next: (result:any) => {
+              this.allDisciplines = result.value as discipline[]
+
+              resolve()
+            },
+            error: (err) => reject(err)
+          })
+      } catch (error) {
+        reject(error)
+      }
+    })
+  }
+
+  fetchPersons(){
+    return new Promise<void>((resolve, reject) => {
+      try {
+        this.httpClient.get(`${environment.GIGABASE.ODATA_URL}/Escola/Discipline`)
+          .subscribe({
+            next: (result:any) => {
+              this.allDisciplines = result.value as discipline[]
+
+              resolve()
+            },
+            error: (err) => reject(err)
+          })
+      } catch (error) {
+        reject(error)
+      }
+    })
+  }
+
+  fetchTeacher(id: string){
+    return new Promise<void>((resolve, reject) => {
+      try {
+        this.teacherService.getTeacherById(id)
           .subscribe({
             next: (result: any) => {
               this.pathFormValues(result)
@@ -127,16 +146,27 @@ export class FormTeacherComponent implements OnInit {
     })
   }
 
+  onLoad() {
+    return this.id? this.fetchTeacher(this.id) : this.fetchPersons()
+  }
+
   onSubmit(){
-    this.onEdit()
+    this.id ? this.onEdit() : this.onNew()
   }
 
   onEdit() {
-    console.log('body to edit', this.body())
-    this.teacherService.update(+this.teacherId!, this.body())
+    this.teacherService.update(this.teacherId!, this.body())
       .subscribe({
         next: (_result) => this.backToList(),
         error: (err) => this.errorHandler(err.statusText, err.Status)
+      })
+  }
+
+  onNew(): void {
+    this.teacherService.create(this.body())
+      .subscribe({
+        next: (_result) => this.backToList(),
+        error: (err) => this.errorHandler(err.statusText, err.status)
       })
   }
 
